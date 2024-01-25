@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.998cb9a6.css",
+    "main.js": "/static/js/main.a42e410d.js",
+    "static/js/787.1fc09dcd.chunk.js": "/static/js/787.1fc09dcd.chunk.js",
+    "static/media/Header.png": "/static/media/Header.6fc38948bbabd308401e.png",
+    "static/media/add.png": "/static/media/add.7065e7c03db8f7be10d2.png",
+    "static/media/Rectangle 19.png": "/static/media/Rectangle 19.e0fee8582baa5a57bedc.png",
+    "static/media/Rectangle 60.png": "/static/media/Rectangle 60.99d3f19e444e4afd060e.png",
+    "static/media/Rectangle 58.png": "/static/media/Rectangle 58.a2a1c0abbce967934ef9.png",
+    "static/media/Rectangle 59.png": "/static/media/Rectangle 59.066be479defbc53baf26.png",
+    "static/media/data science.jpg": "/static/media/data science.3c8796912b94438a14f1.jpg",
+    "static/media/517TrzchOML._AC_UF1000,1000_QL80_.jpg": "/static/media/517TrzchOML._AC_UF1000,1000_QL80_.3f30d8103a939acd1d05.jpg",
+    "static/media/Rectangle 47.png": "/static/media/Rectangle 47.6ad4586fb4be4759230d.png",
+    "static/media/Rectangle 57.png": "/static/media/Rectangle 57.7225420e4bd948898d7e.png",
+    "static/media/Rectangle 61.png": "/static/media/Rectangle 61.4559adb68d4763a95c46.png",
+    "static/media/Ellipse 31.png": "/static/media/Ellipse 31.b999a4df771d082962bf.png",
+    "static/media/Ellipse 30.png": "/static/media/Ellipse 30.8d4270812e70d06e1ef0.png",
+    "index.html": "/index.html",
+    "main.998cb9a6.css.map": "/static/css/main.998cb9a6.css.map",
+    "main.a42e410d.js.map": "/static/js/main.a42e410d.js.map",
+    "787.1fc09dcd.chunk.js.map": "/static/js/787.1fc09dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.998cb9a6.css",
+    "static/js/main.a42e410d.js"
+  ]
+}
