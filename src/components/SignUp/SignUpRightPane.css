@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.signupright {
+  width: 540px;
+  height: 490px;
+  flex-shrink: 0;
+  background: #043e7d;
+  border: 1px solid #b5d1e2;
+  border-radius: 0px 15px 15px 0px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  gap: 100px;
+}
+
+.title-1, .title-2 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 50px;
+  position: relative;
+  padding: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.title-1:hover, .title-2:hover{
+  color: #B5D1E2;
+}
+
+.active:after{
+  content: " ";
+  position: absolute;
+  background-color: #B5D1E2;
+  height: 3px;
+  width: 140px;
+  left: 0;
+  bottom: -12px;
+
+}
+
+.signupform {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  
+}
+
+.box-1 {
+  display: flex;
+  gap: 30px;
+}
+.finame {
+  text-align: center;
+  width: 180px;
+  height: 38px;
+  flex-shrink: 0;
+  color: #a1a0a6;
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.box-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.emiluni {
+  width: 390px;
+  height: 38px;
+  text-align: center;
+  color: #a1a0a6;
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.box-3 {
+  display: flex;
+  gap: 30px;
+}
+
+.password-1 {
+  color: #a1a0a6;
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 180px;
+  height: 38px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.box-4 {
+  display: flex;
+  gap: 30px;
+}
+
+.desc {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.log {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.log:hover{
+  color: #B5D1E2;
+}
+
+.box-5 {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 300px;
+}
