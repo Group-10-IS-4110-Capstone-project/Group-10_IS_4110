@@ -1,10 +1,11 @@
 import React from 'react'
 import "./SignUpLeftPane.css"
 
+
 export default function SignUpLeftPane() {
   return (
     <div>
-      <div className='content signup'>
+      <div className='content-signup'>
       <div className="title signuptitle">
        <h1>Sign Up</h1> 
         </div>
