@@ -43,61 +43,33 @@ function Datascience() {
 <div className="overlap-wrapper">
   <div className="overlap">
     <div className="text-wrapper">Data science</div>
-    <div className="flexcontainer">
+    <div className="flex-container">
       <p className="text">
         <span className="span">
-          Data science continues to evolve as one of the <br />
+        Data Science is a combination of mathematics, statistics, machine learning, and computer science. 
+        Data Science is collecting, analyzing and interpreting data to gather insights into the data that can 
+        help decision-makers make informed decisions.
+
+        Data Science is used in almost every industry today that can predict customer behavior and trends and identify 
+        new opportunities. <br></br><br></br>
+        Data Science is an emerging field that sees its importance grow with each passing day. It is the latest 
+        buzzword in the IT world, and its demand in the market has been growing steadily. The demand for Data 
+        Scientists is proliferating, driven by the need for organizations to transform data into insights. 
+ <br></br><br></br>
+        Nowadays, organizations are overwhelmed with data. Data Science will help in extracting meaningful 
+        insights from that by combining various methods, technology, and tools. In the fields of e-commerce, 
+        finance, medicine, human resources, etc, businesses come across huge amounts of data. Data Science 
+        tools and technologies help them process all of them.
         </span>
       </p>
-      <p className="text">
-        <span className="span">
-          most promising and in-demand career paths for
-          <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          skilled professionals. Today, successful data <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          professionals understand that they must advance <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          past the traditional skills of analyzing large <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          amounts of data, data mining, and programming <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          skills. In order to uncover useful intelligence for <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          their organizations, data scientists must master <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          the full spectrum of the data science life cycle and <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">
-          possess a level of flexibility and understanding to <br />
-        </span>
-      </p>
-      <p className="text">
-        <span className="span">maximize returns at each phase of the process.</span>
-      </p>
+     
+     
+     
+   
+     
+   
+    
+      
     </div>
     <div className="search">
       <div className="overlap-group">

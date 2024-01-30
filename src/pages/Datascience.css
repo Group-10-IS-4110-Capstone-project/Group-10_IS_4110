@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .index {
     background-color: #ffffff;
     display: flex;
@@ -22,19 +22,19 @@
   
   .index .text-wrapper {
     color: #000000;
-    font-family: var(--h-2-font-family);
-    font-size: var(--h-2-font-size);
-    font-style: var(--h-2-font-style);
-    font-weight: var(--h-2-font-weight);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:200%;
+    font-style:normal;
+    font-weight:bold;
     left: 1105px;
     letter-spacing: var(--h-2-letter-spacing);
-    line-height: var(--h-2-line-height);
+    line-height:90%;
     position: absolute;
-    top: 410px;
+    top: 425px;
     white-space: nowrap;
   }
   
-  .index .flexcontainer {
+  .index .flex-container {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@
     align-self: stretch;
     color: #000000;
     font-family: var(--paragraph-font-family);
-    font-size: var(--paragraph-font-size);
+    font-size:150%;
     font-style: var(--paragraph-font-style);
     font-weight: var(--paragraph-font-weight);
     letter-spacing: var(--paragraph-letter-spacing);
@@ -94,17 +94,17 @@
   }
   
   .index .div {
-    color: #575757;
+    color: #3c3939;
     font-family: var(--paragraph-font-family);
-    font-size: var(--paragraph-font-size);
+    font-size:160%;
     font-style: var(--paragraph-font-style);
-    font-weight: var(--paragraph-font-weight);
+    font-weight:bold;
     left: 156px;
     letter-spacing: var(--paragraph-letter-spacing);
     line-height: var(--paragraph-line-height);
     position: absolute;
-    top: 27px;
-    width: 173px;
+    top: 33px;
+    width: 13px;
   }
   
   .index .image {
@@ -119,9 +119,9 @@
   .index .text-wrapper-2 {
     color: #000000;
     font-family: var(--h-2-font-family);
-    font-size: var(--h-2-font-size);
+    font-size: 200%;
     font-style: var(--h-2-font-style);
-    font-weight: var(--h-2-font-weight);
+    font-weight: bold ;
     left: 398px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
@@ -149,10 +149,11 @@
   
   .index .text-wrapper-3 {
     color: #000000;
-    font-family: var(--h-2-font-family);
-    font-size: var(--h-2-font-size);
+    font-family: Montserrat ;
+    font-family:'Times New Roman', Times, serif;
+    font-size:200%;
     font-style: var(--h-2-font-style);
-    font-weight: var(--h-2-font-weight);
+    font-weight:bold;
     left: 620px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
@@ -243,12 +244,12 @@
   
   .index .text-wrapper-4 {
     color: #000000;
-    font-family: var(--paragraph-font-family);
-    font-size: var(--paragraph-font-size);
-    font-style: var(--paragraph-font-style);
-    font-weight: var(--paragraph-font-weight);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:160%;
+    
+    font-weight:normal;
     left: 422px;
-    letter-spacing: var(--paragraph-letter-spacing);
+    
     line-height: var(--paragraph-line-height);
     position: absolute;
     top: 370px;
@@ -266,12 +267,12 @@
   
   .index .text-wrapper-5 {
     color: #000000;
-    font-family: var(--paragraph-font-family);
-    font-size: var(--paragraph-font-size);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 160%;
     font-style: var(--paragraph-font-style);
-    font-weight: var(--paragraph-font-weight);
+   
     left: 422px;
-    letter-spacing: var(--paragraph-letter-spacing);
+    
     line-height: var(--paragraph-line-height);
     position: absolute;
     top: 780px;
@@ -289,12 +290,12 @@
   
   .index .text-wrapper-6 {
     color: #000000;
-    font-family: var(--paragraph-font-family);
-    font-size: var(--paragraph-font-size);
-    font-style: var(--paragraph-font-style);
-    font-weight: var(--paragraph-font-weight);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:160%;
+
+   
     left: 422px;
-    letter-spacing: var(--paragraph-letter-spacing);
+   
     line-height: var(--paragraph-line-height);
     position: absolute;
     top: 1152px;
@@ -399,15 +400,15 @@
   
   .index .text-wrapper-7 {
     color: #000000;
-    font-family: var(--paragraph-font-family);
-    font-size: var(--paragraph-font-size);
-    font-style: var(--paragraph-font-style);
-    font-weight: var(--paragraph-font-weight);
+    font-family:'Times New Roman', Times, serif;
+    font-size:150%;
+    
+   
     left: 997px;
     letter-spacing: var(--paragraph-letter-spacing);
     line-height: var(--paragraph-line-height);
     position: absolute;
-    top: 1281px;
+    top: 1290px;
     white-space: nowrap;
   }
   
@@ -450,15 +451,16 @@
   .index .text-wrapper-8 {
     color: #000000;
     font-family: var(--h-2-font-family);
-    font-size: var(--h-2-font-size);
+    font-size:200%;
     font-style: var(--h-2-font-style);
-    font-weight: var(--h-2-font-weight);
+    font-weight:bold;
     left: 614px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
     position: absolute;
     top: 41px;
     white-space: nowrap;
+    
   }
   
   .index .elements-of {
@@ -504,6 +506,9 @@
     margin-top: -1px;
     position: relative;
     width: 279px;
+    background-color: white;
+    
+   
   }
   
   .index .paragraph-product {
@@ -516,6 +521,7 @@
     line-height: var(--h-5-line-height);
     position: relative;
     width: fit-content;
+    
   }
   
   .index .rectangle-12 {
@@ -756,6 +762,7 @@
     position: absolute;
     top: 0;
   }
+  
   
   .index .text-wrapper-12 {
     color: #043e7d;
