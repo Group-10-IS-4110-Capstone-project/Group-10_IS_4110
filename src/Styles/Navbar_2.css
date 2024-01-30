@@ -1,0 +1,118 @@
+.navbar {
+    width: 95%;
+    margin: auto;
+    height: 100px;
+    background-color: #B5D1E2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Move the navbar to the right */
+  }
+  /*
+    .navbar .leftSide {
+      flex: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 150px;
+    }
+  
+    .navbar .leftSide img {
+      width: 70px;
+    }
+    */
+    /*.navbar .rightSide {
+      flex: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }*/
+    
+    /*.navbar a {
+      color: #043E7D;
+      text-decoration: none;
+      margin: 20px;
+    }*/
+    .navbar  .primary-button {
+      color: #034994;
+      padding: 0.9rem 1.75rem;
+      background-color: #B5D1E2;
+      outline: none;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+      flex: 50%;
+      margin-top: 35px;
+    }
+    
+    .navbar .primary-button:hover {
+      background-color: rgb(220, 230, 236);
+    }
+  
+   /* .navbar .rightSide svg {
+      font-size: 40px;
+    }
+    */
+    
+    .navbar #open {
+      padding-left: 0px;
+    }
+    .navbar #open img {
+      display: none;
+    }
+    
+    .navbar #close img {
+      display: inherit;
+    }
+    
+    .navbar #open .hiddenLinks {
+      display: inherit;
+      margin-left: 30px;
+    }
+    
+    .navbar #close .hiddenLinks {
+      display: none;
+    }
+    
+    .navbar #open a {
+      width: 70px;
+      margin: 5px;
+    }
+    
+    @media only screen and (max-width: 900px) {
+      .navbar .rightSide a {
+        width: 70px;
+      }
+      .navbar .leftSide {
+        padding-left: 50px;
+      }
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .navbar .rightSide a {
+        display: none;
+      }
+    
+      .navbar .rightSide {
+        justify-content: flex-end;
+        padding-right: 50px;
+      }
+    
+      .navbar .rightSide button {
+        display: inherit;
+      }
+    }
+    
+    @media only screen and (min-width: 600px) {
+      .navbar .rightSide button {
+        display: none;
+      }
+    
+      .hiddenLinks {
+        display: none;
+      }
+    }
+    
