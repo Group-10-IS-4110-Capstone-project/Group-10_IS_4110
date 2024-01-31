@@ -13,10 +13,10 @@
   }
   
   .arrow-button.clicked {
-    background-color: #B5D1E2;
+    background-color: #034994;
   }
   
   .arrow-button.clicked:hover {
-    background-color: #00304e;
+    background-color: #B5D1E2;
   }
   
