@@ -1,0 +1,22 @@
+.arrow-button {
+    background-color: #034994;
+    color: #fff;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .arrow-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .arrow-button.clicked {
+    background-color: #034994;
+  }
+  
+  .arrow-button.clicked:hover {
+    background-color: #B5D1E2;
+  }
+  

@@ -3,8 +3,8 @@ import '../Styles/Navbar_2.css'
 
 function Navbar_2() {
   return (
-    <div>
-      <div className='navbar'>
+    <div className='navbar'>
+      <div className=''>
       <button className="primary-button">HOME</button>
       <button className="primary-button">ABOUT</button>
       <button className="primary-button">EXPERTS</button>
