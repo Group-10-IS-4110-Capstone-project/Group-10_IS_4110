@@ -1,15 +1,16 @@
 import React from 'react'
 import Navbar_2 from '../components/Navbar_2'
+import Footer from '../components/Footer'
+import Searchbar from '../components/Searchbar'
 
 
 function Experts() {
   return (
     <div className='Ex_pge'>
       <div className='content-wrap'>
-        <Router>
           <Navbar_2 />
-        </Router>
       </div>
+      <Searchbar />
       <Footer />
     </div>
   )
