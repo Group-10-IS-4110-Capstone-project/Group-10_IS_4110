@@ -11,7 +11,9 @@ function Experts() {
           <Navbar_2 />
       </div>
       <Searchbar />
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   )
 }
