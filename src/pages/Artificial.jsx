@@ -42,22 +42,20 @@ function Datascience() {
       <div className="index">
 <div className="overlap-wrapper">
   <div className="overlap">
-    <div className="text-wrapper">Data science</div>
+    <div className="text-wrapper">Artificial Intelligence</div>
     <div className="flex-container">
       <p className="text">
         <span className="span">
-        Data Science is a combination of mathematics, statistics, machine learning, and computer science. 
-        Data Science is collecting, analyzing and interpreting data to gather insights into the data that can 
-        help decision-makers make informed decisions.
+        Artificial Intelligence (AI) is a multidisciplinary field that encompasses computer science, mathematics, machine learning, and various technologies. It involves the development of intelligent systems capable of performing tasks that typically require human intelligence. AI is revolutionizing industries by automating processes, solving complex problems, and enhancing decision-making.
 
-        <br></br><br></br>
-        Data Science is an emerging field that sees its importance grow with each passing day. It is the latest 
-        buzzword in the IT world, and its demand in the market has been growing steadily. The demand for Data 
-        Scientists is proliferating, driven by the need for organizations to transform data into insights. 
- <br></br><br></br>
-        Nowadays, organizations are overwhelmed with data. Data Science will help in extracting meaningful 
-        insights from that by combining various methods, technology, and tools. In the fields of e-commerce, 
-        finance, medicine, human resources, etc, businesses come across huge amounts of data. 
+<br></br><br></br>
+
+Artificial Intelligence is a rapidly evolving domain with increasing significance in today's technological landscape. It has become a focal point in the IT industry, and its demand continues to surge. The quest for AI expertise is driven by the growing need for organizations to harness the power of intelligent systems to innovate and optimize their operations.
+
+<br></br><br></br>
+
+In the contemporary landscape, organizations are inundated with vast amounts of data. Artificial Intelligence plays a crucial role in extracting valuable insights from this data by employing a myriad of techniques, technologies, and tools. Whether in areas such as automation, robotics, natural language processing, or computer vision, AI is transforming the way businesses operate across 
+diverse sectors such as finance, healthcare, manufacturing, and beyond. The ability of AI to adapt, learn, and improve over time positions it as a key driver of innovation and efficiency in the modern world.
         </span>
       </p>
      
