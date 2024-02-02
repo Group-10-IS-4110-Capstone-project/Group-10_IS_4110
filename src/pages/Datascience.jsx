@@ -50,16 +50,14 @@ function Datascience() {
         Data Science is collecting, analyzing and interpreting data to gather insights into the data that can 
         help decision-makers make informed decisions.
 
-        Data Science is used in almost every industry today that can predict customer behavior and trends and identify 
-        new opportunities. <br></br><br></br>
+        <br></br><br></br>
         Data Science is an emerging field that sees its importance grow with each passing day. It is the latest 
         buzzword in the IT world, and its demand in the market has been growing steadily. The demand for Data 
         Scientists is proliferating, driven by the need for organizations to transform data into insights. 
  <br></br><br></br>
         Nowadays, organizations are overwhelmed with data. Data Science will help in extracting meaningful 
         insights from that by combining various methods, technology, and tools. In the fields of e-commerce, 
-        finance, medicine, human resources, etc, businesses come across huge amounts of data. Data Science 
-        tools and technologies help them process all of them.
+        finance, medicine, human resources, etc, businesses come across huge amounts of data. 
         </span>
       </p>
      
@@ -91,7 +89,7 @@ function Datascience() {
     <div className="overlap-2">
       <div className="text-wrapper-3">Connect with experts</div>
       <div className="overlap-3">
-      <hr></hr>
+      
         <img
           className="rectangle-2"
           alt=""
@@ -246,11 +244,12 @@ function Datascience() {
       <div className="elements-of">
         <div className="product-card">
           <div className="frame">
-            <p className="product-title">The Elements of Statistical Learning</p>
-            <p className="paragraph-product">
-              Trevor Hastie, Robert Tibshirani, <br />
-              and Jerome Friedman: <br />A classic book
-            </p>
+            <div className="product-title">The Elements of 
+            Statistical Learning<br /><br />
+          
+              Trevor Hastie, Robert Tibshirani, 
+              and Jerome 
+            </div>
           </div>
         </div>
         <img
@@ -263,14 +262,11 @@ function Datascience() {
         <div className="group" />
         <div className="frame-wrapper">
           <div className="frame">
-            <p className="product-title">
-              Journal of Machine Learning <br />
-              Research.
-            </p>
-            <p className="paragraph-product">
-              Trevor Hastie, Robert Tibshirani, <br />
-              and Jerome Friedman: <br />A classic book
-            </p>
+            <div className="product-title">
+              Journal of Machine Learning <br /><br />
+              Trevor Hastie, Robert Tibshirani, 
+              and Jerome Friedman: A classic book
+            </div>
           </div>
         </div>
       </div>
@@ -278,12 +274,11 @@ function Datascience() {
         <div className="group-2" />
         <div className="div-wrapper">
           <div className="frame">
-            <div className="product-title">Towards Data Science:</div>
-            <p className="paragraph-product">
-              Towards Data Science: An online <br />
-              publication with a vast collection <br />
+            <div className="product-title">Towards Data Science <br/><br/>
+          
+            An online publication with a vast collection 
               of data science articles and tutorials.
-            </p>
+              </div>
           </div>
         </div>
       </div>
@@ -291,13 +286,13 @@ function Datascience() {
         <div className="group-3" />
         <div className="product-card-2">
           <div className="frame">
-            <div className="product-title">Python for Data Analysis</div>
-            <p className="paragraph-product">
-              {" "}
-              &#34;Python for Data Analysis&#34; <br />
-              by Wes McKinney: A practical <br />
+            <div className="product-title">Python for Data Analysis<br /><br />
+           
+             
+              This is by Wes McKinney: <br/>
+              A practical 
               guide to data analysis
-            </p>
+              </div>
           </div>
         </div>
       </div>
@@ -305,12 +300,12 @@ function Datascience() {
         <div className="group-4" />
         <div className="product-card-3">
           <div className="frame">
-            <div className="product-title">Pattern analysis</div>
-            <p className="p">
-              conferences and journals like <br />
-              &#34;IEEE Transactions on Pattern Analysis <br />
-              and Machine Intelligence&#34; and
-            </p>
+            <div className="product-title">Pattern analysis<br /><br />
+           
+            Journals like 
+             IEEE Transactions on Pattern Analysis 
+              and Machine Intelligence 
+              </div>
           </div>
         </div>
       </div>
@@ -353,6 +348,8 @@ function Datascience() {
         <div className="overlap-group-2">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Udemy</div>
+          <br></br>
+          <hr></hr>
         </div>
         <p className="paragraph-feature">
           Data Science Specialization <br />
@@ -377,6 +374,8 @@ function Datascience() {
         <div className="overlap-group-3">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Great learning</div>
+          <br></br>
+          <hr></hr>
         </div>
         <p className="paragraph-feature-2">
           Data Science Specialization <br />
@@ -401,8 +400,12 @@ function Datascience() {
         <div className="overlap-group-4">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Coursera</div>
+          <br></br>
+          <hr></hr>
         </div>
+        
         <p className="paragraph-feature-3">
+          
           Data Science Specialization <br />
           and other related courses.
         </p>
@@ -425,6 +428,8 @@ function Datascience() {
         <div className="overlap-group-5">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Udacity</div>
+          <br></br>
+          <hr></hr>
         </div>
         <p className="paragraph-feature-4">
           Data Science Specialization <br />
@@ -442,6 +447,8 @@ function Datascience() {
         <div className="overlap-group-6">
           <div className="fixed-width-fixed-2" />
           <div className="feature-title">Solo learn</div>
+          <br></br>
+          <hr></hr>
         </div>
         <p className="paragraph-feature-5">
           Data Science Specialization <br />

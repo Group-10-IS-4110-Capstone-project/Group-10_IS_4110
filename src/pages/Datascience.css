@@ -30,7 +30,7 @@
     letter-spacing: var(--h-2-letter-spacing);
     line-height:90%;
     position: absolute;
-    top: 425px;
+    top: 402px;
     white-space: nowrap;
   }
   
@@ -61,12 +61,10 @@
   
   .index .span {
     color: #000000;
-    font-family: var(--paragraph-font-family);
-    font-size: var(--paragraph-font-size);
-    font-style: var(--paragraph-font-style);
-    font-weight: var(--paragraph-font-weight);
-    letter-spacing: var(--paragraph-letter-spacing);
-    line-height: var(--paragraph-line-height);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    font-size: 90%;
+  
   }
   
   .index .search {
@@ -149,12 +147,12 @@
   
   .index .text-wrapper-3 {
     color: #000000;
-    font-family: Montserrat ;
-    font-family:'Times New Roman', Times, serif;
+   
+    
     font-size:200%;
-    font-style: var(--h-2-font-style);
-    font-weight:bold;
-    left: 620px;
+  
+    font-weight:bolder;
+    left: 720px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
     position: absolute;
@@ -454,7 +452,7 @@
     font-size:200%;
     font-style: var(--h-2-font-style);
     font-weight:bold;
-    left: 614px;
+    left: 720px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
     position: absolute;
@@ -502,27 +500,16 @@
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.1px;
-    line-height: 24px;
-    margin-top: -1px;
-    position: relative;
-    width: 279px;
-    background-color: white;
+    line-height: 25px;
+    margin-top: -25px;
+    width: 320px;
     
-   
+    background-color: white;
+    padding: 30px; 
+    border-radius: 6px; 
   }
   
-  .index .paragraph-product {
-    color: var(--second-text-color);
-    font-family: var(--h-5-font-family);
-    font-size: var(--h-5-font-size);
-    font-style: var(--h-5-font-style);
-    font-weight: var(--h-5-font-weight);
-    letter-spacing: var(--h-5-letter-spacing);
-    line-height: var(--h-5-line-height);
-    position: relative;
-    width: fit-content;
-    
-  }
+
   
   .index .rectangle-12 {
     height: 295px;
@@ -542,14 +529,13 @@
   }
   
   .index .group {
+    /*machiene learning image*/
     background-image: url(https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71fdn0kF9OL._AC_UF1000,1000_QL80_.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
+    background-position: 40% 50%;
+    background-size:cover;
     height: 295px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 343px;
+   margin-left: 7%;
+    width: 320px;
   }
 
   
@@ -575,14 +561,13 @@
   }
   
   .index .group-2 {
+    /*towrds image */
     background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*Ts9ToRgOvtEqWlvxVQDDQA.png);
     background-position: 50% 50%;
-    background-size: cover;
+    background-size:cover;
     height: 310px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 345px;
+    margin-left: 7%;
+    width: 320px;
   }
   
   .index .div-wrapper {
@@ -604,15 +589,24 @@
   }
   
   .index .group-3 {
+     /*python image */
     background-image: url(https://m.media-amazon.com/images/I/91lrhlw-XcL._AC_UF1000,1000_QL80_.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
+    background-position: 50% 40%;
+    background-size:cover;
     height: 310px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 345px;
+    margin-left: 7%;
+    width: 321px;
   }
+  .index .rectangle-12{
+    /*python image */
+   background-image: url(https://m.media-amazon.com/images/I/91lrhlw-XcL._AC_UF1000,1000_QL80_.jpg);
+   background-position: 50% 40%;
+   background-size:cover;
+   height: 310px;
+   margin-left: 7.7%;
+   width: 320px;
+ }
+  
   
   .index .product-card-2 {
     align-items: flex-start;
@@ -634,14 +628,13 @@
   }
   
   .index .group-4 {
+    /*pattern */
     background-image: url(https://cdn.animaapp.com/projects/65a25145e605c75459048e59/releases/65a2528f37c88aec4090d2c0/img/rectangle-63-2.png);
-    background-position: 50% 50%;
-    background-size: cover;
+    background-position: 50% 40%;
+    background-size:cover;
     height: 310px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 345px;
+    margin-left: 7%;
+    width: 321px;
   }
   
   .index .product-card-3 {
