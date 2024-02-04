@@ -31,11 +31,12 @@ import color from '../assets/Color_logo_with_background-removebg-preview 2.png'
 import fb from '../assets/Vector.png'
 import insta from '../assets/Vector insta.png'
 import twi from '../assets/Vector twitter.png'
+import Ai from '../assets/AI.webp'
 
 
-import './Datascience.css'
+import './Artificial.css'
 
-function Datascience() {
+function Artificial() {
   return (
    
 
@@ -46,7 +47,7 @@ function Datascience() {
     <div className="flex-container">
       <p className="text">
         <span className="span">
-        Artificial Intelligence (AI) is a multidisciplinary field that encompasses computer science, mathematics, machine learning, and various technologies. It involves the development of intelligent systems capable of performing tasks that typically require human intelligence. AI is revolutionizing industries by automating processes, solving complex problems, and enhancing decision-making.
+        Artificial Intelligence is a multidisciplinary field that encompasses computer science, mathematics, machine learning, and various technologies. It involves the development of intelligent systems capable of performing tasks that typically require human intelligence. AI is revolutionizing industries by automating processes, solving complex problems, and enhancing decision-making.
 
 <br></br><br></br>
 
@@ -54,8 +55,7 @@ Artificial Intelligence is a rapidly evolving domain with increasing significanc
 
 <br></br><br></br>
 
-In the contemporary landscape, organizations are inundated with vast amounts of data. Artificial Intelligence plays a crucial role in extracting valuable insights from this data by employing a myriad of techniques, technologies, and tools. Whether in areas such as automation, robotics, natural language processing, or computer vision, AI is transforming the way businesses operate across 
-diverse sectors such as finance, healthcare, manufacturing, and beyond. The ability of AI to adapt, learn, and improve over time positions it as a key driver of innovation and efficiency in the modern world.
+In the contemporary landscape, organizations are inundated with vast amounts of data. 
         </span>
       </p>
      
@@ -82,7 +82,7 @@ diverse sectors such as finance, healthcare, manufacturing, and beyond. The abil
     <img
       className="img"
       alt=""
-      src={datas}
+      src={Ai}
     />
     <div className="overlap-2">
       <div className="text-wrapper-3">Connect with experts</div>
@@ -539,6 +539,7 @@ diverse sectors such as finance, healthcare, manufacturing, and beyond. The abil
           alt=""
           src={arrow}
         />
+        
       </div>
     </div>
   </div>
@@ -553,4 +554,4 @@ diverse sectors such as finance, healthcare, manufacturing, and beyond. The abil
   )
 }
 
-export default Datascience
+export default Artificial

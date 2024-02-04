@@ -40,6 +40,7 @@ function Datascience() {
    
 
       <div className="index">
+
 <div className="overlap-wrapper">
   <div className="overlap">
     <div className="text-wrapper">Data science</div>
