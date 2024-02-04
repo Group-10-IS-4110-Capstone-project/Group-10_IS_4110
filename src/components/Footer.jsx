@@ -57,7 +57,7 @@ function Footer() {
 
         </div>
 
-        <hr style={{ borderTop: '1px solid #ccc' }} />;
+        <hr style={{ borderTop: '1px solid #ccc' }} />
         <p className="copyright">IT INSIGHTS</p>
       </div>
     </div>
