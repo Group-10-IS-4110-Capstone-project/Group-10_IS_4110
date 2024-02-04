@@ -1,0 +1,23 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    background-color: #B5D1E2;
+  }
+  
+  .search-bar {
+    padding: 15px;
+    width: 550px;
+    border: 1px solid #ffff;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+  }
+  
+  .search-icon {
+    padding: 20px;
+    background-color: #ffff;
+    border: 0.4px solid #9aabf800;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    outline: none;
+  }
