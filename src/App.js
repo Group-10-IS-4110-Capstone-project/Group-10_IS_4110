@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Datascience from './pages/Datascience';
-import Home from './pages/Home';
+import Home from './pages/Lannding/Home';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
