@@ -142,8 +142,8 @@
   cursor: pointer;
   transition: background-color 0.5s ease;
   
-  position: relative;
-  top: -7px;
+  /* position: relative;
+  top: -5px; */
   
 }
 

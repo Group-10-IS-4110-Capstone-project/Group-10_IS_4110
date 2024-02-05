@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./SignUpExpert.css"
 import SignUpRightPane from './SignUpRightPane';
+import { Link } from 'react-router-dom';
 
 export default function SignUpExpert() {
 
@@ -166,7 +167,10 @@ export default function SignUpExpert() {
 
         <div className="box-4 message">
           <p className="desc">Have an account?</p>
+          <Link to="/login">
           <button className="log">Sign in</button>
+          </Link>
+          
         </div>
 
         <div className="box-5 ">

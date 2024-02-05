@@ -3,10 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./SignUpRightPane.css";
 import SignUpExpert from "./SignUpExpert";
+import { Link } from "react-router-dom";
 
 
 export default function SignUpRightPane() {
-
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -18,7 +18,6 @@ export default function SignUpRightPane() {
 
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [showExpertSection, setShowExpertSection] = useState(false);
- 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,9 +42,6 @@ export default function SignUpRightPane() {
 
   const handleExpertClick = () => {
     setShowExpertSection(true);
-    
-  
-  
   };
 
   //password visible
@@ -53,133 +49,129 @@ export default function SignUpRightPane() {
     setPasswordVisible((prevVisible) => !prevVisible);
   };*/
 
-
   return (
     <div>
       {showExpertSection ? (
-          <SignUpExpert></SignUpExpert>
-        ) : (
-      <div className="signupright active-1">
-      
-        <div className="box">
-          <p className="title-1 active">Undergraduate</p>
-          <p className="title-2" onClick={handleExpertClick}>Expert</p>
-        </div>
-       
+        <SignUpExpert></SignUpExpert>
+      ) : (
+        <div className="signupright active-1">
+          <div className="box">
+            <p className="title-1 active">Undergraduate</p>
+            <p className="title-2" onClick={handleExpertClick}>
+              Expert
+            </p>
+          </div>
 
-        {/* {showExpertSection ? (
+          {/* {showExpertSection ? (
           <SignUpExpert></SignUpExpert>
         ) : ( */}
 
-        <form action="" className="signupform">
-          <div className="box-1">
-            <Form.Control
-              type="text"
-              className="finame"
-              id="fname"
-              aria-describedby="passwordHelpBlock"
-              placeholder="First Name"
-              name="firstName"
-              value={user.firstName}
-              onChange={handleChange}
-              required
-            />
-            <Form.Control
-              type="text"
-              className="finame"
-              id="lname"
-              aria-describedby="passwordHelpBlock"
-              placeholder="Last name"
-              name="lastName"
-              value={user.lastName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="box-2">
-            <Form.Control
-              type="text"
-              className="emiluni"
-              aria-describedby="passwordHelpBlock"
-              placeholder="University"
-              name="university"
-              value={user.university}
-              onChange={handleChange}
-              required
-            />
-            <Form.Control
-              type="email"
-              className="emiluni"
-              aria-describedby="passwordHelpBlock"
-              placeholder="Email Adress"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="box-3">
-            
-            <div className="innerpassword">
-            <Form.Control
-                type="password"
-                className="password-1"
+          <form action="" className="signupform">
+            <div className="box-1">
+              <Form.Control
+                type="text"
+                className="finame"
+                id="fname"
                 aria-describedby="passwordHelpBlock"
-                placeholder="Password"
-                name="password"
-                value={user.password}
+                placeholder="First Name"
+                name="firstName"
+                value={user.firstName}
                 onChange={handleChange}
                 required
               />
-              {/* <i class="bi bi-eye"></i> */}
+              <Form.Control
+                type="text"
+                className="finame"
+                id="lname"
+                aria-describedby="passwordHelpBlock"
+                placeholder="Last name"
+                name="lastName"
+                value={user.lastName}
+                onChange={handleChange}
+                required
+              />
             </div>
-              
-              
+            <div className="box-2">
+              <Form.Control
+                type="text"
+                className="emiluni"
+                aria-describedby="passwordHelpBlock"
+                placeholder="University"
+                name="university"
+                value={user.university}
+                onChange={handleChange}
+                required
+              />
+              <Form.Control
+                type="email"
+                className="emiluni"
+                aria-describedby="passwordHelpBlock"
+                placeholder="Email Adress"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="box-3">
+              <div className="innerpassword">
+                <Form.Control
+                  type="password"
+                  className="password-1"
+                  aria-describedby="passwordHelpBlock"
+                  placeholder="Password"
+                  name="password"
+                  value={user.password}
+                  onChange={handleChange}
+                  required
+                />
+                {/* <i class="bi bi-eye"></i> */}
+              </div>
 
-            <Form.Control
-              type="password"
-              className="password-1"
-              id="confirmPassword"
-              aria-describedby="passwordHelpBlock"
-              placeholder="Confirm Password"
-              name="confirmPassword"
-              value={user.confirmPassword}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          {!passwordMatch && <p>Passwords do not match</p>}
-          <Button
-            className="btn_1"
-            variant="primary"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Continue
-          </Button>{" "}
-        </form>
-        {/* )}  */}
+              <Form.Control
+                type="password"
+                className="password-1"
+                id="confirmPassword"
+                aria-describedby="passwordHelpBlock"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={user.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            {!passwordMatch && <p>Passwords do not match</p>}
+            <Button
+              className="btn_1"
+              variant="primary"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Continue
+            </Button>{" "}
+          </form>
+          {/* )}  */}
 
-
-{/* {!showExpertSection && (
+          {/* {!showExpertSection && (
           <> */}
-        <div className="box-4">
-          <p className="desc">Have an account?</p>
-          <button className="log">Sign in</button>
-        </div>
+          <div className="box-4">
+            <p className="desc">Have an account?</p>
+          
+            <Link to="/login">
+            <button className="log">Sign in</button>
+            </Link>
+          </div>
 
-        <div className="box-5">
-          <p>
-            By signign up/ loging in, you agree to our Terms and condition.
-            Privacy Policy
-          </p>
-        </div>
-        {/* </>
+          <div className="box-5">
+            <p>
+              By signign up/ loging in, you agree to our Terms and condition.
+              Privacy Policy
+            </p>
+          </div>
+          {/* </>
         )} */}
-        
-      </div>
-     )}
-      
+        </div>
+      )}
     </div>
   );
 }
