@@ -1,0 +1,63 @@
+.footer {
+    background-color: #f1f1f1;
+    color: #ffff; /* Changed text color to black for better readability */
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .fcontainer {
+    background: #034994;
+    padding: 20px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between; /* Adjusted to evenly space the columns */
+  }
+  
+  .footer p {
+    color: #000;
+  }
+  
+  .footer h3 {
+    color: #f1f1f1;
+    margin-bottom: 20px;
+  }
+  
+  .footer-col-1,
+  .footer-col-2,
+  .footer-col-3 {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .footer-col-1 img {
+    width: 180px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-col-2 ul,
+  .footer-col-3 ul {
+    padding: 0; /* Removed default padding for better alignment */
+  }
+  
+  .icon{
+    margin-right: 8px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  .app-logo {
+    margin: 20px;
+  }
+  
+  .app-logo img {
+    width: 140px;
+  }
+  
+  .copyright {
+    text-align: center;
+  }
+  
