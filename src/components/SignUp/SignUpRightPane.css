@@ -131,6 +131,8 @@
 }
 
 .log {
+  background-color: transparent;
+  border: none;
   color: #fff;
   font-family: Inter;
   font-size: 14px;
@@ -139,7 +141,13 @@
   line-height: normal;
   cursor: pointer;
   transition: background-color 0.5s ease;
+  
+  position: relative;
+  top: -7px;
+  
 }
+
+
 
 .log:hover{
   color: #B5D1E2;

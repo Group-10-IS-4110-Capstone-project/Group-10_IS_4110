@@ -165,7 +165,7 @@ export default function SignUpRightPane() {
           <> */}
         <div className="box-4">
           <p className="desc">Have an account?</p>
-          <div className="log">Log in</div>
+          <button className="log">Sign in</button>
         </div>
 
         <div className="box-5">
