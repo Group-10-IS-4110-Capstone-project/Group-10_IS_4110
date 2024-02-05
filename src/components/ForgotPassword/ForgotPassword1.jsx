@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./ForgotPassword1.css";
+import { Link } from "react-router-dom";
 
 export default function ForgotPassword1() {
 
@@ -74,7 +75,9 @@ export default function ForgotPassword1() {
               className="linkArrow"
             />
 
-            <div className="forgotPasswordMessage">Back to login</div>
+            <Link to="/login">
+            <button className="forgotPasswordMessage">Back to login</button>
+            </Link>
           </div>
         </div>
       </div>
