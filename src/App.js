@@ -1,12 +1,13 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Datascience from './pages/Datascience';
-import Home from './pages/Home';
+import Home from './pages/Lannding/Home';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
 import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
 import ChangePassword from './components/ForgotPassword/ChangePassword';
+import Experts from './pages/Experts';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Login" element={<Login></Login>} ></Route>
           <Route path="/ForgotPassword" element={<ForgotPwd></ForgotPwd>}></Route>
           <Route path="/ChangePassword" element={<ChangePassword></ChangePassword>}></Route>
+          <Route path="/Experts" element={<Experts></Experts>} ></Route>
         </Routes>
         
       </BrowserRouter>
