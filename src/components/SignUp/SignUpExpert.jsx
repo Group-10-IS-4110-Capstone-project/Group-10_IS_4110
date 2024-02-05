@@ -166,7 +166,7 @@ export default function SignUpExpert() {
 
         <div className="box-4 message">
           <p className="desc">Have an account?</p>
-          <div className="log">Log in</div>
+          <button className="log">Sign in</button>
         </div>
 
         <div className="box-5 ">
