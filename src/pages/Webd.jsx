@@ -538,11 +538,7 @@ function Webd() {
       <div className="overlap-12">
         <div className="text-wrapper-14">Next page</div>
         
-        <img
-          className="arrow"
-          alt=""
-          src={arrow}
-        />
+
       </div>
     </div>
   </div>
