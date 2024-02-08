@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./LoginRightPane.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function LoginRightPane() {
   const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleUserNameChange = (e) => {
     setErrorMessage("");
@@ -19,16 +21,28 @@ export default function LoginRightPane() {
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // Check if the password is valid (e.g., simple validation for demonstration)
-    if (password === "secret123") {
-      // Valid password, proceed with login logic
-      console.log("Login successful!");
+    try {
+      const response = await axios.post("http://localhost:3001/api/login", {
+        email: userName,
+        password: password,
+      });
+
+      console.log(response.data.message);
       setErrorMessage("");
-    } else {
-      // Invalid password, show error message
-      setErrorMessage("INVALID LOGIN. PLEASE TRY AGAIN.");
-      console.log("invalid password");
+      if (response.data.message === "Incorrect password" || "User not found") {
+        setErrorMessage("Incorrect password or Username. Please try again.");
+      }
+
+      if (response.data.message === "success") {
+        navigate("/");
+      }
+      // Redirect to the next page or perform other actions on successful login
+    } catch (error) {
+      console.error("Error during login:", error.response?.data?.message);
+      setErrorMessage("Invalid login credentials. Please try again.");
+      console.error("Error during login:", error.response?.data?.message);
     }
   };
 
@@ -61,7 +75,9 @@ export default function LoginRightPane() {
             Forgot Password
           </Button>{" "}
         </Link>
-        {errorMessage && <div className="error-message">{errorMessage}</div>}
+        <div className={errorMessage ? "error-message" : ""}>
+          {errorMessage}
+        </div>
       </div>
     </div>
   );
