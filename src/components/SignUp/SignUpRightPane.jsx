@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import "./SignUpRightPane.css";
 import SignUpExpert from "./SignUpExpert";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 
 export default function SignUpRightPane() {
@@ -27,13 +28,23 @@ export default function SignUpRightPane() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     if (user.password === user.confirmPassword) {
       setPasswordMatch(true);
       console.log("User Details:", user);
       // You can also send the data to a server or perform other actions here
+      try {
+        const response = await axios.post('http://localhost:3001/api/register', user);
+        console.log('User successfully registered:', response.data);
+        // Perform any additional actions on successful registration
+      } catch (error) {
+        console.error('Error registering user:', error.response.data);
+        // Handle registration error (show error message, etc.)
+      }
+
+      //code
     } else {
       setPasswordMatch(false);
       console.log("Passwords do not match");
