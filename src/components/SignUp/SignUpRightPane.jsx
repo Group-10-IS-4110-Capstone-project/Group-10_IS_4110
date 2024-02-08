@@ -32,7 +32,7 @@ export default function SignUpRightPane() {
 
     if (user.password === user.confirmPassword) {
       setPasswordMatch(true);
-      console.log("User Details:", user);
+      console.log("User Details :", user);
       // You can also send the data to a server or perform other actions here
     } else {
       setPasswordMatch(false);
