@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./ForgotPassword1.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function ForgotPassword1() {
 
@@ -16,7 +17,7 @@ export default function ForgotPassword1() {
     setIsValidEmail(true);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async(e) => {
     e.preventDefault();
 
     // Simple email validation
@@ -31,9 +32,23 @@ export default function ForgotPassword1() {
       // Do not proceed with the form submission if the email is invalid
       return;
     }
+    try {
+      const response = await axios.post("http://localhost:3001/api/forgotpassword", {
+        email: email,
+      });
+
+      // Check the response status or message if needed
+      console.log(response.data);
+
+      // Handle success or show a success message to the user
+      // For example, you can redirect the user to a success page
+    } catch (error) {
+      // Handle errors or show an error message to the user
+      console.error("Error during forgot password:", error.response?.data?.status);
+    }
 
     // Process the form submission logic here (you can make an API call or perform other actions)
-    console.log("Form submitted with email:", email);
+    // console.log("Form submitted with email:", email);
   };
 
   return (
@@ -54,7 +69,7 @@ export default function ForgotPassword1() {
             className="forgotPasswordInput"
             id="forgotEmail"
             aria-describedby="passwordHelpBlock"
-            placeholder="pamudikavindya@gmail.com"
+            placeholder="yourEmail@gmail.com"
             onChange={handleEmailChange}
             required
           />
