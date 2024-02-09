@@ -10,12 +10,14 @@ function PageChangeButton() {
   };
 
   return (
+    <div className="button">
     <button
       className={`arrow-button ${clicked ? 'clicked' : ''}`}
       onClick={handleClick}
     >
-      Click me <FaArrowRight />
+      Next page <FaArrowRight />
     </button>
+    </div>
   );
 }
 
