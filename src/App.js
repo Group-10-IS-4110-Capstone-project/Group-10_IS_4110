@@ -1,13 +1,19 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Datascience from './pages/Datascience';
-import Home from './pages/Lannding/Home';
+import Artificial from './pages/Artificial';
+import Cyber from './pages/Cyber';
+import Cloud from './pages/Cloud';
+import Home from './pages/Home';
+import Devops from './pages/Devops';
+import Webd from './pages/Webd';
+import Mobile from './pages/Mobile';
+import Machiene from './pages/Machiene';
+import Block from './pages/Block';
+import Button from "./components/Button"
+
 import { BrowserRouter,Routes,Route } from "react-router-dom";
-import SignUp from './pages/SignUp/SignUp';
-import Login from './pages/Login/Login';
-import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
-import ChangePassword from './components/ForgotPassword/ChangePassword';
-import Experts from './pages/Experts';
+
 
 
 function App() {
@@ -18,15 +24,20 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/Datascience" element={<Datascience/>} />
-          <Route path="/Signup" element={<SignUp></SignUp>}></Route>
-          <Route path="/Login" element={<Login></Login>} ></Route>
-          <Route path="/ForgotPassword" element={<ForgotPwd></ForgotPwd>}></Route>
-          <Route path="/ChangePassword" element={<ChangePassword></ChangePassword>}></Route>
-          <Route path="/Experts" element={<Experts></Experts>} ></Route>
+          <Route path="/Artificial" element={<Artificial/>} />
+          <Route path="/Block" element={<Block/>} />
+          <Route path="/Cloud" element={<Cloud/>} />
+          <Route path="/Devops" element={<Devops/>} />
+          <Route path="/Webd" element={<Webd/>} />
+          <Route path="/Mobile" element={<Mobile/>} />
+          <Route path="/Machiene" element={<Machiene/>} />
+          <Route path="/Cyber" element={<Cyber/>} />
+
+   
         </Routes>
         
       </BrowserRouter>
-      
+      <Button>Success button</Button>
     </div>
   );
 }
