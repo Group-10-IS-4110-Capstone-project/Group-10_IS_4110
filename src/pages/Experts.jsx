@@ -16,9 +16,9 @@ function Experts() {
       </div>
       <Searchbar />
       <Description />
+      <Connect />
       <Recommended />
       <Courses />
-      <Connect />
       <div>
         <Footer />
       </div>

@@ -1,3 +1,23 @@
-.connect{
+.Connect{
     background-color: #B5D1E2;
 }
+.title {
+    text-align: center;
+    margin: 0 auto 40px; /* Adjusted margin */
+    position: relative;
+    line-height: 60px;
+    color: #fff; /* Changed text color */
+  }
+  
+  .title::after {
+    content: '';
+    background: #034994;
+    width: 260px;
+    height: 3px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  

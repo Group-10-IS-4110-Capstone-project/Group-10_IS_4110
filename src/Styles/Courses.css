@@ -1,5 +1,5 @@
 .courses {
-    padding-top: 50px;
+    padding-top: 20px;
     background-color: #B5D1E2;
   }
   
@@ -19,7 +19,7 @@
   
   .courses .col-3 img {
     width: 50px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 50%;
   }
   

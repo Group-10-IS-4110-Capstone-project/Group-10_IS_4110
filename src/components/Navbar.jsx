@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '../assets/Rectangle 47.png'
 
 function Navbar() {
   return (
