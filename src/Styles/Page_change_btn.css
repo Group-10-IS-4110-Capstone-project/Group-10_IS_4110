@@ -1,3 +1,7 @@
+.button{
+  background-color: #B5D1E2;
+  padding: 40px 0;
+}
 .arrow-button {
     background-color: #034994;
     color: #fff;
@@ -17,6 +21,6 @@
   }
   
   .arrow-button.clicked:hover {
-    background-color: #B5D1E2;
+    background-color: #83B1CF;
   }
   

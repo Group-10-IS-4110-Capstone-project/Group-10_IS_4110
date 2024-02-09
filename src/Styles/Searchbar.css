@@ -2,9 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 0px;
-    background-color: hsl(203, 44%, 80%);
-    margin-bottom: 500px;
-    
+    background-color: hsl(203, 44%, 80%);   
   }
   
   .search-bar {
