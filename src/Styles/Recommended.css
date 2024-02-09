@@ -37,7 +37,7 @@
     padding: 10px 10px; /* Added padding */
   }
   
-  .col-3 img {
-    width: 60%; /* Adjusted image width */
+  .col-3 img { /* Adjusted image width */
+    width: 40%;
   }
   

@@ -1,23 +1,27 @@
 .search-container {
     display: flex;
     justify-content: center;
-    margin-top: 0px;
     background-color: hsl(203, 44%, 80%);   
+    font-size: 15px;
   }
   
   .search-bar {
-    padding: 15px;
+    padding: 10px;
     width: 550px;
+    height: 50px;
     border: 1px solid #ffff;
     border-radius: 50px 0 0 50px;
     outline: none;
   }
   
   .search-icon {
-    padding: 20px;
+    padding: 10px;
     background-color: #ffff;
     border: 0.4px solid #9aabf800;
     border-radius: 0 50px 50px 0;
     cursor: pointer;
     outline: none;
+    height: 50px;
+    display: flex;
+    align-items: center;
   }
