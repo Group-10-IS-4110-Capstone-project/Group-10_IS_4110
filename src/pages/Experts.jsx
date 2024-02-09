@@ -3,6 +3,7 @@ import Navbar_2 from '../components/Navbar_2'
 import Footer from '../components/Footer'
 import Searchbar from '../components/Searchbar'
 import Description from '../components/Description'
+import Recommended from '../components/Recommended'
 
 
 function Experts() {
@@ -13,6 +14,7 @@ function Experts() {
       </div>
       <Searchbar />
       <Description />
+      <Recommended />
       <div>
         <Footer />
       </div>
