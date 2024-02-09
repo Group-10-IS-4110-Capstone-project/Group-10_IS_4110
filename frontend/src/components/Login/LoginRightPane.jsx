@@ -42,7 +42,7 @@ export default function LoginRightPane() {
     } catch (error) {
       console.error("Error during login:", error.response?.data?.message);
       setErrorMessage("Invalid login credentials. Please try again.");
-      console.error("Error during login:", error.response?.data?.message);
+      
     }
   };
 

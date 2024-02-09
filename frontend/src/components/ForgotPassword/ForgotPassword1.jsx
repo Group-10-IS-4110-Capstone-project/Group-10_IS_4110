@@ -47,6 +47,19 @@ export default function ForgotPassword1() {
       console.error("Error during forgot password:", error.response?.data?.status);
     }
 
+    try {
+      const response = await axios.post("http://localhost:3001/api/forgotpassword", {
+        email: email,
+        
+      });
+    }
+      catch (error) {
+        console.error("Error during login:", error.response?.data?.message);
+        
+        console.error("Error during login:", error.response?.data?.message);
+      }
+    
+
     // Process the form submission logic here (you can make an API call or perform other actions)
     // console.log("Form submitted with email:", email);
   };

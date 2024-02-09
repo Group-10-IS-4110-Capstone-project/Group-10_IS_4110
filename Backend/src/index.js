@@ -7,6 +7,10 @@ const UnderGraduateModel = require("../models/UnderGraduate")
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 const app = express();
 app.use(express.json());
@@ -85,6 +89,90 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+//forgotpassword
+
+// app.post('/api/forgotpassword', async(req,res) => {
+//   const {email} = req.body;
+//   UnderGraduateModel.findOne({email: email})
+//   .then(user => {
+//     if(!user){
+//       return res.send({status : "User not existed"})
+//     }
+//     const token = jwt.sign({id: user._id}, "jwt_secret_key", {expiresIn: "id"})
+//     var transporter = nodemailer.createTransport({
+//       service: 'gmail',
+//       auth: {
+//         user: 'youremail@gmail.com',
+//         pass: 'yourpassword'
+//       }
+//     });
+    
+//     var mailOptions = {
+//       from: 'youremail@gmail.com',
+//       to: 'myfriend@yahoo.com',
+//       subject: 'Reset your password',
+//       text: `http://localhost:3000/reset-password/${user._id}/${token}`
+//     };
+    
+//     transporter.sendMail(mailOptions, function(error, info){
+//       if (error) {
+//         console.log(error);
+//       } else {
+//         return res.send({status: "success"})
+//       }
+//     });
+//   })
+// })
+
+app.post('/api/forgotpassword', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+      // Find the user by email
+      const user = await UnderGraduateModel.findOne({ email });
+
+      if (!user) {
+          return res.status(404).json({ status: "User not found" });
+      }
+
+      // Generate a JWT token with user ID and set expiration time
+      const token = jwt.sign({ id: user._id }, "your_jwt_secret_key", { expiresIn: "1h" });
+
+      // Create a nodemailer transporter with your email credentials
+      const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+              user: 'yourEmail@gmail.com', // Replace with your email
+              pass: 'yourPassword' // Replace with your email password
+          }
+      });
+
+      // Create the reset password link
+      const resetPasswordLink = `http://localhost:3000/reset-password/${user._id}/${token}`;
+
+      // Define email options
+      const mailOptions = {
+          from: 'yourEmail@gmail.com', // Replace with your email
+          to: user.email,
+          subject: 'Reset your password',
+          text: `Click the link to reset your password: ${resetPasswordLink}`
+      };
+
+      // Send the email
+      transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+              console.error('Error sending email:', error);
+              return res.status(500).json({ status: "Error sending email" });
+          }
+
+          console.log('Email sent:', info.response);
+          return res.status(200).json({ status: "Email sent successfully" });
+      });
+  } catch (error) {
+      console.error('Error in forgot password:', error);
+      return res.status(500).json({ status: "Internal Server Error" });
+  }
+});
 
 app.post('/api/forgotpassword', async (req, res) => {
   const { email } = req.body;
