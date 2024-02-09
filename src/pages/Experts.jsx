@@ -5,6 +5,7 @@ import Searchbar from '../components/Searchbar'
 import Description from '../components/Description'
 import Recommended from '../components/Recommended'
 import Courses from '../components/Courses'
+import Connect from '../components/Connect'
 
 
 function Experts() {
@@ -17,6 +18,7 @@ function Experts() {
       <Description />
       <Recommended />
       <Courses />
+      <Connect />
       <div>
         <Footer />
       </div>
