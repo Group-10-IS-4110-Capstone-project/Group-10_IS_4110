@@ -7,10 +7,7 @@ const UnderGraduateModel = require("../models/UnderGraduate")
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 
 const app = express();
 app.use(express.json());
@@ -89,40 +86,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-//forgotpassword
 
-// app.post('/api/forgotpassword', async(req,res) => {
-//   const {email} = req.body;
-//   UnderGraduateModel.findOne({email: email})
-//   .then(user => {
-//     if(!user){
-//       return res.send({status : "User not existed"})
-//     }
-//     const token = jwt.sign({id: user._id}, "jwt_secret_key", {expiresIn: "id"})
-//     var transporter = nodemailer.createTransport({
-//       service: 'gmail',
-//       auth: {
-//         user: 'youremail@gmail.com',
-//         pass: 'yourpassword'
-//       }
-//     });
-    
-//     var mailOptions = {
-//       from: 'youremail@gmail.com',
-//       to: 'myfriend@yahoo.com',
-//       subject: 'Reset your password',
-//       text: `http://localhost:3000/reset-password/${user._id}/${token}`
-//     };
-    
-//     transporter.sendMail(mailOptions, function(error, info){
-//       if (error) {
-//         console.log(error);
-//       } else {
-//         return res.send({status: "success"})
-//       }
-//     });
-//   })
-// })
 
 app.post('/api/forgotpassword', async (req, res) => {
   const { email } = req.body;
