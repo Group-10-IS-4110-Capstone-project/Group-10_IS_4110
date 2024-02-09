@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Searchbar from '../components/Searchbar'
 import Description from '../components/Description'
 import Recommended from '../components/Recommended'
+import Courses from '../components/Courses'
 
 
 function Experts() {
@@ -15,6 +16,7 @@ function Experts() {
       <Searchbar />
       <Description />
       <Recommended />
+      <Courses />
       <div>
         <Footer />
       </div>
