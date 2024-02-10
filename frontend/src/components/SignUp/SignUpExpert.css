@@ -1,0 +1,16 @@
+.expert:after{
+    width: 70px;
+}
+
+.message{
+    position: relative;
+    bottom: -5px;
+}
+
+.ex{
+    height: 260px;
+}
+.exper{
+    position: relative;
+    top: -10px;
+}
