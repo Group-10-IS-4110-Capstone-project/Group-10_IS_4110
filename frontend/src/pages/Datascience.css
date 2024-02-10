@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 .index {
     background-color: #ffffff;
     display: flex;
@@ -22,19 +22,19 @@
   
   .index .text-wrapper {
     color: #000000;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size:200%;
-    font-style:normal;
-    font-weight:bold;
+    font-family: var(--h-2-font-family);
+    font-size: var(--h-2-font-size);
+    font-style: var(--h-2-font-style);
+    font-weight: var(--h-2-font-weight);
     left: 1105px;
     letter-spacing: var(--h-2-letter-spacing);
-    line-height:90%;
+    line-height: var(--h-2-line-height);
     position: absolute;
-    top: 402px;
+    top: 410px;
     white-space: nowrap;
   }
   
-  .index .flex-container {
+  .index .flexcontainer {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@
     align-self: stretch;
     color: #000000;
     font-family: var(--paragraph-font-family);
-    font-size:150%;
+    font-size: var(--paragraph-font-size);
     font-style: var(--paragraph-font-style);
     font-weight: var(--paragraph-font-weight);
     letter-spacing: var(--paragraph-letter-spacing);
@@ -61,10 +61,12 @@
   
   .index .span {
     color: #000000;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    font-size: 90%;
-  
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
+    font-style: var(--paragraph-font-style);
+    font-weight: var(--paragraph-font-weight);
+    letter-spacing: var(--paragraph-letter-spacing);
+    line-height: var(--paragraph-line-height);
   }
   
   .index .search {
@@ -92,17 +94,17 @@
   }
   
   .index .div {
-    color: #3c3939;
+    color: #575757;
     font-family: var(--paragraph-font-family);
-    font-size:160%;
+    font-size: var(--paragraph-font-size);
     font-style: var(--paragraph-font-style);
-    font-weight:bold;
+    font-weight: var(--paragraph-font-weight);
     left: 156px;
     letter-spacing: var(--paragraph-letter-spacing);
     line-height: var(--paragraph-line-height);
     position: absolute;
-    top: 33px;
-    width: 13px;
+    top: 27px;
+    width: 173px;
   }
   
   .index .image {
@@ -117,9 +119,9 @@
   .index .text-wrapper-2 {
     color: #000000;
     font-family: var(--h-2-font-family);
-    font-size: 200%;
+    font-size: var(--h-2-font-size);
     font-style: var(--h-2-font-style);
-    font-weight: bold ;
+    font-weight: var(--h-2-font-weight);
     left: 398px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
@@ -147,12 +149,11 @@
   
   .index .text-wrapper-3 {
     color: #000000;
-   
-    
-    font-size:200%;
-  
-    font-weight:bolder;
-    left: 720px;
+    font-family: var(--h-2-font-family);
+    font-size: var(--h-2-font-size);
+    font-style: var(--h-2-font-style);
+    font-weight: var(--h-2-font-weight);
+    left: 620px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
     position: absolute;
@@ -242,12 +243,12 @@
   
   .index .text-wrapper-4 {
     color: #000000;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:160%;
-    
-    font-weight:normal;
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
+    font-style: var(--paragraph-font-style);
+    font-weight: var(--paragraph-font-weight);
     left: 422px;
-    
+    letter-spacing: var(--paragraph-letter-spacing);
     line-height: var(--paragraph-line-height);
     position: absolute;
     top: 370px;
@@ -265,12 +266,12 @@
   
   .index .text-wrapper-5 {
     color: #000000;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 160%;
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
     font-style: var(--paragraph-font-style);
-   
+    font-weight: var(--paragraph-font-weight);
     left: 422px;
-    
+    letter-spacing: var(--paragraph-letter-spacing);
     line-height: var(--paragraph-line-height);
     position: absolute;
     top: 780px;
@@ -288,12 +289,12 @@
   
   .index .text-wrapper-6 {
     color: #000000;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:160%;
-
-   
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
+    font-style: var(--paragraph-font-style);
+    font-weight: var(--paragraph-font-weight);
     left: 422px;
-   
+    letter-spacing: var(--paragraph-letter-spacing);
     line-height: var(--paragraph-line-height);
     position: absolute;
     top: 1152px;
@@ -398,15 +399,15 @@
   
   .index .text-wrapper-7 {
     color: #000000;
-    font-family:'Times New Roman', Times, serif;
-    font-size:150%;
-    
-   
+    font-family: var(--paragraph-font-family);
+    font-size: var(--paragraph-font-size);
+    font-style: var(--paragraph-font-style);
+    font-weight: var(--paragraph-font-weight);
     left: 997px;
     letter-spacing: var(--paragraph-letter-spacing);
     line-height: var(--paragraph-line-height);
     position: absolute;
-    top: 1290px;
+    top: 1281px;
     white-space: nowrap;
   }
   
@@ -449,16 +450,15 @@
   .index .text-wrapper-8 {
     color: #000000;
     font-family: var(--h-2-font-family);
-    font-size:200%;
+    font-size: var(--h-2-font-size);
     font-style: var(--h-2-font-style);
-    font-weight:bold;
-    left: 720px;
+    font-weight: var(--h-2-font-weight);
+    left: 614px;
     letter-spacing: var(--h-2-letter-spacing);
     line-height: var(--h-2-line-height);
     position: absolute;
     top: 41px;
     white-space: nowrap;
-    
   }
   
   .index .elements-of {
@@ -500,16 +500,23 @@
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.1px;
-    line-height: 25px;
-    margin-top: -25px;
-    width: 320px;
-    
-    background-color: white;
-    padding: 30px; 
-    border-radius: 6px; 
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    width: 279px;
   }
   
-
+  .index .paragraph-product {
+    color: var(--second-text-color);
+    font-family: var(--h-5-font-family);
+    font-size: var(--h-5-font-size);
+    font-style: var(--h-5-font-style);
+    font-weight: var(--h-5-font-weight);
+    letter-spacing: var(--h-5-letter-spacing);
+    line-height: var(--h-5-line-height);
+    position: relative;
+    width: fit-content;
+  }
   
   .index .rectangle-12 {
     height: 295px;
@@ -529,13 +536,14 @@
   }
   
   .index .group {
-    /*machiene learning image*/
     background-image: url(https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71fdn0kF9OL._AC_UF1000,1000_QL80_.jpg);
-    background-position: 40% 50%;
-    background-size:cover;
+    background-position: 50% 50%;
+    background-size: cover;
     height: 295px;
-   margin-left: 7%;
-    width: 320px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 343px;
   }
 
   
@@ -561,13 +569,14 @@
   }
   
   .index .group-2 {
-    /*towrds image */
     background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*Ts9ToRgOvtEqWlvxVQDDQA.png);
     background-position: 50% 50%;
-    background-size:cover;
+    background-size: cover;
     height: 310px;
-    margin-left: 7%;
-    width: 320px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 345px;
   }
   
   .index .div-wrapper {
@@ -589,24 +598,15 @@
   }
   
   .index .group-3 {
-     /*python image */
     background-image: url(https://m.media-amazon.com/images/I/91lrhlw-XcL._AC_UF1000,1000_QL80_.jpg);
-    background-position: 50% 40%;
-    background-size:cover;
+    background-position: 50% 50%;
+    background-size: cover;
     height: 310px;
-    margin-left: 7%;
-    width: 321px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 345px;
   }
-  .index .rectangle-12{
-    /*python image */
-   background-image: url(https://m.media-amazon.com/images/I/91lrhlw-XcL._AC_UF1000,1000_QL80_.jpg);
-   background-position: 50% 40%;
-   background-size:cover;
-   height: 310px;
-   margin-left: 7.7%;
-   width: 320px;
- }
-  
   
   .index .product-card-2 {
     align-items: flex-start;
@@ -628,13 +628,14 @@
   }
   
   .index .group-4 {
-    /*pattern */
     background-image: url(https://cdn.animaapp.com/projects/65a25145e605c75459048e59/releases/65a2528f37c88aec4090d2c0/img/rectangle-63-2.png);
-    background-position: 50% 40%;
-    background-size:cover;
+    background-position: 50% 50%;
+    background-size: cover;
     height: 310px;
-    margin-left: 7%;
-    width: 321px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 345px;
   }
   
   .index .product-card-3 {
@@ -755,7 +756,6 @@
     position: absolute;
     top: 0;
   }
-  
   
   .index .text-wrapper-12 {
     color: #043e7d;

@@ -43,31 +43,61 @@ function Datascience() {
 <div className="overlap-wrapper">
   <div className="overlap">
     <div className="text-wrapper">Data science</div>
-    <div className="flex-container">
+    <div className="flexcontainer">
       <p className="text">
         <span className="span">
-        Data Science is a combination of mathematics, statistics, machine learning, and computer science. 
-        Data Science is collecting, analyzing and interpreting data to gather insights into the data that can 
-        help decision-makers make informed decisions.
-
-        <br></br><br></br>
-        Data Science is an emerging field that sees its importance grow with each passing day. It is the latest 
-        buzzword in the IT world, and its demand in the market has been growing steadily. The demand for Data 
-        Scientists is proliferating, driven by the need for organizations to transform data into insights. 
- <br></br><br></br>
-        Nowadays, organizations are overwhelmed with data. Data Science will help in extracting meaningful 
-        insights from that by combining various methods, technology, and tools. In the fields of e-commerce, 
-        finance, medicine, human resources, etc, businesses come across huge amounts of data. 
+          Data science continues to evolve as one of the <br />
         </span>
       </p>
-     
-     
-     
-   
-     
-   
-    
-      
+      <p className="text">
+        <span className="span">
+          most promising and in-demand career paths for
+          <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          skilled professionals. Today, successful data <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          professionals understand that they must advance <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          past the traditional skills of analyzing large <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          amounts of data, data mining, and programming <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          skills. In order to uncover useful intelligence for <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          their organizations, data scientists must master <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          the full spectrum of the data science life cycle and <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">
+          possess a level of flexibility and understanding to <br />
+        </span>
+      </p>
+      <p className="text">
+        <span className="span">maximize returns at each phase of the process.</span>
+      </p>
     </div>
     <div className="search">
       <div className="overlap-group">
@@ -89,7 +119,7 @@ function Datascience() {
     <div className="overlap-2">
       <div className="text-wrapper-3">Connect with experts</div>
       <div className="overlap-3">
-      
+      <hr></hr>
         <img
           className="rectangle-2"
           alt=""
@@ -244,12 +274,11 @@ function Datascience() {
       <div className="elements-of">
         <div className="product-card">
           <div className="frame">
-            <div className="product-title">The Elements of 
-            Statistical Learning<br /><br />
-          
-              Trevor Hastie, Robert Tibshirani, 
-              and Jerome 
-            </div>
+            <p className="product-title">The Elements of Statistical Learning</p>
+            <p className="paragraph-product">
+              Trevor Hastie, Robert Tibshirani, <br />
+              and Jerome Friedman: <br />A classic book
+            </p>
           </div>
         </div>
         <img
@@ -262,11 +291,14 @@ function Datascience() {
         <div className="group" />
         <div className="frame-wrapper">
           <div className="frame">
-            <div className="product-title">
-              Journal of Machine Learning <br /><br />
-              Trevor Hastie, Robert Tibshirani, 
-              and Jerome Friedman: A classic book
-            </div>
+            <p className="product-title">
+              Journal of Machine Learning <br />
+              Research.
+            </p>
+            <p className="paragraph-product">
+              Trevor Hastie, Robert Tibshirani, <br />
+              and Jerome Friedman: <br />A classic book
+            </p>
           </div>
         </div>
       </div>
@@ -274,11 +306,12 @@ function Datascience() {
         <div className="group-2" />
         <div className="div-wrapper">
           <div className="frame">
-            <div className="product-title">Towards Data Science <br/><br/>
-          
-            An online publication with a vast collection 
+            <div className="product-title">Towards Data Science:</div>
+            <p className="paragraph-product">
+              Towards Data Science: An online <br />
+              publication with a vast collection <br />
               of data science articles and tutorials.
-              </div>
+            </p>
           </div>
         </div>
       </div>
@@ -286,13 +319,13 @@ function Datascience() {
         <div className="group-3" />
         <div className="product-card-2">
           <div className="frame">
-            <div className="product-title">Python for Data Analysis<br /><br />
-           
-             
-              This is by Wes McKinney: <br/>
-              A practical 
+            <div className="product-title">Python for Data Analysis</div>
+            <p className="paragraph-product">
+              {" "}
+              &#34;Python for Data Analysis&#34; <br />
+              by Wes McKinney: A practical <br />
               guide to data analysis
-              </div>
+            </p>
           </div>
         </div>
       </div>
@@ -300,12 +333,12 @@ function Datascience() {
         <div className="group-4" />
         <div className="product-card-3">
           <div className="frame">
-            <div className="product-title">Pattern analysis<br /><br />
-           
-            Journals like 
-             IEEE Transactions on Pattern Analysis 
-              and Machine Intelligence 
-              </div>
+            <div className="product-title">Pattern analysis</div>
+            <p className="p">
+              conferences and journals like <br />
+              &#34;IEEE Transactions on Pattern Analysis <br />
+              and Machine Intelligence&#34; and
+            </p>
           </div>
         </div>
       </div>
@@ -348,8 +381,6 @@ function Datascience() {
         <div className="overlap-group-2">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Udemy</div>
-          <br></br>
-          <hr></hr>
         </div>
         <p className="paragraph-feature">
           Data Science Specialization <br />
@@ -374,8 +405,6 @@ function Datascience() {
         <div className="overlap-group-3">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Great learning</div>
-          <br></br>
-          <hr></hr>
         </div>
         <p className="paragraph-feature-2">
           Data Science Specialization <br />
@@ -400,12 +429,8 @@ function Datascience() {
         <div className="overlap-group-4">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Coursera</div>
-          <br></br>
-          <hr></hr>
         </div>
-        
         <p className="paragraph-feature-3">
-          
           Data Science Specialization <br />
           and other related courses.
         </p>
@@ -428,8 +453,6 @@ function Datascience() {
         <div className="overlap-group-5">
           <div className="fixed-width-fixed" />
           <div className="feature-title">Udacity</div>
-          <br></br>
-          <hr></hr>
         </div>
         <p className="paragraph-feature-4">
           Data Science Specialization <br />
@@ -447,8 +470,6 @@ function Datascience() {
         <div className="overlap-group-6">
           <div className="fixed-width-fixed-2" />
           <div className="feature-title">Solo learn</div>
-          <br></br>
-          <hr></hr>
         </div>
         <p className="paragraph-feature-5">
           Data Science Specialization <br />

@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content_1 {
+  width: 500px;
+  height: 400px;
+  flex-shrink: 0;
+
+  border-radius: 0 15px 15px 0;
+  background: #043e7d;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+#inputPassword5 {
+  margin: 16px;
+  width: 310px;
+  height: 35px;
+  flex-shrink: 0;
+
+  border: 1px solid #b5d1e2;
+  background: #feffff;
+  text-align: center;
+  color: #043e7d;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "Public Sans";
+}
+#inputPassword5::placeholder {
+  color: #b5d1e2;
+  font-weight: 700;
+}
+
+.btn_1 {
+  width: 200px;
+  height: 30px;
+  flex-shrink: 0;
+  margin-top: 18px;
+
+  border-radius: 30px;
+  background: #b5d1e2;
+
+  color: #043e7d;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.btn_2 {
+  width: 200px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #fff;
+  background-color: #043e7d;
+  margin-top: 10px;
+
+  border-radius: 30px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.error-message {
+  border: 1px solid #b5d1e2;
+  background: #f0bfbf;
+  width: 325px;
+  height: 38px;
+  flex-shrink: 0;
+  text-align: center;
+  color: #ed1b1b;
+  padding: 10px;
+
+  font-family: "Public Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  position: absolute;
+  top: 40px;
+}
