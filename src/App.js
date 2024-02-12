@@ -37,7 +37,7 @@ function App() {
         </Routes>
         
       </BrowserRouter>
-      <Button>Next page button</Button>
+      <Button>Success button</Button>
     </div>
   );
 }
