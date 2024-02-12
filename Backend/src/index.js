@@ -100,14 +100,14 @@ app.post('/api/forgotpassword', async (req, res) => {
       }
 
       // Generate a JWT token with user ID and set expiration time
-      const token = jwt.sign({ id: user._id }, "your_jwt_secret_key", { expiresIn: "1h" });
+      const token = jwt.sign({ id: user._id }, "10", { expiresIn: "1h" });
 
       // Create a nodemailer transporter with your email credentials
       const transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-              user: 'yourEmail@gmail.com', // Replace with your email
-              pass: 'yourPassword' // Replace with your email password
+              user: 'avishka1999perera@gmail.com', // Replace with your email
+              pass: 'hjba dzmz nhzz rjut' // Replace with your email password
           }
       });
 
@@ -138,56 +138,56 @@ app.post('/api/forgotpassword', async (req, res) => {
   }
 });
 
-app.post('/api/forgotpassword', async (req, res) => {
-  const { email } = req.body;
+// app.post('/api/forgotpassword', async (req, res) => {
+//   const { email } = req.body;
 
-  try {
-      // Find the user by email
-      const user = await UnderGraduateModel.findOne({ email });
+//   try {
+//       // Find the user by email
+//       const user = await UnderGraduateModel.findOne({ email });
 
-      if (!user) {
-          return res.status(404).json({ status: "User not found" });
-      }
+//       if (!user) {
+//           return res.status(404).json({ status: "User not found" });
+//       }
 
-      // Generate a JWT token with user ID and set expiration time
-      const token = jwt.sign({ id: user._id }, "your_jwt_secret_key", { expiresIn: "1h" });
+//       // Generate a JWT token with user ID and set expiration time
+//       const token = jwt.sign({ id: user._id }, "your_jwt_secret_key", { expiresIn: "1h" });
 
-      // Create a nodemailer transporter with your email credentials
-      const transporter = nodemailer.createTransport({
-          service: 'gmail',
-          auth: {
-              user: 'sandaruwan1999perera@gmail.com', // Replace with your email
-              pass: 'San!@#123' // Replace with your email password
-          }
-      });
+//       // Create a nodemailer transporter with your email credentials
+//       const transporter = nodemailer.createTransport({
+//           service: 'gmail',
+//           auth: {
+//               user: 'avishka1999perera@gmail.com', // Replace with your email
+//               pass: 'glws iqrb abwr zxtb' // Replace with your email password
+//           }
+//       });
 
-      // Create the reset password link
-      const resetPasswordLink = `http://localhost:3000/reset-password/${user._id}/${token}`;
+//       // Create the reset password link
+//       const resetPasswordLink = `http://localhost:3000/reset-password/${user._id}/${token}`;
 
-      // Define email options
-      const mailOptions = {
-          from: 'sandaruwan1999perera@gmail.com', // Replace with your email
-          to: user.email,
-          subject: 'Reset your password',
-          text: `Click the link to reset your password: ${resetPasswordLink}`
-      };
+//       // Define email options
+//       const mailOptions = {
+//           from: 'avishka1999perera@gmail.com', // Replace with your email
+//           to: user.email,
+//           subject: 'Reset your password',
+//           text: `Click the link to reset your password: ${resetPasswordLink}`
+//       };
 
-      // Send the email
-      transporter.sendMail(mailOptions, (error, info) => {
-          if (error) {
-              console.error('Error sending email:', error);
-              return res.status(500).json({ status: "Error sending email" });
-          }
+//       // Send the email
+//       transporter.sendMail(mailOptions, (error, info) => {
+//           if (error) {
+//               console.error('Error sending email:', error);
+//               return res.status(500).json({ status: "Error sending email" });
+//           }
 
-          console.log('Email sent:', info.response);
-          return res.status(200).json({ status: "Email sent successfully" });
-      });
-  } catch (error) {
-      console.log(error)
-      console.error('Error in forgot password:', error);
-      return res.status(500).json({ status: "Internal Server Error" });
-  }
-});
+//           console.log('Email sent:', info.response);
+//           return res.status(200).json({ status: "Email sent successfully" });
+//       });
+//   } catch (error) {
+//       console.log(error)
+//       console.error('Error in forgot password:', error);
+//       return res.status(500).json({ status: "Internal Server Error" });
+//   }
+// });
 
 const port = 3001;
 app.listen(port, () => {
