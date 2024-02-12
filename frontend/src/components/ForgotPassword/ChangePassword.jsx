@@ -41,7 +41,7 @@ export default function ChangePassword() {
       try {
         navigate("/login")
         const response = await axios.post(
-          `http://localhost:3001/api/changepassword/${id}/${token}`,
+          `http://localhost:3001/user/changepassword/${id}/${token}`,
           {
             password: password,
           }

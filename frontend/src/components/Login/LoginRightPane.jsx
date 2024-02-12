@@ -24,7 +24,7 @@ export default function LoginRightPane() {
   const handleLogin = async () => {
     // Check if the password is valid (e.g., simple validation for demonstration)
     try {
-      const response = await axios.post("http://localhost:3001/api/login", {
+      const response = await axios.post("http://localhost:3001/user/login", {
         email: userName,
         password: password,
       });

@@ -35,7 +35,7 @@ export default function ForgotPassword1() {
     }
     try {
       navigate("/login")
-      const response = await axios.post("http://localhost:3001/api/forgotpassword", {
+      const response = await axios.post("http://localhost:3001/user/forgotpassword", {
         email: email,
       });
 

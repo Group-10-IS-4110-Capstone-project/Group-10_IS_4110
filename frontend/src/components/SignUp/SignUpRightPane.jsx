@@ -39,7 +39,7 @@ export default function SignUpRightPane() {
       // You can also send the data to a server or perform other actions here
 
       try {
-        const response = await axios.post('http://localhost:3001/api/register', user);
+        const response = await axios.post('http://localhost:3001/user/register', user);
         console.log('User successfully registered:', response.data);
         navigate('/login');
         // Perform any additional actions on successful registration
