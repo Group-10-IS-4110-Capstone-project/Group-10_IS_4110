@@ -112,7 +112,7 @@ app.post('/api/forgotpassword', async (req, res) => {
       });
 
       // Create the reset password link
-      const resetPasswordLink = `http://localhost:3000/reset-password/${user._id}/${token}`;
+      const resetPasswordLink = `http://localhost:3000/changepassword/${user._id}/${token}`;
 
       // Define email options
       const mailOptions = {

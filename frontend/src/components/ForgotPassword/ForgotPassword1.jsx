@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./ForgotPassword1.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function ForgotPassword1() {
@@ -10,6 +10,7 @@ export default function ForgotPassword1() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -33,12 +34,14 @@ export default function ForgotPassword1() {
       return;
     }
     try {
+      navigate("/login")
       const response = await axios.post("http://localhost:3001/api/forgotpassword", {
         email: email,
       });
 
       // Check the response status or message if needed
       console.log(response.data);
+      
 
       // Handle success or show a success message to the user
       // For example, you can redirect the user to a success page
@@ -47,17 +50,17 @@ export default function ForgotPassword1() {
       console.error("Error during forgot password:", error.response?.data?.status);
     }
 
-    try {
-      const response = await axios.post("http://localhost:3001/api/forgotpassword", {
-        email: email,
+    // try {
+    //   const response = await axios.post("http://localhost:3001/api/forgotpassword", {
+    //     email: email,
         
-      });
-    }
-      catch (error) {
-        console.error("Error during login:", error.response?.data?.message);
+    //   });
+    // }
+    //   catch (error) {
+    //     console.error("Error during login:", error.response?.data?.message);
         
-        console.error("Error during login:", error.response?.data?.message);
-      }
+    //     console.error("Error during login:", error.response?.data?.message);
+    //   }
     
 
     // Process the form submission logic here (you can make an API call or perform other actions)
