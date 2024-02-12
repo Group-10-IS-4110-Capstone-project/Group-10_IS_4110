@@ -138,56 +138,24 @@ app.post('/api/forgotpassword', async (req, res) => {
   }
 });
 
-// app.post('/api/forgotpassword', async (req, res) => {
-//   const { email } = req.body;
+app.post("/api/changepassword/:id/:token",(req,res) => {
+    const {id,token} = req.params
+    const {password} = req.body
 
-//   try {
-//       // Find the user by email
-//       const user = await UnderGraduateModel.findOne({ email });
-
-//       if (!user) {
-//           return res.status(404).json({ status: "User not found" });
-//       }
-
-//       // Generate a JWT token with user ID and set expiration time
-//       const token = jwt.sign({ id: user._id }, "your_jwt_secret_key", { expiresIn: "1h" });
-
-//       // Create a nodemailer transporter with your email credentials
-//       const transporter = nodemailer.createTransport({
-//           service: 'gmail',
-//           auth: {
-//               user: 'avishka1999perera@gmail.com', // Replace with your email
-//               pass: 'glws iqrb abwr zxtb' // Replace with your email password
-//           }
-//       });
-
-//       // Create the reset password link
-//       const resetPasswordLink = `http://localhost:3000/reset-password/${user._id}/${token}`;
-
-//       // Define email options
-//       const mailOptions = {
-//           from: 'avishka1999perera@gmail.com', // Replace with your email
-//           to: user.email,
-//           subject: 'Reset your password',
-//           text: `Click the link to reset your password: ${resetPasswordLink}`
-//       };
-
-//       // Send the email
-//       transporter.sendMail(mailOptions, (error, info) => {
-//           if (error) {
-//               console.error('Error sending email:', error);
-//               return res.status(500).json({ status: "Error sending email" });
-//           }
-
-//           console.log('Email sent:', info.response);
-//           return res.status(200).json({ status: "Email sent successfully" });
-//       });
-//   } catch (error) {
-//       console.log(error)
-//       console.error('Error in forgot password:', error);
-//       return res.status(500).json({ status: "Internal Server Error" });
-//   }
-// });
+    jwt.verify(token, "10", (err, decoded) => {
+        if(err){
+            return res.json({status: "Error with token"})
+        } else{
+            bcrypt.hash(password,10)
+            .then(hash => {
+                UnderGraduateModel.findByIdAndUpdate({_id: id}, {password: hash})
+                .then(u => res.send({status: "Success"}))
+                .catch(err => res.send({status: err}))
+            })
+            .catch(err => res.send({status: err}))
+        }
+    })
+});
 
 const port = 3001;
 app.listen(port, () => {
