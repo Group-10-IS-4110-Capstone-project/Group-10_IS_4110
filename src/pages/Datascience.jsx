@@ -74,6 +74,7 @@ function Datascience() {
       <div className="overlap-group">
         <div className="rectangle" />
         <div className="div">Search</div>
+        
         <img
           className="image"
           alt=""
@@ -384,7 +385,7 @@ function Datascience() {
         </p>
       </div>
     </div>
-    <div className="coiuesera">
+    <div className="coursera">
       <div className="overlap-7">
         <div className="overlap-9">
           <img
