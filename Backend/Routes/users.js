@@ -4,6 +4,8 @@ const {userTest, userRegister, userLogin, forgotPassword , changePassword} = req
 
 
 Router.post("/test",userTest)
+
+//signup and signin part for undergraduate
 Router.post("/register",userRegister)
 Router.post("/login",userLogin)
 Router.post("/forgotpassword",forgotPassword)

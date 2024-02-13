@@ -9,6 +9,7 @@ const cors = require("cors");
 // const nodemailer = require('nodemailer');
 
 const users = require("../Routes/users")
+const experts = require("../Routes/expert")
 
 
 const app = express();
@@ -33,6 +34,7 @@ mongoose.connect(connectionString, {
   });
 
 app.use("/user", users)
+app.use("/expert",experts)
 
 // app.post('/api/register', async (req, res) => {
 //   try {

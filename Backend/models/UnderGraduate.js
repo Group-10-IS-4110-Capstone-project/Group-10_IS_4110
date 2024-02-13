@@ -8,6 +8,7 @@ const UnderGraduateSchema = new mongoose.Schema({
     password : String
 })
 
-const UnderGraduateModel = mongoose.model("Login", UnderGraduateSchema)
+
+const UnderGraduateModel = mongoose.model("LoginUndergraduate", UnderGraduateSchema)
 
 module.exports = UnderGraduateModel;
