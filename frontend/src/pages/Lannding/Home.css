@@ -89,7 +89,7 @@
   }
   
   .outer-container:nth-child(2) {
-    /* background-color: #021e32; */
+    background-color:rgb(255, 255, 255);
   }
   
   
@@ -133,6 +133,12 @@
     font-size: clamp(1rem, 3vw, 1.5rem);
     color: #ffffff;
     margin: 1.5rem 0rem;
+    
+  }
+
+  .primary-text-2 {
+    color: #000000 !important;
+    
   }
   
   .secondary-text {
@@ -214,7 +220,7 @@
   .primary-subheading {
     font-weight: 700;
     color: #000000;
-    font-size: 1.15rem;
+    font-size: 2.15rem;
   }
   .about-buttons-container {
     margin-top: 2rem;
@@ -334,13 +340,14 @@
   }
   .work-section-wrapper.container{
     margin-top: 2rem;
+    
   }
   .work-section-top p {
     text-align: center;
-    max-width: 400px !important;
+    max-width: 750px !important;
   }
   .work-section-top h1 {
-    max-width: 700px !important;
+    max-width: 500px !important;
   }
   .work-section-top {
     display: flex;
@@ -349,18 +356,18 @@
     flex-direction: column;
   }
   .work-section-info {
-    width: 350px;
-    min-height: 250px;
+    width: 200px;
+    min-height: 130px;
     background-color: rgb(43, 102, 210);
-    padding: 0.8rem 0.8rem;
+    padding: 0.5rem 0.8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 1rem;
-    color: #505050;
-    margin: 1rem 1rem;
+    border-radius: 0.5rem;
+    color: #3d8cc5;
+    margin: 1.5rem 1rem;
   }
   .work-section-info h2 {
     margin: 1rem 0rem;
