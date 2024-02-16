@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import "./SignUpRightPane.css";
 import SignUpExpert from "./SignUpExpert";
 import { Link, useNavigate } from "react-router-dom";
-import axios from 'axios';
-
+import axios from "axios";
+import Modal from "react-bootstrap/Modal";
 
 
 export default function SignUpRightPane() {
@@ -20,7 +20,8 @@ export default function SignUpRightPane() {
 
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [showExpertSection, setShowExpertSection] = useState(false);
-  const navigate = useNavigate(); 
+  const [showAlert, setShowAlert] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,7 +31,7 @@ export default function SignUpRightPane() {
     });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (user.password === user.confirmPassword) {
@@ -39,19 +40,28 @@ export default function SignUpRightPane() {
       // You can also send the data to a server or perform other actions here
 
       try {
-        const response = await axios.post('http://localhost:3001/api/register', user);
-        console.log('User successfully registered:', response.data);
-        navigate('/login');
+        const response = await axios.post(
+          "http://localhost:3001/user/register",
+          user
+        );
+
+        console.log(response.data.message);
+        if ( response.data.message === "Email already exists") {
+          //------??
+
+          setShowAlert(true)
+        
+        }
+
+        console.log("User successfully registered:", response.data);
+        navigate("/login");
         // Perform any additional actions on successful registration
       } catch (error) {
-        console.error('Error registering user:', error.response.data);
+        console.error("Error registering user:", error.response.data);
         // Handle registration error (show error message, etc.)
       }
 
       //code
-
-
-
     } else {
       setPasswordMatch(false);
       console.log("Passwords do not match");
@@ -62,10 +72,11 @@ export default function SignUpRightPane() {
     setShowExpertSection(true);
   };
 
-  //password visible
-  /*const handleTogglePasswordVisibility = () => {
-    setPasswordVisible((prevVisible) => !prevVisible);
-  };*/
+  
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+  };
 
   return (
     <div>
@@ -174,9 +185,9 @@ export default function SignUpRightPane() {
           <> */}
           <div className="box-4">
             <p className="desc">Have an account?</p>
-          
+
             <Link to="/login">
-            <button className="log">Sign in</button>
+              <button className="log">Sign in</button>
             </Link>
           </div>
 
@@ -186,9 +197,26 @@ export default function SignUpRightPane() {
               Privacy Policy
             </p>
           </div>
+
+          <div>
+          <Modal show={showAlert} onHide={handleCloseAlert}>
+            <Modal.Header closeButton>
+              <Modal.Title>Error</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              Please enter a strong password according to the criteria.
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseAlert}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+            </div>
           {/* </>
         )} */}
         </div>
+        
       )}
     </div>
   );
