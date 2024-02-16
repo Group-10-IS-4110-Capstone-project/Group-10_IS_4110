@@ -10,7 +10,7 @@ import Webd from './pages/Webd';
 import Mobile from './pages/Mobile';
 import Machiene from './pages/Machiene';
 import Block from './pages/Block';
-import Button from "./components/Button"
+
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 
@@ -19,7 +19,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      
+     
       <BrowserRouter>
         <Routes>
         <Route path="/" element={<Home />} />
@@ -37,7 +37,7 @@ function App() {
         </Routes>
         
       </BrowserRouter>
-      <Button>Success button</Button>
+      
     </div>
   );
 }

@@ -32,7 +32,7 @@ import fb from '../assets/Vector.png'
 import insta from '../assets/Vector insta.png'
 import twi from '../assets/Vector twitter.png'
 import Ai from '../assets/AI.webp'
-
+import Button from "../components/Button";
 
 import './Artificial.css'
 
@@ -532,19 +532,24 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
       </div>
     </footer>
     <div className="next">
-      <div className="overlap-12">
-        <div className="text-wrapper-14">Next page</div>
-        <img
-          className="arrow"
-          alt=""
-          src={arrow}
-        />
-        
+     
+     <div className="button">
+       <Button>Next Page</Button>
+     </div>
+
+     <div className="button2">
+        <a href="http://localhost:3001/Artificial">
+          <Button>Previous Page</Button>
+          </a>
+          
       </div>
-    </div>
-  </div>
+     
+   </div>
+ 
 </div>
 </div>
+</div>
+
 
  
 

@@ -31,7 +31,7 @@ import color from '../assets/Color_logo_with_background-removebg-preview 2.png'
 import fb from '../assets/Vector.png'
 import insta from '../assets/Vector insta.png'
 import twi from '../assets/Vector twitter.png'
-
+import Button from "../components/Button";
 
 import './Datascience.css'
 
@@ -535,15 +535,18 @@ function Datascience() {
       </div>
     </footer>
     <div className="next">
-      <div className="overlap-12">
-        <div className="text-wrapper-14">Next page</div>
-        <img
-          className="arrow"
-          alt=""
-          src={arrow}
-        />
+     
+        <div className="button">
+        <a href="http://localhost:3001/Artificial">
+          <Button>Next Page</Button>
+          </a>
+          
+        </div>
+
+      
+        
       </div>
-    </div>
+    
   </div>
 </div>
 </div>
