@@ -1,4 +1,10 @@
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
 .index {
     background-color: #ffffff;
     display: flex;
