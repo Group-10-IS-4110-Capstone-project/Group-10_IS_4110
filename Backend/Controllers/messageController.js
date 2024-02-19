@@ -1,5 +1,6 @@
 const Conversation = require("../models/Conversation");
 const Message = require("../models/MessageModel");
+const UnderGraduateModel = require("../models/UnderGraduate");
 
 const sendMessage = async (req, res) => {
   try {
@@ -60,4 +61,23 @@ const getMessage = async (req, res) => {
   }
 };
 
-module.exports = { sendMessage, getMessage };
+
+//getusersforsidebar
+
+const getUsersForSideBar = async(req, res) => {
+
+  //undergraduate
+  try {
+    const loggedInUserId = req.user._id  //if logged in
+
+    const filteredUsers = await UnderGraduateModel.find({_id: {$ne: loggedInUserId}}).select("-password")
+
+    res.status(200).json(filteredUsers);
+  } catch (error) {
+    console.log("Error in getUserForSideBar",error);
+    res.status(500).json({error:"Internal server error"});
+  }
+}
+
+
+module.exports = { sendMessage, getMessage, getUsersForSideBar };
