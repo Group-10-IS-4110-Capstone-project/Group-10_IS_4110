@@ -1,37 +1,58 @@
 const Conversation = require("../models/Conversation");
 const Message = require("../models/MessageModel");
 
-const sendMessage = async(req, res) => {
+const sendMessage = async (req, res) => {
   try {
     const { message } = req.body;
     const { id: receiverId } = req.params;
     // const senderId = req.user._id
-    const senderId = '65cef9e13a81a8b010e02470'
-
+    const senderId = "65cef9e13a81a8b010e02470";
 
     let conversation = await Conversation.findOne({
-        participants: { $all: [senderId, receiverId]}
-    })
+      participants: { $all: [senderId, receiverId] },
+    });
 
-    if(!conversation){
-        conversation = await Conversation.create({
-            participants: [senderId, receiverId],
-        });
+    if (!conversation) {
+      conversation = await Conversation.create({
+        participants: [senderId, receiverId],
+      });
     }
 
     const newMessage = new Message({
-        senderId,
-        receiverId,
-        message,
-    })
+      senderId,
+      receiverId,
+      message,
+    });
 
-    if(newMessage){
-        conversation.messages.push(newMessage._id)
+    if (newMessage) {
+      conversation.messages.push(newMessage._id);
     }
 
-    await  promise.all([conversation.save(), newMessage.save()])
+    await promise.all([conversation.save(), newMessage.save()]);
 
     res.status(201).json(newMessage);
+  } catch (error) {
+    console.log("Error in sendMessage controller", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+//get messages
+
+const getMessage = async (req, res) => {
+  try {
+    const {id: userToChatId} = req.params;
+    const senderId = "65cef9e13a81a8b010e02470";
+
+    let conversation = await Conversation.findOne({
+        participants: { $all: [senderId, userToChatId] },
+      }).populate("messages");
+
+      if(!conversation) return res.status(200).json([]);
+
+      const messages = conversation.messages;
+
+      res.status(200).json(messages);
 
   } catch (error) {
     console.log("Error in sendMessage controller", error);
@@ -39,4 +60,4 @@ const sendMessage = async(req, res) => {
   }
 };
 
-module.exports = { sendMessage };
+module.exports = { sendMessage, getMessage };
