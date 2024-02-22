@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser")
 // const jwt = require('jsonwebtoken');
 // const nodemailer = require('nodemailer');
 
+const admin = require("../Routes/admin")
 const users = require("../Routes/users")
 const experts = require("../Routes/expert")
 const message = require("../Routes/message")
@@ -36,6 +37,7 @@ mongoose.connect(connectionString, {
     console.log('Connected to MongoDB');
   });
 
+app.use("/admin",admin)
 app.use("/user", users)
 app.use("/expert",experts)
 app.use("/message",message)

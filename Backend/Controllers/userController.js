@@ -4,6 +4,7 @@ const ExpertModel = require("../models/Expert");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
+const AdminModel = require("../models/Admin");
 
 const userTest = (req, res) => {
   res.send({
@@ -94,6 +95,22 @@ const userLogin = async (req, res) => {
       return;
     }
 
+    //admin login
+
+    const admin = await AdminModel.findOne({email: lowercasedEmail});
+
+    if (admin) {
+      const passwordMatch = await bcrypt.compare(password, admin.password);
+
+      if (passwordMatch) {
+        res.json({ message: "success-admin" });
+      } else {
+        res.json({ message: "Incorrect password" });
+      }
+      return;
+    }
+
+
     res.json({ message: "User/Expert not found" });
   } catch (error) {
     console.error("Error during login:", error);
@@ -112,9 +129,7 @@ const forgotPassword = async (req, res) => {
     // Find the user by email
     const user = await UnderGraduateModel.findOne({ email });
 
-    // if (!user) {
-    //   return res.status(404).json({ status: "User not found" });
-    // }
+    
     if(user){
       // Generate a JWT token with user ID and set expiration time
     const token = jwt.sign({ id: user._id }, "10", { expiresIn: "1h" });
