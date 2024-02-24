@@ -1,5 +1,4 @@
 import React from 'react'
-import './Datascience.css';
 import Logo from '../assets/Rectangle 19.png'
 import foty from '../assets/Rectangle 47.png'
 import stat from '../assets/517TrzchOML._AC_UF1000,1000_QL80_.jpg'
@@ -32,36 +31,31 @@ import color from '../assets/Color_logo_with_background-removebg-preview 2.png'
 import fb from '../assets/Vector.png'
 import insta from '../assets/Vector insta.png'
 import twi from '../assets/Vector twitter.png'
+import Ai from '../assets/AI.webp'
 import Button from "../components/Button";
 
+import './Artificial.css'
 
-
-function Datascience() {
+function Artificial() {
   return (
    
-<div>
-      <div className="index">
 
+      <div className="index">
 <div className="overlap-wrapper">
   <div className="overlap">
-
-    <div className="text-wrapper">Data science</div>
+    <div className="text-wrapper">Artificial Intelligence</div>
     <div className="flex-container">
-
       <p className="text">
         <span className="span">
-        Data Science is a combination of mathematics, statistics, machine learning, and computer science. 
-        Data Science is collecting, analyzing and interpreting data to gather insights into the data that can 
-        help decision-makers make informed decisions.
+        Artificial Intelligence is a multidisciplinary field that encompasses computer science, mathematics, machine learning, and various technologies. It involves the development of intelligent systems capable of performing tasks that typically require human intelligence. AI is revolutionizing industries by automating processes, solving complex problems, and enhancing decision-making.
 
-        <br></br><br></br>
-        Data Science is an emerging field that sees its importance grow with each passing day. It is the latest 
-        buzzword in the IT world, and its demand in the market has been growing steadily. The demand for Data 
-        Scientists is proliferating, driven by the need for organizations to transform data into insights. 
- <br></br><br></br>
-        Nowadays, organizations are overwhelmed with data. Data Science will help in extracting meaningful 
-        insights from that by combining various methods, technology, and tools. In the fields of e-commerce, 
-        finance, medicine, human resources, etc, businesses come across huge amounts of data. 
+<br></br><br></br>
+
+Artificial Intelligence is a rapidly evolving domain with increasing significance in today's technological landscape. It has become a focal point in the IT industry, and its demand continues to surge. The quest for AI expertise is driven by the growing need for organizations to harness the power of intelligent systems to innovate and optimize their operations.
+
+<br></br><br></br>
+
+In the contemporary landscape, organizations are inundated with vast amounts of data. 
         </span>
       </p>
      
@@ -88,7 +82,7 @@ function Datascience() {
     <img
       className="img"
       alt=""
-      src={datas}
+      src={Ai}
     />
     <div className="overlap-2">
       <div className="connect">Connect with experts</div>
@@ -473,16 +467,16 @@ function Datascience() {
                 <br></br>
                 <br></br>
                 
-             
+                <div className="buttn2">
+                    <a href="http://localhost:3000/Datascience">
+                      <Button> Previous  Page</Button>
+                      </a>
+                      
+                  </div>
               </div>
     </div>
-
-
-
-
-
-
-
+    
+    
     <footer className="footer">
       <div className="overlap-11">
         <div className="container-wrapper">
@@ -559,17 +553,18 @@ function Datascience() {
       </div>
     </footer>
   
-    
-  </div>
+ 
+</div>
 </div>
 </div>
 
+
  
-</div>
+
 
 
 
   )
 }
 
-export default Datascience
+export default Artificial

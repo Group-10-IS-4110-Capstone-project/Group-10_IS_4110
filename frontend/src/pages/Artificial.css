@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
 .index {
     background-color: #ffffff;
     display: flex;
@@ -1233,18 +1231,6 @@
     top: 73px;
     width: 153px;
   }
-
- .onlineCo{
-        color: #0a0000;
-        font-family: "Inter", Helvetica;
-        font-size: 30px;
-        font-weight: 300;
-       margin-top: -300%;
-   
-        
-       
-        
-    }
   
     .buttn{
     
@@ -1258,3 +1244,15 @@
       padding: 31px 30px;
   }
 
+ .buttn2 {
+  
+ border: none;
+
+  padding: 1px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+ 
+}
+ 
