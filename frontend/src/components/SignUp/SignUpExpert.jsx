@@ -5,6 +5,7 @@ import "./SignUpExpert.css";
 import SignUpRightPane from "./SignUpRightPane";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Modal from "react-bootstrap/Modal";
 
 export default function SignUpExpert() {
   const [user, setUser] = useState({
@@ -20,6 +21,8 @@ export default function SignUpExpert() {
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [showUnderGraduateSection, setShowUnderGraduateSection] =
     useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [passwordShowAlert, setPasswordShowAlert] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -35,6 +38,7 @@ export default function SignUpExpert() {
 
     if (user.password === user.confirmPassword) {
       setPasswordMatch(true);
+      setPasswordShowAlert(false)
       console.log("User Details:", user);
       // You can also send the data to a server or perform other actions here
 
@@ -49,15 +53,27 @@ export default function SignUpExpert() {
       } catch (error) {
         console.error("Error registering user:", error.response.data);
         // Handle registration error (show error message, etc.)
+        if (error.response.data.message === "Email already exists") {
+          // Handle the case where email already exists
+          setShowAlert(true);
+        } else {
+          console.error("Error registering user:", error.response.data);
+        }
       }
     } else {
       setPasswordMatch(false);
+      setPasswordShowAlert(true)
       console.log("Passwords do not match");
     }
   };
 
   const handleUnderGraduateClick = () => {
     setShowUnderGraduateSection(true);
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+    setPasswordShowAlert(false);
   };
 
   return (
@@ -185,6 +201,37 @@ export default function SignUpExpert() {
               Privacy Policy
             </p>
           </div>
+          <div>
+          <Modal show={showAlert} onHide={handleCloseAlert}>
+            <Modal.Header closeButton>
+              <Modal.Title>Error</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            Email already exists
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseAlert}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+            </div>
+
+            <div>
+          <Modal show={passwordShowAlert} onHide={handleCloseAlert}>
+            <Modal.Header closeButton>
+              <Modal.Title>Error</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            Passwords do not match
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseAlert}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+            </div>
         </div>
       )}
     </div>

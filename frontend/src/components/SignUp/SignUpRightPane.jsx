@@ -21,6 +21,7 @@ export default function SignUpRightPane() {
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [showExpertSection, setShowExpertSection] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [passwordShowAlert, setPasswordShowAlert] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -36,34 +37,32 @@ export default function SignUpRightPane() {
 
     if (user.password === user.confirmPassword) {
       setPasswordMatch(true);
+      setPasswordShowAlert(false)
       console.log("User Details :", user);
       // You can also send the data to a server or perform other actions here
 
       try {
-        const response = await axios.post(
-          "http://localhost:3001/user/register",
-          user
-        );
-
-        console.log(response.data.message);
-        if ( response.data.message === "Email already exists") {
-          //------??
-
-          setShowAlert(true)
-        
-        }
-
+        const response = await axios.post("http://localhost:3001/user/register", user);
+      
         console.log("User successfully registered:", response.data);
         navigate("/login");
         // Perform any additional actions on successful registration
       } catch (error) {
-        console.error("Error registering user:", error.response.data);
-        // Handle registration error (show error message, etc.)
+        // console.error("Error registering user:", error.response.data);
+      
+        if (error.response.data.message === "Email already exists") {
+          // Handle the case where email already exists
+          setShowAlert(true);
+        } else {
+          console.error("Error registering user:", error.response.data);
+        }
       }
+      
 
       //code
     } else {
       setPasswordMatch(false);
+      setPasswordShowAlert(true)
       console.log("Passwords do not match");
     }
   };
@@ -76,6 +75,7 @@ export default function SignUpRightPane() {
 
   const handleCloseAlert = () => {
     setShowAlert(false);
+    setPasswordShowAlert(false);
   };
 
   return (
@@ -204,7 +204,23 @@ export default function SignUpRightPane() {
               <Modal.Title>Error</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              Please enter a strong password according to the criteria.
+            Email already exists
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseAlert}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
+            </div>
+
+            <div>
+          <Modal show={passwordShowAlert} onHide={handleCloseAlert}>
+            <Modal.Header closeButton>
+              <Modal.Title>Error</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            Passwords do not match
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleCloseAlert}>
