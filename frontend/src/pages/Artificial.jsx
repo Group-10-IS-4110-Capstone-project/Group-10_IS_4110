@@ -78,14 +78,14 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
         />
       </div>
     </div>
-    <div className="text-wrapper-2">Online Courses and Certificates</div>
+    <div className="online">Online Courses and Certificates</div>
     <img
       className="img"
       alt=""
       src={Ai}
     />
     <div className="overlap-2">
-      <div className="text-wrapper-3">Connect with experts</div>
+      <div className="connect">Connect with experts</div>
       <div className="overlap-3">
       
         <img
@@ -238,12 +238,12 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
       </div>
     </div>
     <div className="overlap-4">
-      <div className="text-wrapper-8">Things recomend by experts</div>
+      <div className="things">Things recomend by experts</div>
       <div className="elements-of">
         <div className="product-card">
           <div className="frame">
-            <div className="product-title">The Elements of 
-            Statistical Learning<br /><br />
+            <div className="product-title"><b>The Elements of 
+            Statistical Learning</b><br /><br />
           
               Trevor Hastie, Robert Tibshirani, 
               and Jerome 
@@ -261,7 +261,7 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
         <div className="frame-wrapper">
           <div className="frame">
             <div className="product-title">
-              Journal of Machine Learning <br /><br />
+            <b>Journal of Machine Learning </b><br /><br />
               Trevor Hastie, Robert Tibshirani, 
               and Jerome Friedman: A classic book
             </div>
@@ -272,7 +272,7 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
         <div className="group-2" />
         <div className="div-wrapper">
           <div className="frame">
-            <div className="product-title">Towards Data Science <br/><br/>
+            <div className="product-title"><b>Towards Data Science</b> <br/><br/>
           
             An online publication with a vast collection 
               of data science articles and tutorials.
@@ -284,7 +284,7 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
         <div className="group-3" />
         <div className="product-card-2">
           <div className="frame">
-            <div className="product-title">Python for Data Analysis<br /><br />
+            <div className="product-title"><b>Python for Data Analysis</b><br /><br />
            
              
               This is by Wes McKinney: <br/>
@@ -298,7 +298,7 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
         <div className="group-4" />
         <div className="product-card-3">
           <div className="frame">
-            <div className="product-title">Pattern analysis<br /><br />
+            <div className="product-title"><b>Pattern analysis</b><br /><br />
            
             Journals like 
              IEEE Transactions on Pattern Analysis 
@@ -453,8 +453,27 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
           and other related courses.
         </p>
       </div>
-    </div>
 
+                <div className="next">
+              <br></br>
+              <br></br>
+              <br></br>
+              
+                <div className="buttn">
+                  <Button>Previous  Page</Button>
+                </div>
+                <br></br>
+                <br></br>
+                
+                <div className="buttn2">
+                    <a href="http://localhost:3001/Artificial">
+                      <Button> Next  Page</Button>
+                      </a>
+                      
+                  </div>
+              </div>
+    </div>
+    
     
     <footer className="footer">
       <div className="overlap-11">
@@ -531,20 +550,7 @@ In the contemporary landscape, organizations are inundated with vast amounts of 
         />
       </div>
     </footer>
-    <div className="next">
-     
-     <div className="button">
-       <Button>Next Page</Button>
-     </div>
-
-     <div className="button2">
-        <a href="http://localhost:3001/Artificial">
-          <Button>Previous page</Button>
-          </a>
-          
-      </div>
-     
-   </div>
+  
  
 </div>
 </div>

@@ -1,0 +1,13 @@
+.btn-component {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-component:hover {
+    background-color: #2980b9;
+  }
