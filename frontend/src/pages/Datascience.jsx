@@ -1,4 +1,5 @@
 import React from 'react'
+import './Datascience.css';
 import Logo from '../assets/Rectangle 19.png'
 import foty from '../assets/Rectangle 47.png'
 import stat from '../assets/517TrzchOML._AC_UF1000,1000_QL80_.jpg'
@@ -33,16 +34,16 @@ import insta from '../assets/Vector insta.png'
 import twi from '../assets/Vector twitter.png'
 
 
-import './Datascience.css'
+
 
 function Datascience() {
   return (
    
-
+<div>
       <div className="index">
 <div className="overlap-wrapper">
   <div className="overlap">
-    <div className="text-wrapper">Data science</div>
+    <div className="text-1">Data science</div>
     <div className="flexcontainer">
       <p className="text">
         <span className="span">
@@ -569,7 +570,7 @@ function Datascience() {
 </div>
 
  
-
+</div>
 
 
 

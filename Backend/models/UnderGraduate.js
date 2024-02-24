@@ -6,7 +6,7 @@ const UnderGraduateSchema = new mongoose.Schema({
     university : String,
     email : String,
     password : String
-})
+},{timestamps: true});
 
 
 const UnderGraduateModel = mongoose.model("LoginUndergraduate", UnderGraduateSchema)
