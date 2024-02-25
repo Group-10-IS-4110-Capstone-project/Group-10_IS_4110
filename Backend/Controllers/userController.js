@@ -6,6 +6,9 @@ const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const AdminModel = require("../models/Admin");
 
+const { verifyToken } = require('../middleware/protectRoute');
+
+
 const userTest = (req, res) => {
   res.send({
     message: "done",
@@ -73,12 +76,13 @@ const userLogin = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (passwordMatch) {
-        res.json({ message: "success" });
+        // Generate JWT token
+        const token = jwt.sign({ userId: user._id, userType: 'undergraduate' }, 'your-secret-key', { expiresIn: '1h' });
+        return res.json({ message: 'success', token });
       } else {
-        res.json({ message: "Incorrect password" });
+        return res.json({ message: 'Incorrect password' });
       }
 
-      return;
     }
 
     const expert = await ExpertModel.findOne({ email: lowercasedEmail });
@@ -88,11 +92,12 @@ const userLogin = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, expert.password);
 
       if (passwordMatch) {
-        res.json({ message: "success" });
+        // Generate JWT token
+        const token = jwt.sign({ userId: user._id, userType: 'expert' }, 'your-secret-key', { expiresIn: '1h' });
+        return res.json({ message: 'success', token });
       } else {
-        res.json({ message: "Incorrect password" });
+        return res.json({ message: 'Incorrect password' });
       }
-      return;
     }
 
     //admin login
@@ -103,11 +108,12 @@ const userLogin = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, admin.password);
 
       if (passwordMatch) {
-        res.json({ message: "success-admin" });
+        // Generate JWT token
+        const token = jwt.sign({ userId: user._id, userType: 'admin' }, 'your-secret-key', { expiresIn: '1h' });
+        return res.json({ message: 'success-admin', token });
       } else {
-        res.json({ message: "Incorrect password" });
+        return res.json({ message: 'Incorrect password' });
       }
-      return;
     }
 
 
@@ -248,6 +254,39 @@ const logOut = async(req,res) => {
   }
 }
 
+// Controller to update user data
+const updateUser = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const { firstName, lastName, university, email, password, bio } = req.body;
+
+    // Check if the user has a valid token and the token matches the user type
+    // if (!req.userId || req.userId !== userId || req.userType !== 'undergraduate') {
+    //   return res.status(401).json({ error: 'Unauthorized - Invalid token for this operation' });
+    // }
+
+    const user = await UnderGraduateModel.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.university = university;
+    user.email = email;
+    user.password = password;
+    user.bio = bio;
+
+    await user.save();
+
+    res.json({ message: 'User updated successfully', user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   userTest,
   userRegister,
@@ -255,4 +294,5 @@ module.exports = {
   forgotPassword,
   changePassword,
   logOut,
+  updateUser
 };
