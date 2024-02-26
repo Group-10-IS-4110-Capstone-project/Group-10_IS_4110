@@ -2,19 +2,23 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
+const cookieParser = require("cookie-parser")
 // const hbs = require("hbs");
 // const UnderGraduateModel = require("../models/UnderGraduate")
 // const bcrypt = require('bcrypt');
 // const jwt = require('jsonwebtoken');
 // const nodemailer = require('nodemailer');
 
+const admin = require("../Routes/admin")
 const users = require("../Routes/users")
 const experts = require("../Routes/expert")
+const message = require("../Routes/message")
 
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
 
 const connectionString = "mongodb+srv://avishka1999perera:Avishka@login.ufmfqma.mongodb.net/Login?retryWrites=true&w=majority"
 
@@ -33,8 +37,10 @@ mongoose.connect(connectionString, {
     console.log('Connected to MongoDB');
   });
 
+app.use("/admin",admin)
 app.use("/user", users)
 app.use("/expert",experts)
+app.use("/message",message)
 
 // app.post('/api/register', async (req, res) => {
 //   try {
