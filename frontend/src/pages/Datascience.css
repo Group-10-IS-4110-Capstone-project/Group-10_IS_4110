@@ -85,9 +85,9 @@
     background-color: #ebf5f5;
     border-radius: 50px;
     height: 99px;
-    left: 0;
+    
     position: absolute;
-    top: 0;
+   
     width: 1319px;
   }
   
@@ -139,7 +139,7 @@
   
   .index .overlap-2 {
     height: 1449px;
-    left: 0;
+   
     position: absolute;
     top: 1165px;
     width: 1920px;
@@ -162,18 +162,18 @@
   
   .index .overlap-3 {
     height: 1449px;
-    left: 0;
+   
     position: absolute;
-    top: 0;
+  
     width: 1920px;
   }
   
   .index .rectangle-2 {
     height: 515px;
-    left: 0;
+  
     object-fit: cover;
     position: absolute;
-    top: 0;
+  
     width: 386px;
   }
   
@@ -337,7 +337,7 @@
   
   .index .line-2 {
     height: 3px;
-    left: 0;
+  
     object-fit: cover;
     position: absolute;
     top: -1px;
@@ -346,7 +346,7 @@
   
   .index .line-3 {
     height: 3px;
-    left: 0;
+   
     object-fit: cover;
     position: absolute;
     top: 52px;
@@ -355,7 +355,7 @@
   
   .index .line-4 {
     height: 3px;
-    left: 0;
+    
     object-fit: cover;
     position: absolute;
     top: 105px;
@@ -513,10 +513,10 @@
   
   .index .rectangle-12 {
     height: 295px;
-    left: 0;
+    
     object-fit: cover;
     position: absolute;
-    top: 0;
+   
     width: 345px;
   }
   
@@ -545,7 +545,7 @@
     display: flex;
     flex-direction: column;
     height: 181px;
-    left: 0;
+    
     overflow: hidden;
     position: absolute;
     top: 295px;
@@ -575,7 +575,7 @@
     background-color: var(--light-background-color);
     display: inline-flex;
     flex-direction: column;
-    left: 0;
+    
     position: absolute;
     top: 310px;
   }
