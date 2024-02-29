@@ -1,0 +1,134 @@
+/* General styles */
+.things {
+    color: #000000;
+    font-family: var(--h-2-font-family);
+    font-size: 300%;
+    font-style: var(--h-2-font-style);
+    font-weight: bold;
+    left: 720px;
+    letter-spacing: var(--h-2-letter-spacing);
+    line-height: var(--h-2-line-height);
+    position: absolute;
+    top: 41px;
+    white-space: nowrap;
+}
+
+.product-title {
+    color: var(--text-color);
+    font-family: "Montserrat", Helvetica;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    line-height: 25px;
+    margin-top: -25px;
+    width: 320px;
+    background-color: white;
+    padding: 30px; 
+    border-radius: 6px; 
+}
+
+/* Section-specific styles */
+.overlap-4 {
+    background-color: #83b1cf;
+    height: 1331px;
+    left: 1px;
+    position: absolute;
+    top: 2711px;
+    width: 1919px;
+}
+
+.elements-of,
+.journal,
+.python-for,
+.pattern {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card,
+.product-card-2,
+.product-card-3 {
+    align-items: flex-start;
+    background-color: var(--light-background-color);
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 344px; /* Adjust width as needed */
+}
+
+.frame,
+.frame-wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    position: relative;
+    width: 100%;
+}
+
+.rectangle-12 {
+    height: 295px;
+    object-fit: cover;
+    width: 100%; /* Make image responsive */
+}
+
+.group,
+.group-3,
+.group-4 {
+    background-size: cover;
+    height: 295px;
+    margin-left: 7%;
+    width: 320px;
+}
+
+/* Adjustments for specific elements */
+.elements-of {
+    height: 476px;
+    left: 160px;
+    position: absolute;
+    top: 759px;
+    width: 345px;
+}
+
+.journal {
+    height: 476px;
+    left: 788px;
+    position: absolute;
+    top: 178px;
+    width: 345px;
+}
+
+.python-for {
+    height: 476px;
+    left: 1416px;
+    position: absolute;
+    top: 175px;
+    width: 345px;
+}
+
+.pattern {
+    height: 476px;
+    left: 786px;
+    position: absolute;
+    top: 759px;
+    width: 345px;
+}
+
+/* Additional styles (not present in the original CSS) */
+.overlap-5 {
+    height: 1219px;
+    left: 1318px;
+    position: absolute;
+    top: 4088px;
+    width: 602px;
+}
+
+.add {
+    background-size: cover;
+    height: 658px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 579px;
+}

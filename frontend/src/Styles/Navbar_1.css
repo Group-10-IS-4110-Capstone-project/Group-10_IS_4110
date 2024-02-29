@@ -1,0 +1,167 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Poppins', sans-serif;
+
+}
+.banner{
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+.navbar1{
+	width: 85%;
+	margin: auto;
+	padding: 35px 0;
+	display: flex;
+}
+.logo1{
+	width: 140px;
+	cursor: pointer;
+}
+.content{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	color: #FFF;
+}
+.content h1{
+	font-size: 60px;
+	margin-top: 80px;
+}
+.content p{
+	margin: 20px auto;
+	font-weight: 100;
+	line-height: 25px;
+	color: #fff;
+}
+.homebtn button{
+	width: 200px;
+	padding: 15px 0;
+	text-align: center;
+	margin: 20px 10px;
+	border-radius: 25px;
+	font-weight: bold;
+	border: 2px solid #2BAB27;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+.homebtn span{
+	background: #2BAB27;
+	height: 100%;
+	width: 0;
+	border-radius: 25px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: 0.5s;
+}
+button:hover span{
+	width: 100%;
+}
+button:hover{
+	border: none;
+}
+.active{
+	color: #2BAB27;
+	text-decoration: overline;
+}
+
+
+
+/*-- home page--*/
+.navbar{
+	display: flex;
+	align-items: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background: #FFF;
+}
+nav{
+	flex: 1;
+	text-align: right;
+}
+nav ul{
+	display: inline-block;
+	list-style-type: none;
+}
+nav ul li{
+	display: inline-block;
+	margin-right: 20px;
+}
+nav ul li:hover{
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.navcart:hover{
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+p{
+	color: 	#FFF;
+}
+.container{
+	margin: auto;
+	background: #f1f1f1;
+}
+.row{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+}
+.col-2{
+	flex-basis: 50%;
+	text-align: center;	
+	
+}
+
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+    color: #000;
+}
+.btn{
+	display: inline-block;
+	background: #000;
+	color: #fff;
+	padding: 8px 30px;
+	margin: 30px 0;
+	border-radius: 30px;
+	transition: background 0.5s;
+}
+.btn:hover{
+	background: #2BAB27;
+	color: #fff;
+}
+.header{
+	background: #fff;
+}
+.header .row{
+	margin-top: 0px;
+	height: 50vh;
+	background-image: url("../assets/hombg.jpg");
+	background-repeat: no-repeat;
+}
+.categories{
+	padding-top: 50px;
+	background: #f1f1f1;
+}

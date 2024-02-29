@@ -6,6 +6,7 @@ import Description from '../components/Description'
 import Recommended from '../components/Recommended'
 import Courses from '../components/Courses'
 import Connect from '../components/Connect'
+import Recommended_by_experts from '../components/Recommended_by_experts'
 
 
 function Experts() {
@@ -17,6 +18,7 @@ function Experts() {
       <Searchbar />
       <Description />
       <Recommended />
+      <Recommended_by_experts />
       <Courses />
       <Connect />
       <div>

@@ -3,7 +3,7 @@
   padding: 40px 0;
 }
 .arrow-button {
-    background-color: #034994;
+    background-color: #032752;
     color: #fff;
     padding: 10px 50px;
     border: none;
@@ -12,15 +12,8 @@
     transition: background-color 0.3s;
   }
   
-  .arrow-button:hover {
-    background-color: #3bb1ff;
-  }
   
   .arrow-button.clicked {
     background-color: #034994;
-  }
-  
-  .arrow-button.clicked:hover {
-    background-color: #83B1CF;
   }
   

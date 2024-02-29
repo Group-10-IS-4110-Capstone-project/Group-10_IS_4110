@@ -43,12 +43,12 @@
     margin: 0 auto 40px; /* Adjusted margin */
     position: relative;
     line-height: 60px;
-    color: #fff; /* Changed text color */
+    color: #000000; /* Changed text color */
   }
   
   .title::after {
     content: '';
-    background: #034994;
+    background: #B5D1E2;
     width: 260px;
     height: 3px;
     border-radius: 3px;
