@@ -1,6 +1,8 @@
 import React from 'react'
 import Hero from './sections/Hero'
+import NavBar from './sections/NavBar'
 import "./Home.css"
+
 import About from './sections/About'
 import Explore from './sections/Explore'
 import Career from './sections/Career'
@@ -10,7 +12,9 @@ import Contact_us from './sections/Contact_us'
 const Home = () => {
   return (
     <div>
+     
       <Hero />
+     
       <About />
       <Explore />
       <Career/>

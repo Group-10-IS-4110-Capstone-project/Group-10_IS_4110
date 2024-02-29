@@ -33,10 +33,11 @@ const Contact_us = () => {
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
     <div style={{ flex: 1, padding: '20px' }}>
+    <h2>Contact Us</h2>
       <img src={contact_img} alt="Contact Us" style={{ maxWidth: '100%', height: 'auto' }} />
     </div>
     <div style={{ flex: 2, padding: '20px'}}>
-      <h2>Contact Us</h2>
+     
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '20px' }}>
           <label htmlFor="name">Name:</label>
@@ -47,7 +48,7 @@ const Contact_us = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
+            style={{ width: '50%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
           />
         </div>
         <div style={{ marginBottom: '20px' }}>
@@ -59,7 +60,7 @@ const Contact_us = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
+            style={{ width: '50%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
           />
         </div>
         <div style={{ marginBottom: '20px' }}>
@@ -71,7 +72,7 @@ const Contact_us = () => {
             value={formData.phoneNumber}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
+            style={{ width: '50%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
           />
         </div>
         <div style={{ marginBottom: '20px' }}>
@@ -82,7 +83,7 @@ const Contact_us = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
+            style={{ width: '50%', padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
           ></textarea>
         </div>
         <button type="submit" style={{ padding: '10px 20px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Contact Us Now</button>
