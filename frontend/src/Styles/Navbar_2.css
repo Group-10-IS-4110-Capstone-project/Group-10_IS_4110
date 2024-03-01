@@ -1,12 +1,17 @@
 .navbar {
-  width: 100%;
-  margin: auto;
-  height: 150px;
   background-color: #B5D1E2;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Adjusted to evenly space buttons */
-  justify-content: flex-end;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: right;
+}
+
+.navbar-left {
+  margin-right: auto; /* Pushes the buttons to the left */
 }
 
 .primary-button {
@@ -24,5 +29,28 @@
 }
 
 .primary-button:hover {
-  background-color: rgb(220, 230, 236);
+  background-color: rgb(240, 245, 252);
 }
+.data-science-container {
+  background-color: #B5D1E2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.data-science-image {
+  max-width: 100%; /* Set maximum width to 100% */
+  width: 100%; /* Ensures image fills its container */
+}
+
+.data-science-description {
+  text-align: left;
+  margin-top: 25px;
+  font-size: 18px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+

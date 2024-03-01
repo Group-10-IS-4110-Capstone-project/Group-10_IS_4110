@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
   margin-top: 0px;
+  margin-bottom: 20px;
   background-color: hsl(203, 44%, 80%);   
+  
 }
 
 .search-bar {
@@ -11,6 +13,7 @@
   border: 1px solid #ffff;
   border-radius: 50px 0 0 50px;
   outline: none;
+  font-size: 11px;
 }
 
 .search-icon {
@@ -20,4 +23,5 @@
   border-radius: 0 50px 50px 0;
   cursor: pointer;
   outline: none;
+  font-size: 11px;
 }
