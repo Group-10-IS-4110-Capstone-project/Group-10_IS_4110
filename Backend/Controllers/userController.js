@@ -80,7 +80,7 @@ const userLogin = async (req, res) => {
         const token = jwt.sign({ userId: user._id, userType: 'undergraduate' }, '10', { expiresIn: '1h' });
         return res.json({ message: 'success', token });
       } else {
-        return res.json({ message: 'Incorrect password' });
+        return res.json({ message: 'Incorrect password user' });
       }
 
     }
@@ -96,7 +96,7 @@ const userLogin = async (req, res) => {
         const token = jwt.sign({ userId: expert._id, userType: 'expert' }, '10', { expiresIn: '1h' });
         return res.json({ message: 'success', token });
       } else {
-        return res.json({ message: 'Incorrect password' });
+        return res.json({ message: 'Incorrect password admin' });
       }
     }
 

@@ -9,9 +9,9 @@ const { verifyToken } = require('../middleware/protectRoute');
 Router.post('/create',verifyToken,createContent);
 
 // Update Content
-Router.put('/update/:id',updateContent);
+Router.put('/update/:id',verifyToken,updateContent);
 
 // Delete Content
-Router.delete('/delete/:id',deleteContent);
+Router.delete('/delete/:id',verifyToken,deleteContent);
 
 module.exports = Router;
