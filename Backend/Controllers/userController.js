@@ -77,7 +77,7 @@ const userLogin = async (req, res) => {
 
       if (passwordMatch) {
         // Generate JWT token
-        const token = jwt.sign({ userId: user._id, userType: 'undergraduate' }, 'your-secret-key', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id, userType: 'undergraduate' }, '10', { expiresIn: '1h' });
         return res.json({ message: 'success', token });
       } else {
         return res.json({ message: 'Incorrect password' });
@@ -93,7 +93,7 @@ const userLogin = async (req, res) => {
 
       if (passwordMatch) {
         // Generate JWT token
-        const token = jwt.sign({ userId: user._id, userType: 'expert' }, 'your-secret-key', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: expert._id, userType: 'expert' }, '10', { expiresIn: '1h' });
         return res.json({ message: 'success', token });
       } else {
         return res.json({ message: 'Incorrect password' });
@@ -109,7 +109,7 @@ const userLogin = async (req, res) => {
 
       if (passwordMatch) {
         // Generate JWT token
-        const token = jwt.sign({ userId: user._id, userType: 'admin' }, 'your-secret-key', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: admin._id, userType: 'admin' }, '10', { expiresIn: '1h' });
         return res.json({ message: 'success-admin', token });
       } else {
         return res.json({ message: 'Incorrect password' });
@@ -222,6 +222,28 @@ const forgotPassword = async (req, res) => {
 
 //change password ----
 
+// const changePassword = (req, res) => {
+//   const { id, token } = req.params;
+//   const { password } = req.body;
+
+//   jwt.verify(token, "10", (err, decoded) => {
+//     if (err) {
+//       return res.json({ status: "Error with token" });
+//     } else {
+//       bcrypt
+//         .hash(password, 10)
+//         .then((hash) => {
+//           UnderGraduateModel.findByIdAndUpdate({ _id: id }, { password: hash })
+//             .then((u) => res.send({ status: "Success" }))
+//             .catch((err) => res.send({ status: err }));
+//         })
+//         .catch((err) => res.send({ status: err }));
+//     }
+//   });
+// };
+
+//********************* */
+
 const changePassword = (req, res) => {
   const { id, token } = req.params;
   const { password } = req.body;
@@ -233,14 +255,33 @@ const changePassword = (req, res) => {
       bcrypt
         .hash(password, 10)
         .then((hash) => {
+          // Check if the decoded ID belongs to an undergraduate user
           UnderGraduateModel.findByIdAndUpdate({ _id: id }, { password: hash })
-            .then((u) => res.send({ status: "Success" }))
+            .then((u) => {
+              if (u) {
+                return res.send({ status: "Success" });
+              }
+
+              // If not an undergraduate user, check if it belongs to an expert
+              ExpertModel.findByIdAndUpdate({ _id: id }, { password: hash })
+                .then((e) => {
+                  if (e) {
+                    return res.send({ status: "Success" });
+                  }
+
+                  // If neither undergraduate user nor expert, return an error
+                  return res.send({ status: "Invalid ID" });
+                })
+                .catch((err) => res.send({ status: err }));
+            })
             .catch((err) => res.send({ status: err }));
         })
         .catch((err) => res.send({ status: err }));
     }
   });
 };
+
+
 
 ///logout
 

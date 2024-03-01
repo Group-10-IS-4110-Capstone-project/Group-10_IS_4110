@@ -2,6 +2,7 @@
 const jwt =require('jsonwebtoken');
 const UnderGraduateModel = require('../models/UnderGraduate');
 
+
 const protectRoute = async(req,res,next) => {
     try {
         const token = req.cookies.jwt;
@@ -32,15 +33,19 @@ const protectRoute = async(req,res,next) => {
 
 const verifyToken = (req, res, next) => {
     const token = req.headers.authorization;
+    console.log(token)
   
     if (!token) {
       return res.status(401).json({ message: 'Unauthorized - No token provided' });
     }
+    
   
     jwt.verify(token, '10', (err, decoded) => {
       if (err) {
+        console.log(err)
         return res.status(401).json({ message: 'Unauthorized - Invalid token' });
       }
+      
   
       req.userId = decoded.userId;
       next();

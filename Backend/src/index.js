@@ -14,6 +14,7 @@ const users = require("../Routes/users");
 const experts = require("../Routes/expert");
 const message = require("../Routes/message");
 const content = require("../Routes/content");
+const advertisement = require("../Routes/advertisement")
 
 const app = express();
 app.use(express.json());
@@ -43,6 +44,7 @@ app.use("/user", users);
 app.use("/expert", experts);
 app.use("/message", message);
 app.use("/content", content);
+app.use("/advertisement", advertisement)
 
 // app.post('/api/register', async (req, res) => {
 //   try {

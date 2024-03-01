@@ -13,7 +13,7 @@ Router.post("/login",userLogin)
 Router.post("/forgotpassword",forgotPassword)
 Router.post("/changepassword/:id/:token",changePassword)
 Router.get("/logout",logOut)
-Router.put('/updateuser/:id', updateUser)
+Router.put('/updateuser/:id',verifyToken, updateUser)
 
 
 
