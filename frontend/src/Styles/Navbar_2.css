@@ -46,11 +46,13 @@
 }
 
 .data-science-description {
-  text-align: left;
+  text-align: justify;
   margin-top: 25px;
-  font-size: 18px;
-  margin-left: 70px;
-  margin-right: 70px;
+  font-size: 19px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 25px;
 }
+
 
 
