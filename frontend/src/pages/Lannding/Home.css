@@ -277,22 +277,26 @@ button:hover {
 }
 
   .footer-wrapper {
-    margin: 6rem 0rem;
+    margin: 7rem 0rem;
     display: flex;
-    margin-top: 10rem;
+    margin-top: 3rem;
+    background-color: #3d8cc5;
+    margin-bottom: 0.5px;
   }
   .footer-logo-container {
     max-width: 110px;
+    padding: 10px;
   }
   .footer-icons {
-    margin-top: 2.5rem;
+    margin-top: 6rem;
+    padding: 10px;
   }
   .footer-icons svg {
     font-size: 1.5rem;
     margin-right: 1.25rem;
     color: #585858;
   }
-  /* .footer-section-one {
+  /*.footer-section-one {
     border: 2px solid blue;
   } */
   .footer-section-two {
@@ -304,12 +308,14 @@ button:hover {
     display: flex;
     flex-direction: column;
     min-width: 190px;
+    margin-top: 4px;
   }
   .footer-section-columns span {
-    margin: 0.25rem 0rem;
-    font-weight: 600;
-    color: #4c4c4c;
+    margin: 0.55rem 0rem;
+    font-weight: 900;
+    color: #f6f2f2;
     cursor: pointer;
+    font-size: 12px;
   }
 .custom-drawer {
   position: fixed;
