@@ -46,15 +46,5 @@
     color: #000000; /* Changed text color */
   }
   
-  .title::after {
-    content: '';
-    background: #B5D1E2;
-    width: 260px;
-    height: 3px;
-    border-radius: 3px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+
   

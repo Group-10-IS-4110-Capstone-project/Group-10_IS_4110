@@ -30,6 +30,9 @@
   flex: 1;
   text-align: center;
 }
+.footer-col-2{
+  font-size: 15px;
+}
 
 .footer-col-1 img {
   width: 180px;
