@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Styles/Navbar_2.css'
 import Data_Science from '../assets/DataScience.jpg'
 import Searchbar from '../components/Searchbar'
 
 function Navbar_2() {
+
+  const [results, setResults] = useState([]);
+
   return (
     <div>
     <div className='navbar'>
@@ -14,7 +17,12 @@ function Navbar_2() {
       <button className="primary-button">CONTACT US</button>  
       </div>
     </div>
-    <Searchbar />
+    <div className='Search'>
+      <div className="search-bar-container">
+        <Searchbar setResults={setResults} />
+        <div>SearchResults</div>
+      </div>
+  </div>
     <div className="data-science-container">
   <img src={Data_Science} alt='' className="data-science-image" />
   <p className="data-science-description">
