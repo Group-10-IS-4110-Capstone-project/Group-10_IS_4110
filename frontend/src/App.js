@@ -11,6 +11,8 @@ import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
 import ChangePassword from './components/ForgotPassword/ChangePassword';
 import Experts from './pages/Experts';
 import AdminUnder from './pages/Admin/AdminUnder';
+import AdminEx from './pages/Admin/AdminEx';
+import AdminContent from './pages/Admin/AdminContent';
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 
@@ -23,8 +25,9 @@ function App() {
         <Route path="/" element={<Home />} />
           <Route path="/Datascience" element={<Datascience/>} />
           <Route path="/Artificial" element={<Artificial/>} />
-         
-         
+
+         <Route path="/AdminContent" element={<AdminContent></AdminContent>}></Route>
+          <Route path="/AdminEx" element={<AdminEx></AdminEx>}></Route>
           <Route path="/AdminUnder" element={<AdminUnder></AdminUnder>}></Route>
           <Route path="/Signup" element={<SignUp></SignUp>}></Route>
           <Route path="/Login" element={<Login></Login>} ></Route>

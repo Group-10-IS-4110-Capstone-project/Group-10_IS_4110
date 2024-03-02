@@ -1,9 +1,9 @@
 import React from "react"; 
-import './AdminUnder.css'
+import './AdminEx.css'
 import Button from "react-bootstrap/Button";
 import white from "../../assets/white_background.jpg";
 
-function AdminUnder() {
+function AdminEx() {
     return (
 
 <div className="admin-page">
@@ -21,8 +21,10 @@ function AdminUnder() {
             </div>
 
                 <div className="under">
-               
-                    Undergraduate
+                <a href="http://localhost:3000/AdminUnder">
+                Undergraduate
+                  </a>
+                    
                     </div>
 
 
@@ -38,7 +40,7 @@ function AdminUnder() {
 
                 <div className="Cont">Content</div>
 
-                <div className="text-wrapper-5">Undergraduate</div>
+                <div className="text-wrapper-5">Expert</div>
 
                 <img
 
@@ -101,7 +103,7 @@ function AdminUnder() {
                 <div className="rectangle-13" />
 
                 <div className="text-wrapper-11">
-                    View users
+                    View experts
                 </div>
 
                 <div className="text-wrapper-12">A.B.C. Silva</div>
@@ -114,7 +116,7 @@ function AdminUnder() {
                 <div className="text-wrapper-16">A.B.C. Silva</div>
 
                 <div className="add-users"><Button className="butn" variant="primary" >
-                Add users
+                Add experts
                 </Button>{" "}</div>
 
                 </div>
@@ -124,5 +126,4 @@ function AdminUnder() {
             </div>
 );
 };
-
-export default AdminUnder
+export default AdminEx
