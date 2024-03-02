@@ -35,7 +35,7 @@ const expertRegister = async (req, res) => {
       jobFeild,
       workExperience,
       email,
-      password,
+      password: hashedPassword,
     });
 
     res.json(expert);
