@@ -7,7 +7,7 @@ function Description_AI() {
     <div className="data-science-container">
       <img src={AI} alt='' className="data-science-image" />
   <p className="data-science-description">
-    <b>Data science </b>continues to evolve as one of the most promising and in-demand career paths for skilled professionals. Today, successful data professionals understand that they must advance past the traditional skills of analyzing large amounts of data, data mining, and programming skills. In order to uncover useful intelligence for their organizations, data scientists must master the full spectrum of the data science life cycle and possess a level of flexibility and understanding to maximize returns at each phase of the process.
+    <b>Artificial intelligence </b>is a multidisciplinary field that merges computer science with extensive datasets to facilitate effective problem-solving. It includes sub-fields like machine learning, where algorithms learn patterns from data to make predictions or decisions, and deep learning, which employs neural networks to process complex data. These techniques enable AI systems to mimic human intelligence, recognize patterns, and adapt to new information. AI's ultimate goal is to develop autonomous systems capable of reasoning, understanding natural language, and performing tasks with high precision, revolutionizing industries and enhancing everyday life through intelligent automation and decision-making.
   </p>
     </div>
   )
