@@ -10,6 +10,8 @@ import Login from './pages/Login/Login';
 import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
 import ChangePassword from './components/ForgotPassword/ChangePassword';
 import Experts from './pages/Experts';
+import Data_Science from './pages/Data_Science'
+import Artificial_Intelligence from './pages/Artificial_Intelligence';
 
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
@@ -30,7 +32,10 @@ function App() {
           <Route path="/Login" element={<Login></Login>} ></Route>
           <Route path="/ForgotPassword" element={<ForgotPwd></ForgotPwd>}></Route>
           <Route path="/ChangePassword/:id/:token" element={<ChangePassword></ChangePassword>}></Route>
+
           <Route path="/Experts" element={<Experts></Experts>} ></Route>
+          <Route path="/Data_Science" element={<Data_Science></Data_Science>} ></Route>
+          <Route path="/Artificial_Intelligence" element={<Artificial_Intelligence></Artificial_Intelligence>} ></Route>
 
         </Routes>
         
