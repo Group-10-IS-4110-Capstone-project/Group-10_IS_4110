@@ -1,0 +1,50 @@
+.courses {
+    padding-top: 50px;
+    background-color: #B5D1E2;
+  }
+  
+  .courses .col-3 {
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+    margin-bottom: 30px; /* Added margin bottom for spacing between boxes */
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+    background-color: #fff;
+    border-radius: 50px;
+  }
+  
+  .courses .col-3 img {
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+  }
+  
+  .courses .col-3:hover {
+    transform: translateY(-10px);
+  }
+  
+  .col-3 p {
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+  }
+  
+  .courses .col-3 h3 {
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+  }
+  .title {
+    text-align: center;
+    margin: 0 auto 40px; /* Adjusted margin */
+    position: relative;
+    line-height: 60px;
+    color: #000000; /* Changed text color */
+  }
+  
+
+  

@@ -243,6 +243,7 @@ function Datascience() {
         />
       </div>
     </div>
+    
     <div className="overlap-4">
       <div className="things">Things recomend by experts</div>
       <div className="elements-of">
