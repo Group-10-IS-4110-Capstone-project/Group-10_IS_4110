@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import '../Styles/Navbar_2.css'
 import Data_Science from '../assets/DataScience.jpg'
 import Searchbar from '../components/Searchbar'
+import SearchbarResults from './SearchbarResults';
+
 
 function Navbar_2() {
 
@@ -20,7 +22,7 @@ function Navbar_2() {
     <div className='Search'>
       <div className="search-bar-container">
         <Searchbar setResults={setResults} />
-        <div>SearchResults</div>
+        <SearchbarResults results={results} />
       </div>
   </div>
     <div className="data-science-container">
