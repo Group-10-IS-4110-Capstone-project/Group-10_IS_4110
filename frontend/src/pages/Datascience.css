@@ -1258,3 +1258,29 @@
       padding: 31px 30px;
   }
 
+  @media (min-width: 768px) {
+    /* Adjust styles for larger screens */
+    .index{
+      text-align: left;
+    }
+  }
+  @media (max-width: 768px) {
+    /* Styles for smaller screens */
+    .index{
+      text-align: left;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for medium-sized screens */
+    .index{
+      text-align: left;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    /* Styles for larger screens */
+    .index{
+      text-align: left;
+    }
+  }
