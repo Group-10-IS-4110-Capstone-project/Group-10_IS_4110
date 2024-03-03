@@ -36,7 +36,13 @@
 
 .col-3 img {
   width: 60%;
+  transition: transform 0.5s; /* Added transition property */
 }
+
+.col-3 img:hover {
+  transform: scale(1.1); /* Example transform on hover */
+}
+
 
 .white-box {
   text-align: center;
