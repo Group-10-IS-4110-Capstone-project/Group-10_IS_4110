@@ -31,28 +31,7 @@
 .primary-button:hover {
   background-color: rgb(240, 245, 252);
 }
-.data-science-container {
-  background-color: #B5D1E2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 2px;
-}
 
-.data-science-image {
-  max-width: 100%; /* Set maximum width to 100% */
-  width: 100%; /* Ensures image fills its container */
-}
-
-.data-science-description {
-  text-align: justify;
-  margin-top: 25px;
-  font-size: 19px;
-  margin-left: 80px;
-  margin-right: 80px;
-  margin-bottom: 35px;
-}
 .Search{
   background-color: #B5D1E2;
   height: 12vh;
