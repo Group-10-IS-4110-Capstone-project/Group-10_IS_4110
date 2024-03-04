@@ -1,7 +1,12 @@
 import React from 'react'
+import '../Styles/Experts.css'
 import Navbar_2 from '../components/Navbar_2'
 import Footer from '../components/Footer'
-import Searchbar from '../components/Searchbar'
+import Recommended from '../components/Recommended'
+import Courses from '../components/Courses'
+import Connect from '../components/Connect'
+
+
 
 
 function Experts() {
@@ -10,7 +15,9 @@ function Experts() {
       <div className='content-wrap'>
           <Navbar_2 />
       </div>
-      <Searchbar />
+      <Recommended />
+      <Courses />
+      <Connect />
       <div>
         <Footer />
       </div>

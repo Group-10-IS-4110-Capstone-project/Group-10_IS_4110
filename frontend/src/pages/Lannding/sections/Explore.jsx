@@ -10,6 +10,7 @@ import Block_Chain from "../../../assets/Group 13.png";
 import Web_Development from "../../../assets/Group 14.png";
 
 
+
 const Explore = () => {
   const workInfoData = [
     {
@@ -40,6 +41,7 @@ const Explore = () => {
     {
       image:Web_Development,
     },
+    
 
 
   ];
@@ -47,7 +49,7 @@ const Explore = () => {
     
   <div className="work-section-wrapper container">
       <div className="work-section-top">
-        <p className="primary-subheading">Explore IT fields</p>
+        <p className="primary-subheading">Explore IT Fields</p>
         <p className="primary-text primary-text-2">
         understand the different specializations, career paths, and opportunities available 
 within the IT industry.

@@ -1,14 +1,15 @@
 import React from "react";
+import NavBar from './NavBar';
 // import BannerBackground from "../assets/Background.png";
 import BannerImage from "../../../assets/1imag.png"
-// import Navbar from "../sections/Navbar";
+
 
 
 const Hero = () => {
   return (
     <div className="outer-container outer-home-container">
     <div className="home-container container">
-      {/* <Navbar /> */}
+    <NavBar/> 
       <div className="home-banner-container">
         <div className="home-text-section">
           <h1 className="primary-heading">
