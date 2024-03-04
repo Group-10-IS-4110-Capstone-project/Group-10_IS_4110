@@ -9,7 +9,19 @@ import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
 import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
 import ChangePassword from './components/ForgotPassword/ChangePassword';
-import Experts from './pages/Experts';
+import AdminContent from './pages/Admin/AdminContent'
+import AdminEx from './pages/Admin/AdminEx'
+import AdminUnder from './pages/Admin/AdminUnder'
+
+import Cyber_Security from './pages/Cyber_Security'
+import Data_Science from './pages/Data_Science'
+import Artificial_Intelligence from './pages/Artificial_Intelligence'
+import BlockChain from './pages/BlockChain'
+import Cloud_Computing from './pages/Cloud_Computing'
+import DevOps from './pages/DevOps'
+import Machine_Learning from './pages/Machine_Learning'
+import Mobile_app_Dev from './pages/Mobile_app_Dev'
+import Web_Development from './pages/Web_Development'
 
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
