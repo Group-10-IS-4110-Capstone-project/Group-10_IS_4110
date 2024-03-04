@@ -7,7 +7,7 @@ function MAD_Description() {
     <div className="data-science-container">
       <img src={Data_Science} alt='' className="data-science-image" />
   <p className="data-science-description">
-    <b>DevOps </b>is a software development methodology that emphasizes collaboration, communication, and integration between software development (Dev) and IT operations (Ops) teams. The goal of DevOps is to streamline the software delivery process, increase the frequency of software releases, and improve the overall quality and reliability of software applications.
+    <b>Mobile App Development </b>is the process of creating software applications specifically designed to run on mobile devices, such as smartphones and tablets. With the increasing ubiquity and popularity of mobile devices, mobile app development has become a crucial aspect of software development, enabling businesses and individuals to reach and engage with their target audiences on-the-go.
   </p>
     </div>
   )

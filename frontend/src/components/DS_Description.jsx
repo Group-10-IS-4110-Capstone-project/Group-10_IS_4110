@@ -7,7 +7,17 @@ function DS_Description() {
     <div className="data-science-container">
       <img src={Data_Science} alt='' className="data-science-image" />
   <p className="data-science-description">
-    <b>Web Development </b>refers to the process of building, creating, and maintaining websites and web applications. It encompasses a variety of tasks, including web design, front-end development, back-end development, and web server configuration. Web developers use a combination of programming languages, frameworks, and tools to create functional and visually appealing websites that meet the needs of users and businesses.
+    <b>Data science </b>continues to evolve as one of the 
+most promising and in-demand career paths for
+skilled professionals. Today, successful data 
+professionals understand that they must advance 
+past the traditional skills of analyzing large 
+amounts of data, data mining, and programming 
+skills. In order to uncover useful intelligence for 
+their organizations, data scientists must master 
+the full spectrum of the data science life cycle and 
+possess a level of flexibility and understanding to 
+maximize returns at each phase of the process.
   </p>
     </div>
   )

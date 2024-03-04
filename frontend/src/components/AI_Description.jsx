@@ -7,7 +7,18 @@ function AI_Description() {
     <div className="data-science-container">
       <img src={Data_Science} alt='' className="data-science-image" />
   <p className="data-science-description">
-    <b>Cloud Computing </b>is a technology that enables users to access and utilize computing resources, such as servers, storage, databases, networking, software, and more, over the internet. Instead of owning and maintaining physical hardware and infrastructure, users can leverage cloud services provided by third-party providers to run their applications, store their data, and perform various computing tasks.
+    <b>Artificial intelligence </b>is a multidisciplinary field that merges 
+computer science with extensive datasets to facilitate effective 
+problem-solving. It includes sub-fields like machine learning, 
+where algorithms learn patterns from data to make predictions 
+or decisions, and deep learning, which employs neural networks 
+to process complex data. These techniques enable AI systems 
+to mimic human intelligence, recognize patterns, and adapt to 
+new information. AI's ultimate goal is to develop autonomous 
+systems capable of reasoning, understanding natural language, 
+and performing tasks with high precision, revolutionizing 
+industries and enhancing everyday life through intelligent 
+automation and decision-making.
   </p>
     </div>
   )

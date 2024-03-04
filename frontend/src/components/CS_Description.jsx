@@ -7,7 +7,8 @@ function CS_Description() {
     <div className="data-science-container">
       <img src={Data_Science} alt='' className="data-science-image" />
   <p className="data-science-description">
-    <b>Cloud Computing </b>is a technology that enables users to access and utilize computing resources, such as servers, storage, databases, networking, software, and more, over the internet. Instead of owning and maintaining physical hardware and infrastructure, users can leverage cloud services provided by third-party providers to run their applications, store their data, and perform various computing tasks.
+    <b>Cyber Security </b>is a field of technology focused on protecting computer systems, networks, and data from cyber threats such as hacking, malware, and unauthorized access. It encompasses a range of practices, technologies, and processes designed to safeguard digital assets and mitigate risks to information security.
+    Similar to cloud computing, cybersecurity involves accessing and utilizing resources, but in this case, the focus is on securing those resources against malicious actors and potential vulnerabilities. Cybersecurity professionals work to identify and assess risks, implement security measures, and respond to security incidents to protect organizations' data and infrastructure.
   </p>
     </div>
   )
