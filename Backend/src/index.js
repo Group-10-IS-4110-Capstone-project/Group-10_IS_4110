@@ -2,45 +2,49 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
-const cookieParser = require("cookie-parser")
+const cookieParser = require("cookie-parser");
 // const hbs = require("hbs");
 // const UnderGraduateModel = require("../models/UnderGraduate")
 // const bcrypt = require('bcrypt');
 // const jwt = require('jsonwebtoken');
 // const nodemailer = require('nodemailer');
 
-const admin = require("../Routes/admin")
-const users = require("../Routes/users")
-const experts = require("../Routes/expert")
-const message = require("../Routes/message")
-
+const admin = require("../Routes/admin");
+const users = require("../Routes/users");
+const experts = require("../Routes/expert");
+const message = require("../Routes/message");
+const content = require("../Routes/content");
+const advertisement = require("../Routes/advertisement")
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-const connectionString = "mongodb+srv://avishka1999perera:Avishka@login.ufmfqma.mongodb.net/Login?retryWrites=true&w=majority"
+const connectionString =
+  "mongodb+srv://avishka1999perera:Avishka@login.ufmfqma.mongodb.net/Login?retryWrites=true&w=majority";
 
 mongoose.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  
-  const db = mongoose.connection;
-  
-  db.on('error', (error) => {
-    console.error('MongoDB connection error:', error);
-  });
-  
-  db.once('open', () => {
-    console.log('Connected to MongoDB');
-  });
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-app.use("/admin",admin)
-app.use("/user", users)
-app.use("/expert",experts)
-app.use("/message",message)
+const db = mongoose.connection;
+
+db.on("error", (error) => {
+  console.error("MongoDB connection error:", error);
+});
+
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
+
+app.use("/admin", admin);
+app.use("/user", users);
+app.use("/expert", experts);
+app.use("/message", message);
+app.use("/content", content);
+app.use("/advertisement", advertisement)
 
 // app.post('/api/register', async (req, res) => {
 //   try {
@@ -64,9 +68,6 @@ app.use("/message",message)
 //       res.status(500).json({ error: 'Internal Server Error' });
 //   }
 // });
-
-
-
 
 // app.post('/api/login', async (req, res) => {
 //   try {
@@ -95,8 +96,6 @@ app.use("/message",message)
 //       res.status(500).json({ error: 'Internal Server Error' });
 //   }
 // });
-
-
 
 // app.post('/api/forgotpassword', async (req, res) => {
 //   const { email } = req.body;
@@ -169,5 +168,5 @@ app.use("/message",message)
 
 const port = 3001;
 app.listen(port, () => {
-    console.log(`server running on port : ${port}`)
-})
+  console.log(`server running on port : ${port}`);
+});

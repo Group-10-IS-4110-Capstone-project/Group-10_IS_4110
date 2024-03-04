@@ -6,6 +6,9 @@ const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const AdminModel = require("../models/Admin");
 
+const { verifyToken } = require('../middleware/protectRoute');
+
+
 const userTest = (req, res) => {
   res.send({
     message: "done",
@@ -73,12 +76,13 @@ const userLogin = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (passwordMatch) {
-        res.json({ message: "success" });
+        // Generate JWT token
+        const token = jwt.sign({ userId: user._id, userType: 'undergraduate' }, '10', { expiresIn: '1h' });
+        return res.json({ message: 'success', token });
       } else {
-        res.json({ message: "Incorrect password" });
+        return res.json({ message: 'Incorrect password user' });
       }
 
-      return;
     }
 
     const expert = await ExpertModel.findOne({ email: lowercasedEmail });
@@ -88,11 +92,12 @@ const userLogin = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, expert.password);
 
       if (passwordMatch) {
-        res.json({ message: "success" });
+        // Generate JWT token
+        const token = jwt.sign({ userId: expert._id, userType: 'expert' }, '10', { expiresIn: '1h' });
+        return res.json({ message: 'success', token });
       } else {
-        res.json({ message: "Incorrect password" });
+        return res.json({ message: 'Incorrect password admin' });
       }
-      return;
     }
 
     //admin login
@@ -103,11 +108,12 @@ const userLogin = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, admin.password);
 
       if (passwordMatch) {
-        res.json({ message: "success-admin" });
+        // Generate JWT token
+        const token = jwt.sign({ userId: admin._id, userType: 'admin' }, '10', { expiresIn: '1h' });
+        return res.json({ message: 'success-admin', token });
       } else {
-        res.json({ message: "Incorrect password" });
+        return res.json({ message: 'Incorrect password' });
       }
-      return;
     }
 
 
@@ -216,6 +222,28 @@ const forgotPassword = async (req, res) => {
 
 //change password ----
 
+// const changePassword = (req, res) => {
+//   const { id, token } = req.params;
+//   const { password } = req.body;
+
+//   jwt.verify(token, "10", (err, decoded) => {
+//     if (err) {
+//       return res.json({ status: "Error with token" });
+//     } else {
+//       bcrypt
+//         .hash(password, 10)
+//         .then((hash) => {
+//           UnderGraduateModel.findByIdAndUpdate({ _id: id }, { password: hash })
+//             .then((u) => res.send({ status: "Success" }))
+//             .catch((err) => res.send({ status: err }));
+//         })
+//         .catch((err) => res.send({ status: err }));
+//     }
+//   });
+// };
+
+//********************* */
+
 const changePassword = (req, res) => {
   const { id, token } = req.params;
   const { password } = req.body;
@@ -227,14 +255,33 @@ const changePassword = (req, res) => {
       bcrypt
         .hash(password, 10)
         .then((hash) => {
+          // Check if the decoded ID belongs to an undergraduate user
           UnderGraduateModel.findByIdAndUpdate({ _id: id }, { password: hash })
-            .then((u) => res.send({ status: "Success" }))
+            .then((u) => {
+              if (u) {
+                return res.send({ status: "Success" });
+              }
+
+              // If not an undergraduate user, check if it belongs to an expert
+              ExpertModel.findByIdAndUpdate({ _id: id }, { password: hash })
+                .then((e) => {
+                  if (e) {
+                    return res.send({ status: "Success" });
+                  }
+
+                  // If neither undergraduate user nor expert, return an error
+                  return res.send({ status: "Invalid ID" });
+                })
+                .catch((err) => res.send({ status: err }));
+            })
             .catch((err) => res.send({ status: err }));
         })
         .catch((err) => res.send({ status: err }));
     }
   });
 };
+
+
 
 ///logout
 
@@ -248,6 +295,39 @@ const logOut = async(req,res) => {
   }
 }
 
+// Controller to update user data
+const updateUser = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const { firstName, lastName, university, email, password, bio } = req.body;
+
+    // Check if the user has a valid token and the token matches the user type
+    // if (!req.userId || req.userId !== userId || req.userType !== 'undergraduate') {
+    //   return res.status(401).json({ error: 'Unauthorized - Invalid token for this operation' });
+    // }
+
+    const user = await UnderGraduateModel.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.university = university;
+    user.email = email;
+    user.password = password;
+    user.bio = bio;
+
+    await user.save();
+
+    res.json({ message: 'User updated successfully', user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   userTest,
   userRegister,
@@ -255,4 +335,5 @@ module.exports = {
   forgotPassword,
   changePassword,
   logOut,
+  updateUser
 };
