@@ -10,7 +10,7 @@ import Login from './pages/Login/Login';
 import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
 import ChangePassword from './components/ForgotPassword/ChangePassword';
 
-import Experts from './pages/Experts';
+
 import Cyber_Security from './pages/Cyber_Security'
 import Data_Science from './pages/Data_Science'
 import Artificial_Intelligence from './pages/Artificial_Intelligence';
@@ -41,7 +41,6 @@ function App() {
           <Route path="/ForgotPassword" element={<ForgotPwd></ForgotPwd>}></Route>
           <Route path="/ChangePassword/:id/:token" element={<ChangePassword></ChangePassword>}></Route>
 
-          <Route path="/Experts" element={<Experts></Experts>} ></Route>
           <Route path="/Cyber_Security" element={<Cyber_Security></Cyber_Security>} ></Route>
           <Route path="/Data_Science" element={<Data_Science></Data_Science>} ></Route>
           <Route path="/Artificial_Intelligence" element={<Artificial_Intelligence></Artificial_Intelligence>} ></Route>
