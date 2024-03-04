@@ -5,17 +5,14 @@ import Footer from '../components/Footer'
 import Recommended from '../components/Recommended'
 import Courses from '../components/Courses'
 import Connect from '../components/Connect'
-import Description from '../components/DO_Description'
+import CS_Description from '../components/CS_Description'
 
-
-
-
-function Experts() {
+function Cyber_Security() {
   return (
     <div className='Ex_pge'>
       <div className='content-wrap'>
           <Navbar_2 />
-          <Description />
+          <CS_Description />
       </div>
       <Recommended />
       <Courses />
@@ -27,4 +24,4 @@ function Experts() {
   )
 }
 
-export default Experts
+export default Cyber_Security

@@ -5,17 +5,14 @@ import Footer from '../components/Footer'
 import Recommended from '../components/Recommended'
 import Courses from '../components/Courses'
 import Connect from '../components/Connect'
-import Description from '../components/DO_Description'
+import MAD_Description from '../components/MAD_Description'
 
-
-
-
-function Experts() {
+function Mobile_app_Dev() {
   return (
     <div className='Ex_pge'>
       <div className='content-wrap'>
           <Navbar_2 />
-          <Description />
+          <MAD_Description />
       </div>
       <Recommended />
       <Courses />
@@ -27,4 +24,4 @@ function Experts() {
   )
 }
 
-export default Experts
+export default Mobile_app_Dev

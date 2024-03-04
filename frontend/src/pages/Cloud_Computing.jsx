@@ -5,17 +5,15 @@ import Footer from '../components/Footer'
 import Recommended from '../components/Recommended'
 import Courses from '../components/Courses'
 import Connect from '../components/Connect'
-import Description from '../components/DO_Description'
+import CC_Description from '../components/CC_Description'
 
 
-
-
-function Experts() {
+function Cloud_Computing() {
   return (
     <div className='Ex_pge'>
       <div className='content-wrap'>
           <Navbar_2 />
-          <Description />
+          <CC_Description />
       </div>
       <Recommended />
       <Courses />
@@ -27,4 +25,4 @@ function Experts() {
   )
 }
 
-export default Experts
+export default Cloud_Computing

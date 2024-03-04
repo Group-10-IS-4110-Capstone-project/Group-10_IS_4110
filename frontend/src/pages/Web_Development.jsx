@@ -5,17 +5,14 @@ import Footer from '../components/Footer'
 import Recommended from '../components/Recommended'
 import Courses from '../components/Courses'
 import Connect from '../components/Connect'
-import Description from '../components/DO_Description'
+import WD_Description from '../components/WD_Description'
 
-
-
-
-function Experts() {
+function Web_Development() {
   return (
     <div className='Ex_pge'>
       <div className='content-wrap'>
           <Navbar_2 />
-          <Description />
+          <WD_Description />
       </div>
       <Recommended />
       <Courses />
@@ -27,4 +24,4 @@ function Experts() {
   )
 }
 
-export default Experts
+export default Web_Development
