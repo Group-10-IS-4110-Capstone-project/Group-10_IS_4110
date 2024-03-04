@@ -96,4 +96,14 @@ const deleteContent = async (req, res) => {
   }
 };
 
-module.exports = { createContent, updateContent, deleteContent };
+const getAllContent = async (req, res) => {
+  try {
+    const allContent = await ContentModel.find();
+    res.json({ content: allContent });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
+module.exports = { createContent, updateContent, deleteContent, getAllContent };
