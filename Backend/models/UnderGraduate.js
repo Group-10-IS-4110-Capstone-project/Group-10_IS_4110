@@ -5,7 +5,8 @@ const UnderGraduateSchema = new mongoose.Schema({
     lastName : String,
     university : String,
     email : String,
-    password : String
+    password : String,
+    bio : String 
 },{timestamps: true});
 
 

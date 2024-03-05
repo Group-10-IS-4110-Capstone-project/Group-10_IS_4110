@@ -9,11 +9,13 @@ import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
 import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
 import ChangePassword from './components/ForgotPassword/ChangePassword';
+import AdminContent from './pages/Admin/AdminContent'
+import AdminEx from './pages/Admin/AdminEx'
+import AdminUnder from './pages/Admin/AdminUnder'
 
-import Experts from './pages/Experts';
 import Cyber_Security from './pages/Cyber_Security'
 import Data_Science from './pages/Data_Science'
-import Artificial_Intelligence from './pages/Artificial_Intelligence';
+import Artificial_Intelligence from './pages/Artificial_Intelligence'
 import BlockChain from './pages/BlockChain'
 import Cloud_Computing from './pages/Cloud_Computing'
 import DevOps from './pages/DevOps'
@@ -33,15 +35,15 @@ function App() {
         <Route path="/" element={<Home />} />
           <Route path="/Datascience" element={<Datascience/>} />
           <Route path="/Artificial" element={<Artificial/>} />
-         
-         
 
+         <Route path="/AdminContent" element={<AdminContent></AdminContent>}></Route>
+          <Route path="/AdminEx" element={<AdminEx></AdminEx>}></Route>
+          <Route path="/AdminUnder" element={<AdminUnder></AdminUnder>}></Route>
           <Route path="/Signup" element={<SignUp></SignUp>}></Route>
           <Route path="/Login" element={<Login></Login>} ></Route>
           <Route path="/ForgotPassword" element={<ForgotPwd></ForgotPwd>}></Route>
           <Route path="/ChangePassword/:id/:token" element={<ChangePassword></ChangePassword>}></Route>
 
-          <Route path="/Experts" element={<Experts></Experts>} ></Route>
           <Route path="/Cyber_Security" element={<Cyber_Security></Cyber_Security>} ></Route>
           <Route path="/Data_Science" element={<Data_Science></Data_Science>} ></Route>
           <Route path="/Artificial_Intelligence" element={<Artificial_Intelligence></Artificial_Intelligence>} ></Route>
