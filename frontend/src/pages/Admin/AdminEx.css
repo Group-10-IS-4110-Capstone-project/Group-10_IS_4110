@@ -6,6 +6,7 @@
   width: 100%;
 }
 
+<<<<<<< HEAD
 .admin-page .overlap-group-wrapper {
   background-color: #83b1cf;
   height: 800px;
@@ -16,17 +17,43 @@
 .admin-page.overlap-group {
   height: 680px;
   left: 5px;
+=======
+.admin-page .group-wrapper {
+background-color:#83B1CF;
+height: 900px;
+width: 1440px;
+position: relative;
+}
+
+.admin-page.thar{
+height: 680px;
+left: 5px;
+
+top:58px;
+width: 1344px;
+>>>>>>> 98516c0a64553b7adcf7b7dd5be1989294119b57
 
   top: 58px;
   width: 1344px;
 }
 
+<<<<<<< HEAD
 .admin-page .group {
   height: 680px;
   left: 20px;
   position: absolute;
   width: 1342px;
   top: 10px;
+=======
+.admin-page .cove {
+
+height: 680px;
+left: 20px;
+position: absolute;
+width: 1342px;
+top: 10px;
+
+>>>>>>> 98516c0a64553b7adcf7b7dd5be1989294119b57
 }
 
 .admin-page .rectangle {
@@ -39,6 +66,7 @@
   top: 10px;
 }
 
+<<<<<<< HEAD
 .admin-page .div {
   background-color: #043e7d;
   border-radius: 0px 15px 15px 0px;
@@ -47,6 +75,18 @@
   position: absolute;
   top: 10px;
   width: 880px;
+=======
+.admin-page .diva {
+
+    background-color: #043e7d;
+    border-radius: 0px 15px 15px 0px;
+    height: 680px;
+    left:480px;
+    position: absolute;
+    top:10px;
+    width: 880px;
+    
+>>>>>>> 98516c0a64553b7adcf7b7dd5be1989294119b57
 }
 
 .admin-page .under {
@@ -163,6 +203,7 @@ a {
 
   border-radius: 50px;
 
+<<<<<<< HEAD
   height: 41px;
 
   left: 1161px;
@@ -406,3 +447,156 @@ a {
     position: relative;
     bottom: 7px;
 }
+=======
+            }
+            
+            .admin-page .text-wrapper-13 {
+            
+            color: #000000;
+            
+            font-family: "Inter", Helvetica;
+            
+            font-size: 16px;
+            
+            font-weight: 700;
+            
+            left: 607px;
+            line-height: normal;
+            
+            position: absolute;
+            
+            top: 300px;
+            
+            white-space: nowrap;
+            }
+            
+            .admin-page .text-wrapper-14 {
+            
+            color: #000000;
+            font-family: "Inter", Helvetica;
+            font-size: 16px;
+            font-weight: 700;
+            left: 607px;
+            line-height: normal;
+            position: absolute;
+            top: 372px; 
+            white-space:nowrap;
+            
+            }
+            
+  
+            .admin-page .text-wrapper-15 {
+                color: #000000;
+                font-family: "Inter", Helvetica;
+                font-size: 16px;
+                font-weight: 700;
+                left: 607px;
+                letter-spacing: 0;
+                line-height: normal;
+                position: absolute;
+                top: 444px;
+                white-space: nowrap;
+            
+            }
+            
+            .admin-page .text-wrapper-16 {
+                color: #000000;
+                font-family: "Inter", Helvetica;
+                font-size: 16px;
+                font-weight: 700;
+                left: 607px;
+                letter-spacing: 0;
+                line-height: normal;
+                position: absolute;
+                top: 516px;
+                white-space: nowrap;
+            
+            }
+            
+            .admin-page .add-users {
+            
+             
+                
+                left: 830px;
+                letter-spacing: 0;
+                line-height: normal;
+                position: absolute;
+                top: 597px;
+                width: 131px;
+            }
+
+            
+            /*responsive*/
+          
+
+/* Common styles for all screen sizes */
+
+  
+  /* Styles for screens with a minimum width of 768px (tablets and larger) */
+  @media (min-width: 768px) {
+    .admin-page {
+      flex-direction: row;
+    }
+  
+    .admin-page .overlap-group-wrapper {
+      width: 768px; /* Set a maximum width for the content */
+      margin: 0 auto; /* Center the content horizontally */
+    }
+  
+    .admin-page .overlap-group {
+      width: 100%; /* Full width */
+    }
+  
+    .admin-page .group {
+      width: 100%; /* Full width */
+    }
+  
+    .admin-page .rectangle,
+    .admin-page .div {
+      width: 50%; /* Adjust based on your design */
+    }
+  
+    .admin-page .under,
+    .admin-page .expert,
+    .admin-page .chat,
+    .admin-page .Cont,
+    .admin-page .text-wrapper-5,
+    .admin-page .text-wrapper-11,
+    .admin-page .text-wrapper-12,
+    .admin-page .text-wrapper-13,
+    .admin-page .text-wrapper-14,
+    .admin-page .text-wrapper-15,
+    .admin-page .text-wrapper-16 {
+      text-align: left;
+    }
+  }
+  
+  /* Styles specific to screens with a maximum width of 576px (mobile devices) */
+  @media (max-width: 576px) {
+    .admin-page {
+      padding: 10px;
+    }
+  
+    .admin-page .overlap-group-wrapper {
+      width: 100%; /* Full width */
+    }
+  
+    .admin-page .overlap-group {
+      width: 100%; /* Full width */
+    }
+  
+    .admin-page .group {
+      width: 100%; /* Full width */
+    }
+  
+    .admin-page .rectangle,
+    .admin-page .div {
+      width: 100%; /* Full width */
+    }
+  
+    .admin-page .butn {
+      width: 100%; /* Full width for buttons on smaller screens */
+    }
+  }
+  
+>>>>>>> 98516c0a64553b7adcf7b7dd5be1989294119b57
