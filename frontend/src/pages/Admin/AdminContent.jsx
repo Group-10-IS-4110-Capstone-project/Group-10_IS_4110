@@ -29,6 +29,7 @@ const AdminContent = () => {
             </div>
 
                 <div className="under">
+                  
                 <a href="http://localhost:3000/AdminUnder">
                 Undergraduate
                   </a>
@@ -143,17 +144,7 @@ const AdminContent = () => {
 
                
 
-           
-            
-
-         
-
-              
-
-              
-              
-              
-
+     
                 
 
                
