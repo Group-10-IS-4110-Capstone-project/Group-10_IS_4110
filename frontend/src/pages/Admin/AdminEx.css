@@ -1,170 +1,153 @@
-
-
 .admin-page {
-    background-color: #83b1cf;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
- 
- 
+  background-color: #83b1cf;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 .admin-page .overlap-group-wrapper {
-background-color:#83B1CF;
-height: 800px;
-width: 1440px;
-position: relative;
+  background-color: #83b1cf;
+  height: 800px;
+  width: 1440px;
+  position: relative;
 }
 
 .admin-page.overlap-group {
-height: 680px;
-left: 5px;
+  height: 680px;
+  left: 5px;
 
-top:58px;
-width: 1344px;
-
+  top: 58px;
+  width: 1344px;
 }
 
 .admin-page .group {
-
-height: 680px;
-left: 20px;
-position: absolute;
-width: 1342px;
-top: 10px;
-
+  height: 680px;
+  left: 20px;
+  position: absolute;
+  width: 1342px;
+  top: 10px;
 }
 
 .admin-page .rectangle {
-background-color: #ffffff;
-border-radius: 15px 0px 0px 15px;
-height: 680px; 
-left:20px;   
-position:absolute;
-width: 510px;
-top:10px;
+  background-color: #ffffff;
+  border-radius: 15px 0px 0px 15px;
+  height: 680px;
+  left: 20px;
+  position: absolute;
+  width: 510px;
+  top: 10px;
 }
 
 .admin-page .div {
-
-    background-color: #043e7d;
-    border-radius: 0px 15px 15px 0px;
-    height: 680px;
-    left:480px;
-    position: absolute;
-    top:10px;
-    width: 880px;
-    
+  background-color: #043e7d;
+  border-radius: 0px 15px 15px 0px;
+  height: 680px;
+  left: 480px;
+  position: absolute;
+  top: 10px;
+  width: 880px;
 }
-    
-.admin-page .under {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 25px;
-    font-weight: 400;
-    left: 78px;
 
-    line-height: normal;
-  
-    position: absolute;
-    top: 100px;
-    white-space: nowrap;
-    
+.admin-page .under {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  left: 78px;
+
+  line-height: normal;
+
+  position: absolute;
+  top: 100px;
+  white-space: nowrap;
 }
 a {
-    text-decoration: none; /* Remove underline */
-    color: #02090c; /* Change link color to your preference */
-/* Add bold font weight */
-    /* You can add more styles as needed */
+  text-decoration: none; /* Remove underline */
+  color: #02090c; /* Change link color to your preference */
+  /* Add bold font weight */
+  /* You can add more styles as needed */
 }
-.butn{
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 18px;
-    font-weight: 700;
-   left: 50px;
-   margin-left: -50%;
-    background-color: rgb(176, 213, 237);
-    border-radius: 18px 18px 18px 18px;
-    width: 150%;
-
- 
-   
+.butn {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  left: 50px;
+  margin-left: -50%;
+  background-color: rgb(176, 213, 237);
+  border-radius: 18px 18px 18px 18px;
+  width: 20%;
 }
-.admin-page .expert{
-    
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 25px;
-    font-weight: 700;
-    left: 78px;
+.admin-page .expert {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 25px;
+  font-weight: 700;
+  left: 78px;
 
-    line-height: normal;
-    mix-blend-mode:darken;
-    position: absolute;
-    top: 159px;
-    white-space:nowrap;
+  line-height: normal;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 159px;
+  white-space: nowrap;
+}
+.admin-page .chat {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  left: 78px;
+  line-height: normal;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 218px;
+  white-space: nowrap;
+}
+.admin-page .Cont {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  left: 78px;
+  letter-spacing: 0;
+  line-height: normal;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 277px;
+  white-space: nowrap;
+}
+.admin-page .text-wrapper-5 {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 578px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 61px;
+  white-space: nowrap;
+}
+.admin-page .line {
+  height: 3px;
+  left: 568px;
+  position: absolute;
+  top: 88px;
+  width: 80px;
+}
 
-    }
-    .admin-page .chat {
+.admin-page .rectangle-2 {
+  /*view*/
+  background-color: #83b1cf;
+  height: 52px;
+  left: 538px;
+  position: absolute;
+  top: 137px;
+  width: 187px;
+}
 
-        color: #000000;
-        font-family: "Inter", Helvetica;
-        font-size: 25px;
-        font-weight: 400;
-        left: 78px;
-        line-height: normal;
-        mix-blend-mode:darken;
-        position: absolute;
-        top: 218px;
-        white-space: nowrap;
-    }
-    .admin-page .Cont{
-        color: #000000;
-        font-family: "Inter", Helvetica;
-        font-size: 25px;
-        font-weight: 400;
-        left: 78px;
-        letter-spacing: 0;
-        line-height: normal;
-        mix-blend-mode: darken;
-        position: absolute;
-        top: 277px;
-        white-space: nowrap;
-    }
-    .admin-page .text-wrapper-5 {
-        color: #ffffff;
-        font-family: "Inter", Helvetica;
-        font-size: 16px;
-        font-weight: 700;
-        left: 578px;
-        letter-spacing: 0;
-        line-height: normal;
-        position: absolute;
-        top: 61px;
-        white-space: nowrap;
-        }
-        .admin-page .line {
-            height: 3px;
-            left: 568px;
-            position: absolute;
-            top: 88px;
-            width: 80px;
-            
-            }
-            
-            .admin-page .rectangle-2 {
-                /*view*/
-                background-color: #83b1cf;
-                height: 52px;
-                left: 538px;
-                position: absolute;
-                top: 137px;
-                width: 187px;
-            }
-            
-            /*.admin-page .rectangle-3 {
+/*.admin-page .rectangle-3 {
                  remove background 1
                 background-color: #148ad9;
                 border-radius: 50px;
@@ -174,243 +157,252 @@ a {
                 top: 220px;
                 width: 145px;
             } */
-            
-        
-       
-            .admin-page.rectangle-5 {
-            
-            background-color: #d4e8f5;
-            
-            border-radius: 50px;
-            
-            height: 41px;
-            
-            left: 1161px;
-            
-            position: absolute;
-            
-            top: 508px;
-            
-            width: 145px;
-            
-            }
-          
-            
-      
-            
-            .admin-page .text-wrapper-6 {
-                color: #000000;
-                font-family: "Inter", Helvetica;
-                font-size: 16px;
-                font-weight: 700;
-                left: 1218px;
-                letter-spacing: 0;
-                line-height: normal;
-                position: absolute;
-                top: 228px;
-                white-space: nowrap;
-            }
 
-            .admin-page .text-wrapper-7 {
-                color: #000000;
-                font-family: "Inter", Helvetica;
-                font-size: 16px;
-                font-weight: 700;
-                left: 1218px;
-                letter-spacing: 0;
-                line-height: normal;
-                position: absolute;
-                top: 447px;
-                white-space: nowrap;
-            }
-            
-            .admin-page .text-wrapper-8 {
-            
-            color: #000000;
-            font-family: "Inter", Helvetica;
-            font-size: 16px;
-            font-weight: 700;
-            left: 1218px;
-            line-height: normal;
-            position:absolute;
-            top: 514px;
-            white-space: nowrap 
-        }
-        .admin-page .text-wrapper-9 {
-            
-            color: #000000;
-            font-family: "Inter", Helvetica;
-            font-size: 16px;
-            font-weight: 700;
-            left: 1218px;
-            line-height: normal;
-            position:absolute;
-            top: 298px;
-            white-space: nowrap 
-        }
-           
-        .admin-page .text-wrapper-10 {
-            
-            color: #000000;
-            font-family: "Inter", Helvetica;
-            font-size: 16px;
-            font-weight: 700;
-            left: 1218px;
-            line-height: normal;
-            position:absolute;
-            top: 370px;
-            white-space: nowrap 
-        }
-        .admin-page .rectangle-8 {
-            background-color: #d9d9d9;
-            height: 41px;
-            left: 538px;
-            position: absolute;
-            top: 218px;
-            width: 391px;
-        }
-            
-            .admin-page .rectangle-9 {
-                background-color: #d9d9d9;
-                height: 41px;
-                left: 538px;
-                position: absolute;
-                top:290px;
-                width: 391px;
-        }
-        .admin-page .rectangle-10 {
-            background-color: #d9d9d9;
-            height: 41px;
-            left: 538px;
-            position: absolute;
-            top:362px;
-            width: 391px;
-    }
-            
-          .admin-page .rectangle-11 {
-            
-                background-color: #d9d9d9;
-                height: 41px;
-                left: 538px;
-                position: absolute;
-                top:434px;
-                width: 391px;
-        }
-            
-            .admin-page .rectangle-12 {
-            
-            background-color: #d9d9d9;
-            
-            height: 41px;
-            
-            left: 538px;
-            
-            position: absolute;
-            
-            top: 506px;
-            
-            width: 391px;
-            
-            }
-            
-        
-            .admin-page .text-wrapper-11 {
-                color: #000000;
-                font-family: "Inter", Helvetica;
-                font-size: 19px;
-                font-weight: 700;
-                left: 536px;
-                line-height:200%;
-                position: absolute;
-                top: 150px;
-                width: 137px;
-            }
+.admin-page.rectangle-5 {
+  background-color: #d4e8f5;
 
-            .admin-page .text-wrapper-12 {
-            
-            color: #000000; 
-            font-family: "Inter", Helvetica;
-            font-size: 16px;
-            font-weight: 700;
-            left: 607px;
-            line-height: normal;
-            position:absolute;
-            top: 228px;
-           
+  border-radius: 50px;
 
-            }
-            
-            .admin-page .text-wrapper-13 {
-            
-            color: #000000;
-            
-            font-family: "Inter", Helvetica;
-            
-            font-size: 16px;
-            
-            font-weight: 700;
-            
-            left: 607px;
-            line-height: normal;
-            
-            position: absolute;
-            
-            top: 300px;
-            
-            white-space: nowrap;
-            }
-            
-            .admin-page .text-wrapper-14 {
-            
-            color: #000000;
-            font-family: "Inter", Helvetica;
-            font-size: 16px;
-            font-weight: 700;
-            left: 607px;
-            line-height: normal;
-            position: absolute;
-            top: 372px; 
-            white-space:nowrap;
-            
-            }
-            
-  
-            .admin-page .text-wrapper-15 {
-                color: #000000;
-                font-family: "Inter", Helvetica;
-                font-size: 16px;
-                font-weight: 700;
-                left: 607px;
-                letter-spacing: 0;
-                line-height: normal;
-                position: absolute;
-                top: 444px;
-                white-space: nowrap;
-            
-            }
-            
-            .admin-page .text-wrapper-16 {
-                color: #000000;
-                font-family: "Inter", Helvetica;
-                font-size: 16px;
-                font-weight: 700;
-                left: 607px;
-                letter-spacing: 0;
-                line-height: normal;
-                position: absolute;
-                top: 516px;
-                white-space: nowrap;
-            
-            }
-            
-            .admin-page .add-users {
-            
-             
-                
-                left: 830px;
-                letter-spacing: 0;
-                line-height: normal;
-                position: absolute;
-                top: 597px;
-                width: 131px;
-            }
+  height: 41px;
+
+  left: 1161px;
+
+  position: absolute;
+
+  top: 508px;
+
+  width: 145px;
+}
+
+/* .admin-page .text-wrapper-6 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 1218px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 228px;
+  white-space: nowrap;
+}
+
+.admin-page .text-wrapper-7 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 1218px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 447px;
+  white-space: nowrap;
+}
+
+.admin-page .text-wrapper-8 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 1218px;
+  line-height: normal;
+  position: absolute;
+  top: 514px;
+  white-space: nowrap;
+}
+.admin-page .text-wrapper-9 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 1218px;
+  line-height: normal;
+  position: absolute;
+  top: 298px;
+  white-space: nowrap;
+}
+
+.admin-page .text-wrapper-10 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 1218px;
+  line-height: normal;
+  position: absolute;
+  top: 370px;
+  white-space: nowrap;
+} */
+.admin-page .rectangle-8 {
+  background-color: #d9d9d9;
+  height: 41px;
+  left: 538px;
+  position: absolute;
+  top: 218px;
+  width: 391px;
+}
+
+.admin-page .rectangle-9 {
+  background-color: #d9d9d9;
+  height: 41px;
+  left: 538px;
+  position: absolute;
+  top: 290px;
+  width: 391px;
+}
+.admin-page .rectangle-10 {
+  background-color: #d9d9d9;
+  height: 41px;
+  left: 538px;
+  position: absolute;
+  top: 362px;
+  width: 391px;
+}
+
+.admin-page .rectangle-11 {
+  background-color: #d9d9d9;
+  height: 41px;
+  left: 538px;
+  position: absolute;
+  top: 434px;
+  width: 391px;
+}
+
+.admin-page .rectangle-12 {
+  background-color: #d9d9d9;
+
+  height: 41px;
+
+  left: 538px;
+
+  position: absolute;
+
+  top: 506px;
+
+  width: 391px;
+}
+
+.admin-page .text-wrapper-11 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 19px;
+  font-weight: 700;
+  left: 536px;
+  line-height: 200%;
+  position: absolute;
+  top: 150px;
+  width: 137px;
+}
+
+.admin-page .text-wrapper-12 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 607px;
+  line-height: normal;
+  position: absolute;
+  top: 228px;
+}
+
+.admin-page .text-wrapper-13 {
+  color: #000000;
+
+  font-family: "Inter", Helvetica;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  left: 607px;
+  line-height: normal;
+
+  position: absolute;
+
+  top: 300px;
+
+  white-space: nowrap;
+}
+
+.admin-page .text-wrapper-14 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 607px;
+  line-height: normal;
+  position: absolute;
+  top: 372px;
+  white-space: nowrap;
+}
+
+.admin-page .text-wrapper-15 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 607px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 444px;
+  white-space: nowrap;
+}
+
+.admin-page .text-wrapper-16 {
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 607px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 516px;
+  white-space: nowrap;
+}
+
+.admin-page .add-users {
+  left: 830px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 597px;
+  width: 131px;
+}
+
+.view-expert{
+    
+    position: relative;
+    top: 225px;
+    left: 600px;
+    height: 320px;
+    overflow: scroll;
+
+}
+
+
+
+
+.expert-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 250px;
+    margin: 10px;
+    font-size: 16px;
+}
+
+.f-name{
+    font-size: 20px;
+    border: 1px solid #D9D9D9;
+    width: 250px;
+    background-color: #D9D9D9 ;
+}
+
+.remove-btn{
+    margin: 0;
+    position: relative;
+    bottom: 7px;
+}
