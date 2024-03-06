@@ -10,14 +10,14 @@
      
     }
     
-    .admin-page .overlap-group-wrapper {
+    .admin-page .second {
     background-color:#83B1CF;
-    height: 800px;
+    height: 900px;
     width: 1440px;
     position: relative;
     }
     
-    .admin-page.overlap-group {
+    .admin-page.third{
     height: 680px;
     left: 5px;
    
@@ -26,7 +26,7 @@
     
     }
     
-    .admin-page .group {
+    .admin-page .forth {
     
     height: 680px;
     left: 20px;
@@ -46,7 +46,7 @@
     top:10px;
     }
 
-    .admin-page .div {
+    .admin-page .dive {
 
         background-color: #043e7d;
         border-radius: 0px 15px 15px 0px;
@@ -150,6 +150,7 @@
                 position: absolute;
                 top: 88px;
                 width: 140px;
+                color: #d4e8f5;
                 
                 }
                 
@@ -294,6 +295,7 @@
                     position: absolute;
                     top:434px;
                     width: 391px;
+                   
             }
                 
                 .admin-page .rectangle-12 {
@@ -318,10 +320,10 @@
                     font-family: "Inter", Helvetica;
                     font-size: 19px;
                     font-weight: 700;
-                    left: 536px;
+                    margin-left: 3%;
                     line-height:200%;
                     position: absolute;
-                    top: 150px;
+        
                     width: 137px;
                 }
 

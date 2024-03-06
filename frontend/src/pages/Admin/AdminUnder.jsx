@@ -1,52 +1,63 @@
-import React from "react"; 
-import './AdminUnder.css'
+import React, { useState } from "react";
+import './AdminUnder.css';
 import Button from "react-bootstrap/Button";
-import white from "../../assets/white_background.jpg";
+
 
 function AdminUnder() {
-    return (
+  const [currentPage, setCurrentPage] = useState("Undergraduate");
 
-<div className="admin-page">
+  const handleExpertClick = () => {
+    // Update the window location to navigate to the expert page
+    window.location.href = "http://localhost:3000/AdminEx";
+  };
 
-    <div className="overlap-group-wrapper">
+  const handleUndergraduateClick = () => {
+    setCurrentPage("Undergraduate");
+    
+  };
 
-        <div className="overlap-group">
+  return (
+    <div className="admin-page">
+      <div className="second">
+        <div className="third">
+          <div className="forth">
+            <div className="rectangle" />
+            <div className="dive" />
+          </div>
 
-            <div className="group">
+          <div className="under" onClick={handleUndergraduateClick}>
+            Undergraduate
+          </div>
+          
+          <div className="expert" onClick={handleExpertClick}>
+            Expert
+          </div>
 
-                <div className="rectangle" />
-A
-                <div className="div" />
+          {/* Render content based on the current page */}
+          {currentPage === "Undergraduate" && (
+            <>
+         
+              <div className="text-wrapper-5">Undergraduate </div>
+             
+            </>
+          )}
 
-            </div>
+          {currentPage === "Expert" && (
+            <>
+           
+              <div className="text-wrapper-5">Expert</div>
+             
+            </>
+          )}
 
-                <div className="under">
-               
-                    Undergraduate
-                    </div>
-
-
-                <div className="expert">
-                <a href="http://localhost:3000/AdminEx">
-                Expert
-                  </a>
-                    
-                
-                </div>
-
+                        
                 <div className="chat">Chat</div>
 
                 <div className="Cont">Content</div>
 
-                <div className="text-wrapper-5">Undergraduate</div>
+                <div className="text-wrapper-5">Undergraduate<hr></hr></div>
 
-                <img
-
-                className="line"
-
-                alt="Line"
-
-                src={white}/>
+                
 
                 <div className="rectangle-2" />
 
@@ -64,13 +75,13 @@ A
                 <Button className="butn" variant="primary" >
                 Remove
                 </Button>{" "}
-        
+
                     
                     </div>
 
                 <div className="text-wrapper-7">
-               
-            
+
+
                 <Button className="butn" variant="primary" >
                 Remove
                 </Button>{" "}
@@ -113,16 +124,15 @@ A
 
                 <div className="text-wrapper-16">A.B.C. Silva</div>
 
-                <div className="add-users"><Button className="butn" variant="primary" >
-                Add users
-                </Button>{" "}</div>
+          <div className="add-users">
+            <Button className="butn" variant="primary">
+              Add users
+            </Button>{" "}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-                </div>
-
-            </div>
-
-            </div>
-);
-};
-
-export default AdminUnder
+export default AdminUnder;
