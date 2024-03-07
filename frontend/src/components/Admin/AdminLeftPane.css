@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.adminleft-pane{
+    height: 90vh;
+    width: 400px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px 0 0 10px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-text{
+    font-family: inter;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: 70;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+.admin-text :after{
+    font-weight: bold;
+}

@@ -7,7 +7,7 @@ Router.post("/register",adminRegister);
 Router.get('/search',verifyToken, searchUsers);
 Router.get('/displayusers', displayUsers);
 Router.get('/displayExperts', displayExperts);
-Router.delete('/deleteuser/:id',verifyToken, deleteUserById);
+Router.delete('/deleteuser/:id', deleteUserById);
 
 
 
