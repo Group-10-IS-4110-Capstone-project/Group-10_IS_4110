@@ -35,8 +35,11 @@ export default function LoginRightPane() {
         setErrorMessage("Incorrect password or Username. Please try again.");
       }
 
-      if (response.data.message === "success") {
+      if (response.data.message === "success-user") {
         navigate("/");
+      }
+      if (response.data.message === "success-admin") {
+        navigate("/admin");
       }
       // Redirect to the next page or perform other actions on successful login
     } catch (error) {

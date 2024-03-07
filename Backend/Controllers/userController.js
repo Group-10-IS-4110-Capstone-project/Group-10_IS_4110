@@ -78,7 +78,7 @@ const userLogin = async (req, res) => {
       if (passwordMatch) {
         // Generate JWT token
         const token = jwt.sign({ userId: user._id, userType: 'undergraduate' }, '10', { expiresIn: '1h' });
-        return res.json({ message: 'success', token });
+        return res.json({ message: 'success-user', token });
       } else {
         return res.json({ message: 'Incorrect password user' });
       }
@@ -94,7 +94,7 @@ const userLogin = async (req, res) => {
       if (passwordMatch) {
         // Generate JWT token
         const token = jwt.sign({ userId: expert._id, userType: 'expert' }, '10', { expiresIn: '1h' });
-        return res.json({ message: 'success', token });
+        return res.json({ message: 'success-expert', token });
       } else {
         return res.json({ message: 'Incorrect password admin' });
       }

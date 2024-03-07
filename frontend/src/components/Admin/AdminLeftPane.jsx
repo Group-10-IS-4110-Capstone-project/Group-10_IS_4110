@@ -9,7 +9,7 @@ export default function AdminLeftPane() {
         <Link to={"/Admin"} className="admin-text">Undergraduate</Link>
         <Link to={"/AdminEx"} className="admin-text">Expert</Link>
         <div className="admin-text">Chat</div>
-        <div className="admin-text">Content</div>
+        <Link to={"/AdminContent"} className="admin-text">Content</Link>
       </div>
     </div>
   )
