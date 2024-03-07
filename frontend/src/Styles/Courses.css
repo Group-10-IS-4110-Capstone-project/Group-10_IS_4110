@@ -1,50 +1,79 @@
 .courses {
-    padding-top: 50px;
-    background-color: #B5D1E2;
-  }
-  
-  .courses .col-3 {
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.5s;
-    margin-bottom: 30px; /* Added margin bottom for spacing between boxes */
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 100px;
-    background-color: #fff;
-    border-radius: 50px;
-  }
-  
-  .courses .col-3 img {
-    width: 50px;
-    margin-top: 20px;
-    border-radius: 50%;
-  }
-  
-  .courses .col-3:hover {
-    transform: translateY(-10px);
-  }
-  
-  .col-3 p {
-    font-size: 12px;
-    margin: 12px 0;
-    color: #777;
-  }
-  
-  .courses .col-3 h3 {
-    font-weight: 600;
-    color: #555;
-    font-size: 16px;
-  }
-  .title {
-    text-align: center;
-    margin: 0 auto 40px; /* Adjusted margin */
-    position: relative;
-    line-height: 60px;
-    color: #000000; /* Changed text color */
-  }
-  
+  padding-top: 50px;
+  background-color: #B5D1E2;
+}
 
-  
+.courses .col-3 {
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+  margin-bottom: 30px; /* Added margin bottom for spacing between boxes */
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.courses .col-3 img {
+  width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+.courses .col-3:hover {
+  transform: translateY(-10px);
+}
+
+.col-3 p {
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+
+.courses .col-3 h3 {
+  font-weight: 600;
+  color: #555;
+  font-size: 16px;
+}
+
+.title {
+  text-align: center;
+  margin: 0 auto 40px; /* Adjusted margin */
+  position: relative;
+  line-height: 60px;
+  color: #000000; /* Changed text color */
+}
+
+.row1 {
+  display: flex;
+  background-color: rgb(199, 221, 236);
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  scroll-snap-type: x mandatory; /* Enable snapping */
+  justify-content: center; /* Center the items horizontally */
+  margin-top: 20px; /* Add more margin on the top */
+  margin-bottom: 10px; /* Add more margin on the bottom */
+  padding: 10px; /* Add padding */
+}
+
+.col-32 {
+  text-align: center; /* Center the content horizontally */
+  padding: 20px; /* Add padding for spacing */
+  margin: 0 20px; /* Add margin for spacing between boxes */
+  width: 300px; /* Fixed width for grid layout */
+  flex: 0 0 auto; /* Ensure fixed width */
+
+}
+
+.row1 .col-32 img {
+  width: 270px; /* Adjust the width as per your preference */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px; /* Adjust the margin as needed */
+  transition: transform 0.3s; /* Add transition for smooth effect */
+}
+
+.row1 .col-32:hover img {
+  transform: scale(1.25); /* Zoom in effect on hover */
+}

@@ -5,6 +5,11 @@ import img2 from '../assets/Ellipse 33.png'
 import img3 from '../assets/Ellipse 34.png'
 import img4 from '../assets/Ellipse 35.png'
 import img5 from '../assets/Ellipse 36.png'
+import Re1 from '../assets/Advertisements/ad1.jpeg'
+import Re2 from '../assets/Advertisements/ad2.jpeg'
+import Re3 from '../assets/Advertisements/ad3.jpeg'
+import Re4 from '../assets/Advertisements/ad4.jpeg'
+
 import Page_change_btn from '../components/Page_change_btn'
 
 function Courses() {
@@ -42,6 +47,21 @@ function Courses() {
     			</div>
             </div>
     	</div>
+        <div className="row1">
+  <div class="col-32">
+    <img src={Re1} alt='' />
+  </div>
+  <div class="col-32">
+    <img src={Re2} alt='' />
+  </div>
+  <div class="col-32">
+    <img src={Re3} alt='' />
+  </div>
+  <div class="col-32">
+    <img src={Re4} alt='' />
+  </div>
+</div>
+
         <Page_change_btn />
     </div>
 
