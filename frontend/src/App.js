@@ -9,9 +9,7 @@ import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
 import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
 import ChangePassword from './components/ForgotPassword/ChangePassword';
-import AdminContent from './pages/Admin/AdminContent'
-import AdminEx from './pages/Admin/AdminEx'
-import AdminUnder from './pages/Admin/AdminUnder'
+
 
 import Cyber_Security from './pages/Cyber_Security'
 import Data_Science from './pages/Data_Science'
@@ -25,6 +23,10 @@ import Web_Development from './pages/Web_Development'
 
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Admin from './pages/Admin/Admin';
+import AdminRightExpert from './components/Admin/AdminRightExpert';
+import Admin1 from './pages/Admin/Admin1';
+
 
 function App() {
   return (
@@ -36,9 +38,7 @@ function App() {
           <Route path="/Datascience" element={<Datascience/>} />
           <Route path="/Artificial" element={<Artificial/>} />
 
-         <Route path="/AdminContent" element={<AdminContent></AdminContent>}></Route>
-          <Route path="/AdminEx" element={<AdminEx></AdminEx>}></Route>
-          <Route path="/AdminUnder" element={<AdminUnder></AdminUnder>}></Route>
+         
           <Route path="/Signup" element={<SignUp></SignUp>}></Route>
           <Route path="/Login" element={<Login></Login>} ></Route>
           <Route path="/ForgotPassword" element={<ForgotPwd></ForgotPwd>}></Route>
@@ -53,7 +53,10 @@ function App() {
           <Route path="/Machine_Learning" element={<Machine_Learning></Machine_Learning>} ></Route>
           <Route path="/Mobile_app_Dev" element={<Mobile_app_Dev></Mobile_app_Dev>} ></Route>
           <Route path="/Web_Development" element={<Web_Development></Web_Development>} ></Route>
+          <Route path='/q' element={<AdminRightExpert></AdminRightExpert>}></Route>
 
+          <Route path='/Admin' element={<Admin></Admin>}></Route>
+          <Route path="/AdminEx" element={<Admin1></Admin1>}></Route>
         </Routes>
         
       </BrowserRouter>

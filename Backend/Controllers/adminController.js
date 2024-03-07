@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const AdminModel = require("../models/Admin");
 const UnderGraduate = require("../models/UnderGraduate");
+const ExpertModel = require("../models/Expert");
 
 //Admin SignUp *****************
 let adminCreated = false;
@@ -68,6 +69,18 @@ const displayUsers = async (req, res) => {
   }
 };
 
+const displayExperts = async (req, res) => {
+  try {
+    // Retrieve all users
+    const users = await ExpertModel.find({}, 'Name email');
+
+    res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 //user Account delete
 const deleteUserById = async (req, res) => {
   try {
@@ -92,4 +105,4 @@ const deleteUserById = async (req, res) => {
 
 //admin login => userController  **************
 
-module.exports = { adminRegister , searchUsers ,displayUsers , deleteUserById};
+module.exports = { adminRegister , searchUsers ,displayUsers, displayExperts , deleteUserById};
