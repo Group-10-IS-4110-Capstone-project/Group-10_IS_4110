@@ -23,6 +23,8 @@ import Machine_Learning from './pages/Machine_Learning'
 import Mobile_app_Dev from './pages/Mobile_app_Dev'
 import Web_Development from './pages/Web_Development'
 
+import Add_cousesCerificates from './pages/Admin/Add_cousesCerificates/Add_cousesCerificates'
+
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 
@@ -54,6 +56,7 @@ function App() {
           <Route path="/Mobile_app_Dev" element={<Mobile_app_Dev></Mobile_app_Dev>} ></Route>
           <Route path="/Web_Development" element={<Web_Development></Web_Development>} ></Route>
 
+          <Route path="/Add_cousesCerificates" element={<Add_cousesCerificates></Add_cousesCerificates>} ></Route>
         </Routes>
         
       </BrowserRouter>
