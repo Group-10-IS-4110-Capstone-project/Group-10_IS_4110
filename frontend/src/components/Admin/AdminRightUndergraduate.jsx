@@ -5,30 +5,38 @@ import "./AdminRightUndergraduate.css"
 export default function AdminRightUndergraduate() {
   const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-      // Fetch data from the backend
-      fetch("http://localhost:3001/admin/displayusers")
-        .then((response) => response.json())
-        .then((data) => setUsers(data))
-        .catch((error) => console.error("Error fetching data:", error));
-    }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/admin/displayusers');
+        const data = await response.json();
+        setUsers(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-    const handleRemoveUser = (userId) => {
-      // Send a DELETE request to remove the user
-      fetch(`http://localhost:3001/admin/deleteuser/${userId}`, {
+    fetchData();
+  }, []);
+
+  const handleRemoveUser = async (userId) => {
+    try {
+      await fetch(`http://localhost:3001/admin/deleteuser/${userId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
           // Include any additional headers or tokens needed for authorization
         },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // Update the users state after successful deletion
-          setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));
-        })
-        .catch((error) => console.error("Error deleting user:", error));
-    };
+      });
+
+      // Update the undergraduates state after successful deletion
+      setUsers((prevUsers) =>
+        prevUsers.filter((user) => user._id !== userId)
+      );
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
+  };
 
   return (
     <div>
@@ -42,7 +50,7 @@ export default function AdminRightUndergraduate() {
                 <div key={user.id} className="expert-item">
                   <p className="f-name">{user.firstName}</p>
                   
-                    <Button className="remove-btn" variant="primary" onClick={() => handleRemoveUser(user.id)}>
+                    <Button className="remove-btn" variant="primary" onClick={() => handleRemoveUser(user._id)}>
                       Remove
                     </Button>{" "}
         

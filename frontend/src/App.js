@@ -24,8 +24,8 @@ import Web_Development from './pages/Web_Development'
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Admin from './pages/Admin/Admin';
-import AdminRightExpert from './components/Admin/AdminRightExpert';
 import Admin1 from './pages/Admin/Admin1';
+import AdminContent from './pages/Admin/AdminContent';
 
 
 function App() {
@@ -53,10 +53,11 @@ function App() {
           <Route path="/Machine_Learning" element={<Machine_Learning></Machine_Learning>} ></Route>
           <Route path="/Mobile_app_Dev" element={<Mobile_app_Dev></Mobile_app_Dev>} ></Route>
           <Route path="/Web_Development" element={<Web_Development></Web_Development>} ></Route>
-          <Route path='/q' element={<AdminRightExpert></AdminRightExpert>}></Route>
+         
 
           <Route path='/Admin' element={<Admin></Admin>}></Route>
           <Route path="/AdminEx" element={<Admin1></Admin1>}></Route>
+          <Route path="/AdminContent" element={<AdminContent></AdminContent>}></Route>
         </Routes>
         
       </BrowserRouter>

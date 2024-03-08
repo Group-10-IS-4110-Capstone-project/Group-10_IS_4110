@@ -79,3 +79,33 @@
     position: relative;
     bottom: 7px;
 }
+
+.boxwrap{
+    display: flex;
+    gap: 10px;
+    width: 600px;
+    height: 500px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxwarp1{
+    width: 120px;
+    height: 120px;
+    border: 1px solid #83B1CF;
+    background-color: #83B1CF;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.con1{
+    font-family: inter;
+    font-size: 12px;
+    font-weight: 70;
+    cursor: pointer;
+}

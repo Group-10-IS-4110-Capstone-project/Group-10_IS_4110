@@ -102,7 +102,27 @@ const deleteUserById = async (req, res) => {
   }
 };
 
+const deleteExpertById = async (req, res) => {
+  try {
+    const userId = req.params.id;
+
+    // Check if the user exists
+    const user = await ExpertModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Delete the user
+    await ExpertModel.findByIdAndDelete(userId);
+
+    res.json({ message: 'User deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 
 //admin login => userController  **************
 
-module.exports = { adminRegister , searchUsers ,displayUsers, displayExperts , deleteUserById};
+module.exports = { adminRegister , searchUsers ,displayUsers, displayExperts , deleteUserById, deleteExpertById};
