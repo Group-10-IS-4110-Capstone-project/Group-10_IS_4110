@@ -7,12 +7,37 @@ export default function AdminRightExpert() {
     const [experts, setExperts] = useState([]);
 
     useEffect(() => {
-      // Fetch data from the backend
-      fetch("http://localhost:3001/admin/displayExperts")
-        .then((response) => response.json())
-        .then((data) => setExperts(data))
-        .catch((error) => console.error("Error fetching data:", error));
+      const fetchData = async () => {
+        try {
+          const response = await fetch('http://localhost:3001/admin/displayExperts');
+          const data = await response.json();
+          setExperts(data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
     }, []);
+
+    const handleRemoveUser = async (expertId) => {
+      try {
+        await fetch(`http://localhost:3001/admin/deleteexpert/${expertId}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            // Include any additional headers or tokens needed for authorization
+          },
+        });
+  
+        // Update the undergraduates state after successful deletion
+        setExperts((prevExperts) =>
+          prevExperts.filter((expert) => expert._id !== expertId)
+        );
+      } catch (error) {
+        console.error('Error deleting user:', error);
+      }
+    };
 
   return (
     <div>
@@ -26,7 +51,7 @@ export default function AdminRightExpert() {
                 <div key={expert.id} className="expert-item">
                   <p className="f-name">{expert.Name}</p>
                   
-                    <Button className="remove-btn" variant="primary">
+                    <Button className="remove-btn" variant="primary" onClick={() => handleRemoveUser(expert._id)}>
                       Remove
                     </Button>{" "}
         
