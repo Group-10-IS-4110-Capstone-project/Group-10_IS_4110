@@ -27,7 +27,7 @@ import Admin from './pages/Admin/Admin';
 import Admin1 from './pages/Admin/Admin1';
 import AdminContent from './pages/Admin/AdminContent';
 
-import ProfileUn from './pages/Profile/ProfileUn';
+
 
 function App() {
   return (
@@ -61,7 +61,6 @@ function App() {
           <Route path="/AdminEx" element={<Admin1></Admin1>}></Route>
           <Route path="/AdminContent" element={<AdminContent></AdminContent>}></Route>
 
-          <Route path="/ProfileUn" element={<ProfileUn></ProfileUn>}></Route>
         </Routes>
         
       </BrowserRouter>

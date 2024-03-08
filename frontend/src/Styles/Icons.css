@@ -1,7 +1,8 @@
 .Icons {
     display: flex;
     align-items:center;
-    column-gap: 100px;
+    column-gap: 0px;
+    margin-left: 13%;
     
 
     
@@ -9,8 +10,8 @@
   
   .Home {
    
-    margin-left: 14%;
-    margin-top: 3%;
+    margin-left: 13%;
+    margin-top: 1%;
   }
   
   .image {
@@ -18,8 +19,27 @@
     height: 40px; 
   }
   .Line{
-    margin-left: 75.4%;
+    margin-left: 62.2%;
     width: 58px; 
     height: 6px; 
   }
-  
+  .Photo{
+    margin-top: 4%;
+    width: 168px; 
+    height: 1px; 
+    margin-left: 5%;
+  }
+  .Butn{
+    margin-top: -2.5%;
+    margin-left:90% ;
+    width: 168px; 
+    height: 1px; 
+    color: rgb(224, 204, 191);
+ 
+  }
+  .search{
+    margin-top: 5%;
+    margin-left:30% ;
+    width: 788px; 
+    
+  }
