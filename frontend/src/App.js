@@ -27,6 +27,7 @@ import Admin from './pages/Admin/Admin';
 import Admin1 from './pages/Admin/Admin1';
 import AdminContent from './pages/Admin/AdminContent';
 
+import ProfileUn from './pages/Profile/ProfileUn';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/Login" element={<Login></Login>} ></Route>
           <Route path="/ForgotPassword" element={<ForgotPwd></ForgotPwd>}></Route>
           <Route path="/ChangePassword/:id/:token" element={<ChangePassword></ChangePassword>}></Route>
+     
 
           <Route path="/Cyber_Security" element={<Cyber_Security></Cyber_Security>} ></Route>
           <Route path="/Data_Science" element={<Data_Science></Data_Science>} ></Route>
@@ -58,6 +60,8 @@ function App() {
           <Route path='/Admin' element={<Admin></Admin>}></Route>
           <Route path="/AdminEx" element={<Admin1></Admin1>}></Route>
           <Route path="/AdminContent" element={<AdminContent></AdminContent>}></Route>
+
+          <Route path="/ProfileUn" element={<ProfileUn></ProfileUn>}></Route>
         </Routes>
         
       </BrowserRouter>
