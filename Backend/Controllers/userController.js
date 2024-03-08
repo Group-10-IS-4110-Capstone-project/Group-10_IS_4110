@@ -295,6 +295,20 @@ const logOut = async(req,res) => {
   }
 }
 
+
+//get user data
+const getUserById = async (req, res) => {
+  try {
+    const undergraduate = await UnderGraduateModel.findById(req.params.id);
+    if (!undergraduate) {
+      return res.status(404).json({ message: 'Undergraduate not found' });
+    }
+    res.json(undergraduate);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // Controller to update user data
 const updateUser = async (req, res) => {
   try {
@@ -335,5 +349,6 @@ module.exports = {
   forgotPassword,
   changePassword,
   logOut,
-  updateUser
+  updateUser,
+  getUserById
 };

@@ -1,6 +1,6 @@
 body{
     background-color: #f4f7f6;
-    margin-top:20px;
+    /* margin-top:20px; */
 }
 .card {
     background: #fff;
@@ -18,7 +18,8 @@ body{
     left: 0;
     top: 0;
     padding: 20px;
-    z-index: 7
+    z-index: 7;
+    
 }
 
 .chat-app .chat {
@@ -30,13 +31,18 @@ body{
     -moz-transition: .5s;
     -o-transition: .5s;
     -webkit-transition: .5s;
-    transition: .5s
+    transition: .5s;
+    
+}
+.people-list .list-unstyled{
+    height: 450px;
+    overflow: scroll;
 }
 
 .people-list .chat-list li {
     padding: 10px 15px;
     list-style: none;
-    border-radius: 3px
+    border-radius: 3px;
 }
 
 .people-list .chat-list li:hover {
@@ -207,6 +213,12 @@ body{
     content: " ";
     clear: both;
     height: 0
+}
+
+
+.list-unstyled chat-list mt-2 mb-0{
+    height: 400px;
+    overflow: scroll;
 }
 
 @media only screen and (max-width: 767px) {
