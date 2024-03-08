@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.undergraduateForm{
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
+
+
+.user-profile{
+    width: 100%;
+    align-items: center;
+}
+
+.user-footer{
+    width: 100%;
+}
+

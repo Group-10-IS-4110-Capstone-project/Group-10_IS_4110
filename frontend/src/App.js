@@ -26,6 +26,11 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Admin from './pages/Admin/Admin';
 import AdminRightExpert from './components/Admin/AdminRightExpert';
 import Admin1 from './pages/Admin/Admin1';
+import UnderNav_Bar from './components/UnderNav_Bar';
+import UnderProfile from './components/UnderProfile';
+import Chat from './components/Chat';
+import UnderGraduate from './pages/UnderGraduate';
+import UndergraduateChat from './pages/UndergraduateChat';
 
 
 function App() {
@@ -57,6 +62,10 @@ function App() {
 
           <Route path='/Admin' element={<Admin></Admin>}></Route>
           <Route path="/AdminEx" element={<Admin1></Admin1>}></Route>
+          <Route path="/Undergraduate" element={<UnderGraduate></UnderGraduate>}></Route>
+          <Route path="/Undergraduatechat" element={<UndergraduateChat></UndergraduateChat>}></Route>
+          
+          
         </Routes>
         
       </BrowserRouter>
