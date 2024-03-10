@@ -4,11 +4,22 @@ import "./AdminRightUndergraduate.css"
 
 export default function AdminRightUndergraduate() {
   const [users, setUsers] = useState([]);
+ 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/admin/displayusers');
+        const token = localStorage.getItem("token");
+        if (!token) {
+          // Handle the case where the token is not available
+          console.log('No token available');
+          return;
+        }
+        const response = await fetch('http://localhost:3001/admin/displayusers',{
+          headers : {
+            'Authorization': token,
+          }
+        });
         const data = await response.json();
         setUsers(data);
       } catch (error) {

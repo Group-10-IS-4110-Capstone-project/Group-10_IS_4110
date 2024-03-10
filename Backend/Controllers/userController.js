@@ -6,8 +6,7 @@ const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const AdminModel = require("../models/Admin");
 
-const { verifyToken } = require('../middleware/protectRoute');
-
+const { verifyToken } = require("../middleware/protectRoute");
 
 const userTest = (req, res) => {
   res.send({
@@ -18,7 +17,6 @@ const userTest = (req, res) => {
 //user signup
 
 const userRegister = async (req, res) => {
-
   const emailRegex = /^[^\s@]+@gmail\.com$/;
   try {
     const { firstName, lastName, university, email, password } = req.body;
@@ -57,6 +55,7 @@ const userRegister = async (req, res) => {
 
 //undergraduate and expert login
 
+
 const userLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -77,12 +76,16 @@ const userLogin = async (req, res) => {
 
       if (passwordMatch) {
         // Generate JWT token
-        const token = jwt.sign({ userId: user._id, userType: 'undergraduate' }, '10', { expiresIn: '1h' });
-        return res.json({ message: 'success-user', token });
+        const token = jwt.sign(
+          { userId: user._id, userType: "undergraduate" },
+          "10",
+          { expiresIn: "1h" }
+        );
+      
+        return res.json({ message: "success-user", token });
       } else {
-        return res.json({ message: 'Incorrect password user' });
+        return res.json({ message: "Incorrect password user" });
       }
-
     }
 
     const expert = await ExpertModel.findOne({ email: lowercasedEmail });
@@ -93,29 +96,34 @@ const userLogin = async (req, res) => {
 
       if (passwordMatch) {
         // Generate JWT token
-        const token = jwt.sign({ userId: expert._id, userType: 'expert' }, '10', { expiresIn: '1h' });
-        return res.json({ message: 'success-expert', token });
+        const token = jwt.sign(
+          { userId: expert._id, userType: "expert" },
+          "10",
+          { expiresIn: "1h" }
+        );
+        return res.json({ message: "success-expert", token });
       } else {
-        return res.json({ message: 'Incorrect password admin' });
+        return res.json({ message: "Incorrect password admin" });
       }
     }
 
     //admin login
 
-    const admin = await AdminModel.findOne({email: lowercasedEmail});
+    const admin = await AdminModel.findOne({ email: lowercasedEmail });
 
     if (admin) {
       const passwordMatch = await bcrypt.compare(password, admin.password);
 
       if (passwordMatch) {
         // Generate JWT token
-        const token = jwt.sign({ userId: admin._id, userType: 'admin' }, '10', { expiresIn: '1h' });
-        return res.json({ message: 'success-admin', token });
+        const token = jwt.sign({ userId: admin._id, userType: "admin" }, "10", {
+          expiresIn: "1h",
+        });
+        return res.json({ message: "success-admin", token });
       } else {
-        return res.json({ message: 'Incorrect password' });
+        return res.json({ message: "Incorrect password" });
       }
     }
-
 
     res.json({ message: "User/Expert not found" });
   } catch (error) {
@@ -135,85 +143,83 @@ const forgotPassword = async (req, res) => {
     // Find the user by email
     const user = await UnderGraduateModel.findOne({ email });
 
-    
-    if(user){
+    if (user) {
       // Generate a JWT token with user ID and set expiration time
-    const token = jwt.sign({ id: user._id }, "10", { expiresIn: "1h" });
+      const token = jwt.sign({ id: user._id }, "10", { expiresIn: "1h" });
 
-    // Create a nodemailer transporter with your email credentials
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "avishka1999perera@gmail.com", // Replace with your email
-        pass: "hjba dzmz nhzz rjut", // Replace with your email password
-      },
-    });
+      // Create a nodemailer transporter with your email credentials
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: "avishka1999perera@gmail.com", // Replace with your email
+          pass: "hjba dzmz nhzz rjut", // Replace with your email password
+        },
+      });
 
-    // Create the reset password link
-    const resetPasswordLink = `http://localhost:3000/changepassword/${user._id}/${token}`;
+      // Create the reset password link
+      const resetPasswordLink = `http://localhost:3000/changepassword/${user._id}/${token}`;
 
-    // Define email options
-    const mailOptions = {
-      from: "yourEmail@gmail.com", // Replace with your email
-      to: user.email,
-      subject: "Reset your password",
-      text: `Click the link to reset your password: ${resetPasswordLink}`,
-    };
+      // Define email options
+      const mailOptions = {
+        from: "yourEmail@gmail.com", // Replace with your email
+        to: user.email,
+        subject: "Reset your password",
+        text: `Click the link to reset your password: ${resetPasswordLink}`,
+      };
 
-    // Send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error("Error sending email:", error);
-        return res.status(500).json({ status: "Error sending email" });
-      }
+      // Send the email
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error("Error sending email:", error);
+          return res.status(500).json({ status: "Error sending email" });
+        }
 
-      console.log("Email sent:", info.response);
-      return res.status(200).json({ status: "Email sent successfully" });
-    });
+        console.log("Email sent:", info.response);
+        return res.status(200).json({ status: "Email sent successfully" });
+      });
     }
 
-    const expert = await ExpertModel.findOne({email});
+    const expert = await ExpertModel.findOne({ email });
 
-    if(expert){
+    if (expert) {
       // Generate a JWT token with user ID and set expiration time
-    const token = jwt.sign({ id: expert._id }, "10", { expiresIn: "1h" });
+      const token = jwt.sign({ id: expert._id }, "10", { expiresIn: "1h" });
 
-    // Create a nodemailer transporter with your email credentials
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "avishka1999perera@gmail.com", // Replace with your email
-        pass: "hjba dzmz nhzz rjut", // Replace with your email password
-      },
-    });
+      // Create a nodemailer transporter with your email credentials
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: "avishka1999perera@gmail.com", // Replace with your email
+          pass: "hjba dzmz nhzz rjut", // Replace with your email password
+        },
+      });
 
-    // Create the reset password link
-    const resetPasswordLink = `http://localhost:3000/changepassword/${expert._id}/${token}`;
+      // Create the reset password link
+      const resetPasswordLink = `http://localhost:3000/changepassword/${expert._id}/${token}`;
 
-    // Define email options
-    const mailOptions = {
-      from: "yourEmail@gmail.com", // Replace with your email
-      to: expert.email,
-      subject: "Reset your password",
-      text: `Click the link to reset your password: ${resetPasswordLink}`,
-    };
+      // Define email options
+      const mailOptions = {
+        from: "yourEmail@gmail.com", // Replace with your email
+        to: expert.email,
+        subject: "Reset your password",
+        text: `Click the link to reset your password: ${resetPasswordLink}`,
+      };
 
-    // Send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error("Error sending email:", error);
-        return res.status(500).json({ status: "Error sending email" });
-      }
+      // Send the email
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error("Error sending email:", error);
+          return res.status(500).json({ status: "Error sending email" });
+        }
 
-      console.log("Email sent:", info.response);
-      return res.status(200).json({ status: "Email sent successfully" });
-    });
+        console.log("Email sent:", info.response);
+        return res.status(200).json({ status: "Email sent successfully" });
+      });
     }
 
     if (!user && !expert) {
       return res.status(404).json({ status: "User not found" });
     }
-    
   } catch (error) {
     console.error("Error in forgot password:", error);
     return res.status(500).json({ status: "Internal Server Error" });
@@ -281,27 +287,24 @@ const changePassword = (req, res) => {
   });
 };
 
-
-
 ///logout
 
-const logOut = async(req,res) => {
+const logOut = async (req, res) => {
   try {
-    res.cookie("jwt", "10", {maxAge : 0});
-    res.status(200).json({message: "Logged out successfully"});
+    res.cookie("jwt", "10", { maxAge: 0 });
+    res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
-    console.log("Error in logout controller",error)
-    res.status(500).json({error: "Internal Server Error"});
+    console.log("Error in logout controller", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
-}
-
+};
 
 //get user data
 const getUserById = async (req, res) => {
   try {
     const undergraduate = await UnderGraduateModel.findById(req.params.id);
     if (!undergraduate) {
-      return res.status(404).json({ message: 'Undergraduate not found' });
+      return res.status(404).json({ message: "Undergraduate not found" });
     }
     res.json(undergraduate);
   } catch (error) {
@@ -323,7 +326,7 @@ const updateUser = async (req, res) => {
     const user = await UnderGraduateModel.findById(userId);
 
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+      return res.status(404).json({ error: "User not found" });
     }
 
     user.firstName = firstName;
@@ -335,10 +338,10 @@ const updateUser = async (req, res) => {
 
     await user.save();
 
-    res.json({ message: 'User updated successfully', user });
+    res.json({ message: "User updated successfully", user });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
@@ -350,5 +353,5 @@ module.exports = {
   changePassword,
   logOut,
   updateUser,
-  getUserById
+  getUserById,
 };
