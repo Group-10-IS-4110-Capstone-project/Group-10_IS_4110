@@ -9,7 +9,8 @@
   
   .data-science-image {
     max-width: 100%; /* Set maximum width to 100% */
-    width: 100%; /* Ensures image fills its container */
+    width: 100%;
+    height: 10%; /* Ensures image fills its container */
   }
   
   .data-science-description {
