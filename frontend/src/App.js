@@ -31,7 +31,8 @@ import UnderProfile from './components/UnderProfile';
 import Chat from './components/Chat';
 import UnderGraduate from './pages/UnderGraduate';
 import UndergraduateChat from './pages/UndergraduateChat';
-
+import UserFeed from './pages/UserFeed';
+import UserHome from './pages/UserHome';
 
 
 function App() {
@@ -65,6 +66,13 @@ function App() {
           <Route path='/Admin' element={<Admin></Admin>}></Route>
           <Route path="/AdminEx" element={<Admin1></Admin1>}></Route>
           <Route path="/AdminContent" element={<AdminContent></AdminContent>}></Route>
+          <Route path="/Undergraduate" element={<UnderGraduate></UnderGraduate>}></Route>
+          <Route path="/Undergraduatechat" element={<UndergraduateChat></UndergraduateChat>}></Route>
+          <Route path="/feed" element={<UserFeed></UserFeed>}></Route>
+          <Route path="/Home" element={<UserHome></UserHome>}></Route>
+
+          
+          
         </Routes>
         
       </BrowserRouter>
