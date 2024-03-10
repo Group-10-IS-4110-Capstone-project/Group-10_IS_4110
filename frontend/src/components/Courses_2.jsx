@@ -8,8 +8,9 @@ import coursera from '../assets/Ellipse 34.png';
 import udacity from '../assets/Ellipse 33.png';
 import solo from '../assets/Ellipse 36.png';
 import add from '../assets/add.png'
+import Button_2 from './Button_2';
 
-function Courses() {
+function Courses_2() {
   return (
     <div className="courses">
       <h2 className="title">Online Courses and Certificates</h2>
@@ -101,9 +102,12 @@ function Courses() {
 
         <div className='c_butn'>
         <Page_change_btn />
+
+        <Button_2 />
+        
         </div>
 
-      
+   
 
 
       </div>
@@ -112,8 +116,4 @@ function Courses() {
   );
 }
 
-export default Courses;
-
-
-
-
+export default Courses_2;
