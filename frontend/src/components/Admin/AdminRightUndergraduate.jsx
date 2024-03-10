@@ -11,14 +11,14 @@ export default function AdminRightUndergraduate() {
 
   useEffect(() => {
     const fetchData = async () => {
-      if(isAuthenticated == null) return;
+      if (isAuthenticated == null) return;
 
       if (isAuthenticated == false) {
         // Handle unauthorized access, e.g., redirect to login page
-        navigate("/login")
+        navigate("/login");
         return;
       }
-      
+
       try {
         const token = localStorage.getItem("token");
         if (!token) {
@@ -46,10 +46,17 @@ export default function AdminRightUndergraduate() {
 
   const handleRemoveUser = async (userId) => {
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        // Handle the case where the token is not available
+        console.log("No token available");
+        return;
+      }
       await fetch(`http://localhost:3001/admin/deleteuser/${userId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          Authorization: token,
           // Include any additional headers or tokens needed for authorization
         },
       });
