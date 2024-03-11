@@ -82,7 +82,7 @@ const userLogin = async (req, res) => {
           { expiresIn: "1h" }
         );
       
-        return res.json({ message: "success-user", token });
+        return res.json({ message: "success-user", token ,id:user._id});
       } else {
         return res.json({ message: "Incorrect password user" });
       }
@@ -302,7 +302,8 @@ const logOut = async (req, res) => {
 //get user data
 const getUserById = async (req, res) => {
   try {
-    const undergraduate = await UnderGraduateModel.findById(req.params.id);
+    const userId = req.params.id;
+    const undergraduate = await UnderGraduateModel.findById(userId);
     if (!undergraduate) {
       return res.status(404).json({ message: "Undergraduate not found" });
     }
@@ -316,7 +317,7 @@ const getUserById = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const userId = req.params.id;
-    const { firstName, lastName, university, email, password, bio } = req.body;
+    const { firstName, lastName, university, bio } = req.body;
 
     // Check if the user has a valid token and the token matches the user type
     // if (!req.userId || req.userId !== userId || req.userType !== 'undergraduate') {
@@ -332,8 +333,6 @@ const updateUser = async (req, res) => {
     user.firstName = firstName;
     user.lastName = lastName;
     user.university = university;
-    user.email = email;
-    user.password = password;
     user.bio = bio;
 
     await user.save();

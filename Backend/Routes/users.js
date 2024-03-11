@@ -14,7 +14,7 @@ Router.post("/forgotpassword",forgotPassword)
 Router.post("/changepassword/:id/:token",changePassword)
 Router.get("/logout",logOut)
 Router.get('/undergraduates/:id', getUserById);
-Router.put('/updateuser/:id',verifyToken, updateUser)
+Router.put('/updateuser/:id', updateUser)
 
 
 
