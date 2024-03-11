@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import useAuth from "./UseAth";
+import { useNavigate } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
 export default function () {
+  const isAuthenticated = useAuth();
   const userid = localStorage.getItem("userid");
+  const navigate = useNavigate();
   // const { userId} = useParams(); // Access the id from the route parameters
   const [undergraduateData, setUndergraduateData] = useState({
     firstName: "",
@@ -13,6 +17,12 @@ export default function () {
 
   const fetchData = async (userId) => {
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        // Handle the case where the token is not available
+        console.log("No token available");
+        return;
+      }
       const response = await fetch(
         `http://localhost:3001/user/undergraduates/${userId}`
       );
@@ -31,8 +41,15 @@ export default function () {
   };
 
   useEffect(() => {
+    if (isAuthenticated == null) return;
+
+      if (isAuthenticated == false) {
+        // Handle unauthorized access, e.g., redirect to login page
+        navigate("/login");
+        return;
+      }
     fetchData(userid);
-  }, []); // Fetch data when the component mounts and when id changes
+  }, [isAuthenticated]); // Fetch data when the component mounts and when id changes
 
   const handleInputChange = (event) => {
     // Handle input changes if needed
@@ -47,6 +64,12 @@ export default function () {
     event.preventDefault();
     // Handle form submission if needed
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        // Handle the case where the token is not available
+        console.log("No token available");
+        return;
+      }
       const response = await fetch(
         `http://localhost:3001/user/updateuser/${userid}`,
         {
