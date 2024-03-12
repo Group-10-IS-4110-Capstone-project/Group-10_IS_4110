@@ -49,6 +49,7 @@ app.use("/message", message);
 app.use("/content", content);
 app.use("/advertisement", advertisement)
 app.use('/upload', upload);
+app.use('/uploads', express.static('uploads'));
 
 // app.post('/api/register', async (req, res) => {
 //   try {

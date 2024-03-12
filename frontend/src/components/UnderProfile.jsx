@@ -7,12 +7,14 @@ export default function () {
   const isAuthenticated = useAuth();
   const userid = localStorage.getItem("userid");
   const navigate = useNavigate();
+
   // const { userId} = useParams(); // Access the id from the route parameters
   const [undergraduateData, setUndergraduateData] = useState({
     firstName: "",
     lastName: "",
     university: "",
     bio: "",
+    profilePic: "",
   });
 
   const fetchData = async (userId) => {
@@ -34,7 +36,7 @@ export default function () {
         lastName: data.lastName || "",
         university: data.university || "",
         bio: data.bio || "",
-        
+        profilePic: "http://localhost:3001/uploads/" + data.profilePic || "",
       });
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -44,11 +46,11 @@ export default function () {
   useEffect(() => {
     if (isAuthenticated == null) return;
 
-      if (isAuthenticated == false) {
-        // Handle unauthorized access, e.g., redirect to login page
-        navigate("/login");
-        return;
-      }
+    if (isAuthenticated == false) {
+      // Handle unauthorized access, e.g., redirect to login page
+      navigate("/login");
+      return;
+    }
     fetchData(userid);
   }, [isAuthenticated]); // Fetch data when the component mounts and when id changes
 
@@ -59,6 +61,45 @@ export default function () {
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setUndergraduateData((prevData) => ({
+      ...prevData,
+      profilePic: file, // Set profilePic to the selected file
+    }));
+  };
+
+  const handleUpload = async (event) => {
+    event.preventDefault();
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        console.log("No token available");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("profilePic", undergraduateData.profilePic);
+      formData.append("id", userid);
+
+      const response = await fetch("http://localhost:3001/upload/uploadpic", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      if (response.ok) {
+        console.log("Profile picture updated successfully:", data);
+      } else {
+        console.error("Error updating profile picture:", data.error);
+      }
+    } catch (error) {
+      console.error("Error updating profile picture:", error);
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -106,13 +147,23 @@ export default function () {
           <div className="col-md-3">
             <div className="text-center">
               <img
-                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                src={
+                  undergraduateData.profilePic
+                    ? undergraduateData.profilePic
+                    : "https://bootdey.com/img/Content/avatar/avatar7.png"
+                }
                 className="avatar img-circle img-thumbnail"
                 alt="avatar"
               ></img>
-              <h6>Upload a different photo...</h6>
 
-              <input type="file" class="form-control" />
+              <input
+                type="file"
+                class="form-control"
+                onChange={handleFileChange}
+              />
+              <button type="Submit" value={"submit"} onClick={handleUpload}>
+                upload
+              </button>
             </div>
           </div>
 
