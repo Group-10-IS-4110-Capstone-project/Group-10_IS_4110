@@ -51,7 +51,27 @@ const verifyToken = (req, res, next) => {
       next();
     });
   };
+
+  const protectToken = async (req,res) => {
+
+    const token = req.headers.authorization;
+    
+    if (!token) {
+      return res.status(401).json({ message: 'Unauthorized - No token provided' });
+    }
+    
+  
+    jwt.verify(token, '10', (err, decoded) => {
+      if (err) {
+        console.log(err)
+        return res.status(401).json({ message: 'Unauthorized - Invalid token' });
+      }else{
+        res.json("done");
+      }
+
+    });
+  }
   
 
 
-module.exports = {protectRoute ,verifyToken};
+module.exports = {protectRoute ,verifyToken, protectToken};
