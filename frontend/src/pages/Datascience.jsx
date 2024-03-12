@@ -33,7 +33,7 @@ import fb from '../assets/Vector.png'
 import insta from '../assets/Vector insta.png'
 import twi from '../assets/Vector twitter.png'
 import Button from "../components/Button";
-
+import Navbar_2 from '../components/Navbar_2'
 
 
 function Datascience() {
@@ -43,6 +43,7 @@ function Datascience() {
       <div className="index">
 
 <div className="overlap-wrapper">
+      <Navbar_2 />
   <div className="overlap">
 
     <div className="text-wrapper">Data science</div>

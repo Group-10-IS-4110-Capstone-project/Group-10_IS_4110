@@ -1,11 +1,12 @@
 import React from 'react'
 import '../Styles/Description.css'
 import Data_Science from '../assets/DataScience.jpg'
+import Ai from '../assets/Artificial Intelligence.jpg'
 
 function AI_Description() {
   return (
     <div className="data-science-container">
-      <img src={Data_Science} alt='' className="data-science-image" />
+      <img src={Ai} alt='' className="data-science-image" />
   <p className="data-science-description">
     <b>Artificial intelligence </b>is a multidisciplinary field that merges 
 computer science with extensive datasets to facilitate effective 

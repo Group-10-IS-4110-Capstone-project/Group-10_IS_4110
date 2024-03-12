@@ -1,9 +1,9 @@
 import React from 'react'
 import AdminLeftPane from '../../components/Admin/AdminLeftPane'
+import AdminRightUndergraduate from '../../components/Admin/AdminRightUndergraduate'
 import "./Admin.css"
-import AdminRightContent from '../../components/Admin/AdminRightContent'
 
-export default function AdminContent() {
+export default function Admin() {
   return (
     <div>
       <div className="admin-all">
@@ -11,7 +11,7 @@ export default function AdminContent() {
             <AdminLeftPane></AdminLeftPane>
         </div>
         <div className="admin-right">
-            <AdminRightContent></AdminRightContent>
+            <AdminRightUndergraduate></AdminRightUndergraduate>
         </div>
       </div>
     </div>
