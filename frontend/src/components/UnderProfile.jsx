@@ -34,6 +34,7 @@ export default function () {
         lastName: data.lastName || "",
         university: data.university || "",
         bio: data.bio || "",
+        
       });
     } catch (error) {
       console.error("Error fetching data:", error);
