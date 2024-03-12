@@ -17,6 +17,8 @@ export default function () {
     profilePic: "",
   });
 
+  const [img,setimg] = useState("");
+
   const fetchData = async (userId) => {
     try {
       const token = localStorage.getItem("token");
@@ -36,7 +38,7 @@ export default function () {
         lastName: data.lastName || "",
         university: data.university || "",
         bio: data.bio || "",
-        profilePic: "http://localhost:3001/uploads/" + data.profilePic || "",
+        profilePic: `http://localhost:3001/uploads/${data.profilePic}` || "https://bootdey.com/img/Content/avatar/avatar7.png",
       });
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -65,10 +67,8 @@ export default function () {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    setUndergraduateData((prevData) => ({
-      ...prevData,
-      profilePic: file, // Set profilePic to the selected file
-    }));
+    setimg(file);
+    
   };
 
   const handleUpload = async (event) => {
@@ -81,7 +81,7 @@ export default function () {
       }
 
       const formData = new FormData();
-      formData.append("profilePic", undergraduateData.profilePic);
+      formData.append("profilePic", img);
       formData.append("id", userid);
 
       const response = await fetch("http://localhost:3001/upload/uploadpic", {
@@ -90,10 +90,14 @@ export default function () {
       });
 
       const data = await response.json();
-      console.log(data);
 
       if (response.ok) {
         console.log("Profile picture updated successfully:", data);
+        setUndergraduateData((prevData) => ({
+          ...prevData,
+          profilePic: "http://localhost:3001/uploads/" + data.user.profilePic,
+        }));
+        
       } else {
         console.error("Error updating profile picture:", data.error);
       }
@@ -149,8 +153,7 @@ export default function () {
               <img
                 src={
                   undergraduateData.profilePic
-                    ? undergraduateData.profilePic
-                    : "https://bootdey.com/img/Content/avatar/avatar7.png"
+                    
                 }
                 className="avatar img-circle img-thumbnail"
                 alt="avatar"
