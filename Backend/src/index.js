@@ -14,7 +14,8 @@ const users = require("../Routes/users");
 const experts = require("../Routes/expert");
 const message = require("../Routes/message");
 const content = require("../Routes/content");
-const advertisement = require("../Routes/advertisement")
+const advertisement = require("../Routes/advertisement");
+const { verifyToken, protectToken } = require("../middleware/protectRoute");
 
 const app = express();
 app.use(express.json());
@@ -39,6 +40,7 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
+app.get("/verifytoken",protectToken)
 app.use("/admin", admin);
 app.use("/user", users);
 app.use("/expert", experts);
