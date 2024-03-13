@@ -24,12 +24,12 @@
     font-size: 25px;
 }
 
-.g-3{
+/* .g-3{
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 600px;
-}
+} */
 
 .form-label{
     font-family: inter;

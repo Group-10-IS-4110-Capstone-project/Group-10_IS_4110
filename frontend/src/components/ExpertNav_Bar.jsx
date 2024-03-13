@@ -16,7 +16,7 @@ export default function ExpertNav_Bar() {
                 <Link to={"/homeEx"}><img src={icon2} alt="" className="nav-icon2" /></Link>
                 <Link to={"/chatEx"}><img src={icon3} alt="" className="nav-icon2" /></Link>
                 <Link to={"/feedEx"}><img src={icon4} alt="" className="nav-icon2" /></Link>
-                <Link to={""}><img src={icon5} alt="" className="nav-icon2" /></Link>
+                <Link to={"/profileEx"}><img src={icon5} alt="" className="nav-icon2" /></Link>
                 
             </div>
             <button className="nav-logout">Log Out</button>
