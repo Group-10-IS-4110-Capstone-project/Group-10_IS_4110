@@ -5,6 +5,7 @@ import "./LoginRightPane.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 export default function LoginRightPane() {
   const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("");
@@ -36,9 +37,15 @@ export default function LoginRightPane() {
       }
 
       if (response.data.message === "success-user") {
-        navigate("/");
+       
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userid", response.data.id);
+        
+        navigate(`/Undergraduate`);
+
       }
       if (response.data.message === "success-admin") {
+        localStorage.setItem("token", response.data.token);
         navigate("/admin");
       }
       // Redirect to the next page or perform other actions on successful login

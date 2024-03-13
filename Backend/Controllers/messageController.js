@@ -1,4 +1,5 @@
 const Conversation = require("../models/Conversation");
+const ExpertModel = require("../models/Expert");
 const Message = require("../models/MessageModel");
 const UnderGraduateModel = require("../models/UnderGraduate");
 
@@ -70,7 +71,7 @@ const getUsersForSideBar = async(req, res) => {
   try {
     const loggedInUserId = req.user._id  //if logged in
 
-    const filteredUsers = await UnderGraduateModel.find({_id: {$ne: loggedInUserId}}).select("-password")
+    const filteredUsers = await ExpertModel.find().select("-password")
 
     res.status(200).json(filteredUsers);
   } catch (error) {
