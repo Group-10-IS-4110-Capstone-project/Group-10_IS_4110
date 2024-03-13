@@ -14,8 +14,8 @@ export default function ExpertNav_Bar() {
             <img src={icon1} alt="" className="nav-icon-1" />
             <div className="user-navbar-1">
                 <Link to={""}><img src={icon2} alt="" className="nav-icon2" /></Link>
-                <Link to={""}><img src={icon3} alt="" className="nav-icon2" /></Link>
-                <Link to={""}><img src={icon4} alt="" className="nav-icon2" /></Link>
+                <Link to={"/feed"}><img src={icon3} alt="" className="nav-icon2" /></Link>
+                <Link to={"/feedEx"}><img src={icon4} alt="" className="nav-icon2" /></Link>
                 <Link to={""}><img src={icon5} alt="" className="nav-icon2" /></Link>
                 
             </div>
