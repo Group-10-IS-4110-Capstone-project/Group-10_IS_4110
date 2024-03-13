@@ -3,7 +3,7 @@
   padding: 40px 0;
 }
 .arrow-button {
-    background-color: #000000;
+    background-color: #034994;
     color: #fff;
     padding: 10px 50px;
     border: none;
@@ -14,6 +14,6 @@
   
   
   .arrow-button.clicked {
-    background-color: #034994;
+    background-color: #033366;
   }
   
