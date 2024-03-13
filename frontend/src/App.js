@@ -38,6 +38,8 @@ import ExpertFeed from './pages/ExpertFeed';
 import ExpertHome from './pages/ExpertHome';
 import ChatEx from './components/ChatEx';
 import ExpertChat from './pages/ExpertChat';
+import Advertistemen from './components/Advertistemen';
+import CreatePost from './components/CreatePost';
 
 
 function App() {
@@ -81,6 +83,9 @@ function App() {
           <Route path="/chatEx" element={<ExpertChat></ExpertChat>}></Route>
           <Route path="/feedEx" element={<ExpertFeed></ExpertFeed>}></Route>
           <Route path="/homeEx" element={<ExpertHome></ExpertHome>}></Route>
+          <Route path="/add" element={<Advertistemen></Advertistemen>}></Route>
+          
+          <Route path="/post" element={<CreatePost></CreatePost>}></Route>
 
           
           
