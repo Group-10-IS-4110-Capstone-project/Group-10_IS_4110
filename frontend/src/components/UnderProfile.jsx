@@ -92,7 +92,6 @@ export default function () {
       const data = await response.json();
 
       if (response.ok) {
-        console.log("Profile picture updated successfully:", data);
         setUndergraduateData((prevData) => ({
           ...prevData,
           profilePic: "http://localhost:3001/uploads/" + data.user.profilePic,
