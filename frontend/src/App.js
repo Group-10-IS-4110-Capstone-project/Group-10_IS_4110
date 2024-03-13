@@ -33,6 +33,7 @@ import UnderGraduate from './pages/UnderGraduate';
 import UndergraduateChat from './pages/UndergraduateChat';
 import UserFeed from './pages/UserFeed';
 import UserHome from './pages/UserHome';
+import ExpertNav_Bar from './components/ExpertNav_Bar';
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
           <Route path="/Undergraduatechat" element={<UndergraduateChat></UndergraduateChat>}></Route>
           <Route path="/feed" element={<UserFeed></UserFeed>}></Route>
           <Route path="/Home" element={<UserHome></UserHome>}></Route>
+          <Route path="/nav" element={<ExpertNav_Bar></ExpertNav_Bar>}></Route>
 
           
           
