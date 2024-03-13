@@ -13,7 +13,7 @@ export default function () {
         <div className="user-navbar">
             <img src={icon1} alt="" className="nav-icon-1" />
             <div className="user-navbar-1">
-                <Link to={"/Undergraduate"}><img src={icon2} alt="" className="nav-icon2" /></Link>
+                <Link to={"/Home"}><img src={icon2} alt="" className="nav-icon2" /></Link>
                 <Link to={"/Undergraduatechat"}><img src={icon3} alt="" className="nav-icon2" /></Link>
                 <Link to={"/feed"}><img src={icon4} alt="" className="nav-icon2" /></Link>
                 <Link to={"/Undergraduate"}><img src={icon5} alt="" className="nav-icon2" /></Link>

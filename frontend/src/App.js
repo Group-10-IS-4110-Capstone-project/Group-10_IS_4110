@@ -35,6 +35,9 @@ import UserFeed from './pages/UserFeed';
 import UserHome from './pages/UserHome';
 import ExpertNav_Bar from './components/ExpertNav_Bar';
 import ExpertFeed from './pages/ExpertFeed';
+import ExpertHome from './pages/ExpertHome';
+import ChatEx from './components/ChatEx';
+import ExpertChat from './pages/ExpertChat';
 
 
 function App() {
@@ -75,7 +78,9 @@ function App() {
 
 
           <Route path="/nav" element={<ExpertNav_Bar></ExpertNav_Bar>}></Route>
+          <Route path="/chatEx" element={<ExpertChat></ExpertChat>}></Route>
           <Route path="/feedEx" element={<ExpertFeed></ExpertFeed>}></Route>
+          <Route path="/homeEx" element={<ExpertHome></ExpertHome>}></Route>
 
           
           
