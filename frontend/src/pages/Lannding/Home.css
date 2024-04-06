@@ -4,6 +4,28 @@
     box-sizing: border-box;
     font-family: "Reem Kufi", sans-serif !important;
   }
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #0000ff;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4460ff;
+}
+
+
   img {
     max-width: 100%;
     height: auto;

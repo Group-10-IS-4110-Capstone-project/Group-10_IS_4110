@@ -8,18 +8,23 @@ const NavBar = () => {
   const menuOptions = [
     {
       text: "Home",
+      path: "/"
     },
     {
       text: "About",
+      path: "/about"
     },
     {
       text: "Experts",
+      path: "/experts"
     },
     {
       text: "Contact",
+      path: "/"
     },
     {
       text: "LogIn",
+      path: "/login"
     },
   ];
 
@@ -30,10 +35,11 @@ const NavBar = () => {
       </div>
       <div className="navbar-links-container">
         {menuOptions.map((option) => (
-          <a key={option.text} href="#">{option.text}</a>
+          option.text !== "Contact" ? <a key={option.text} href={option.path}>{option.text}</a> : <a key={option.text} href="#contact">{option.text}</a>
         ))}
-        <button className="primary-button">Sign Up</button>
+        <a href="/signup"><button className="primary-button">Sign Up</button></a>
       </div>
+      
       <div className="navbar-menu-container">
         <HiOutlineMenu onClick={() => setOpenMenu(true)} />
       </div>
