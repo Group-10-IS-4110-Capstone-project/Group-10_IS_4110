@@ -23,7 +23,7 @@ const Hero = () => {
             <a className="secondary-button" href="#join-us">
               Join Us
             </a>
-            <a className="btn-outline">Learn more</a>
+            <a className="btn-outline" href="/about">Learn more</a>
 
           </div>
         </div>
