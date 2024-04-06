@@ -26,7 +26,6 @@ export default function () {
           `http://localhost:3001/user/undergraduates/${userId}`
         );
         const data = await response.json();
-        console.log(data);
         setUndergraduateDataPic({
           profilePic: data.profilePic
             ? `http://localhost:3001/uploads/${data.profilePic}`

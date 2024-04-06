@@ -13,6 +13,27 @@ export default function () {
 
   const handleExpertClick = (expert) => {
     setSelectedExpert(expert);
+    fetchExpertDetails(expert._id);
+  };
+
+  const fetchExpertDetails = async (expertId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/expert/experts/${expertId}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch expert details");
+      }
+      const expertDetails = await response.json();
+      setSelectedExpert({
+        ...selectedExpert,
+        profilePic: expertDetails.profilePic,
+        Name: expertDetails.Name,
+      });
+    } catch (error) {
+      console.error("Error fetching expert details:", error);
+    }
   };
 
   return (
@@ -62,73 +83,6 @@ export default function () {
                       </div>
                     </li>
                   ))}
-                  {/*<li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Aiden Chavez</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Mike Thomas</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Christian Kelly</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle offline"></i> left 10 hours
-                        ago{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar8.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Monica Ward</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Dean Henry</div>
-                      <div className="status">
-                        {" "}
-                        <i class="fa fa-circle offline"></i> offline since Oct
-                        28{" "}
-                      </div>
-                    </div>
-                  </li> */}
                 </ul>
               </div>
               <div className="chat">
@@ -141,7 +95,7 @@ export default function () {
                         data-target="#view_info"
                       >
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                          src={selectedExpert ? selectedExpert.profilePic : ""}
                           alt="avatar"
                         />
                       </a>
@@ -149,11 +103,18 @@ export default function () {
                         <h6 className="m-b-0">
                           {selectedExpert ? selectedExpert.Name : ""}
                         </h6>
+                        {/* Other details if available */}
+                      </div>
+
+                      {/* <div className="chat-about">
+                        <h6 className="m-b-0">
+                          {selectedExpert ? selectedExpert.Name : ""}
+                        </h6>
                         <small>
                           Last seen:{" "}
                           {selectedExpert ? selectedExpert.LastSeen : ""}
                         </small>
-                      </div>
+                      </div> */}
                     </div>
                     <div className="col-lg-6 hidden-sm text-right">
                       <a
