@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
+import axios from "axios";
 
 export default function () {
   const [experts, setExperts] = useState([]);
   const [selectedExpert, setSelectedExpert] = useState(null);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3001/expert/")
@@ -13,6 +15,61 @@ export default function () {
 
   const handleExpertClick = (expert) => {
     setSelectedExpert(expert);
+    fetchExpertDetails(expert._id);
+  };
+
+  const fetchExpertDetails = async (expertId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/expert/experts/${expertId}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch expert details");
+      }
+      const expertDetails = await response.json();
+      setSelectedExpert({
+        ...selectedExpert,
+        profilePic: expertDetails.profilePic,
+        Name: expertDetails.Name,
+        id: expertDetails._id,
+      });
+    } catch (error) {
+      console.error("Error fetching expert details:", error);
+    }
+  };
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const sendMessage = async () => {
+    try {
+      // const userId = getUserId();
+      const response = await fetch(
+        `http://localhost:3001/message/send/${selectedExpert.id}`,
+        {
+          method: "POST", // Specify the method as POST
+          headers: {
+            "Content-Type": "application/json", // Specify the content type as JSON
+          },
+          body: JSON.stringify({
+            // Convert the data to JSON string
+            message: message,
+            userId: "65eb32ff9b96d7db56c4ac3f",
+          }),
+        }
+      );
+
+      const responseData = await response.json(); // Parse the response JSON
+
+      console.log("Message sent successfully:", responseData);
+
+      // console.log("Message sent successfully:", response);
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
   };
 
   return (
@@ -62,73 +119,6 @@ export default function () {
                       </div>
                     </li>
                   ))}
-                  {/*<li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Aiden Chavez</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Mike Thomas</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Christian Kelly</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle offline"></i> left 10 hours
-                        ago{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar8.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Monica Ward</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Dean Henry</div>
-                      <div className="status">
-                        {" "}
-                        <i class="fa fa-circle offline"></i> offline since Oct
-                        28{" "}
-                      </div>
-                    </div>
-                  </li> */}
                 </ul>
               </div>
               <div className="chat">
@@ -141,7 +131,7 @@ export default function () {
                         data-target="#view_info"
                       >
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                          src={selectedExpert ? selectedExpert.profilePic : ""}
                           alt="avatar"
                         />
                       </a>
@@ -149,11 +139,18 @@ export default function () {
                         <h6 className="m-b-0">
                           {selectedExpert ? selectedExpert.Name : ""}
                         </h6>
+                        {/* Other details if available */}
+                      </div>
+
+                      {/* <div className="chat-about">
+                        <h6 className="m-b-0">
+                          {selectedExpert ? selectedExpert.Name : ""}
+                        </h6>
                         <small>
                           Last seen:{" "}
                           {selectedExpert ? selectedExpert.LastSeen : ""}
                         </small>
-                      </div>
+                      </div> */}
                     </div>
                     <div className="col-lg-6 hidden-sm text-right">
                       <a
@@ -226,14 +223,19 @@ export default function () {
                 <div className="chat-message clearfix">
                   <div className="input-group mb-0">
                     <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        <i class="bi bi-send"></i>
-                      </span>
+                      <button
+                        className="input-group-text"
+                        onClick={sendMessage}
+                      >
+                        <i className="bi bi-send"></i>
+                      </button>
                     </div>
                     <input
                       type="text"
                       className="form-control"
                       placeholder="Enter text here..."
+                      value={message}
+                      onChange={handleMessageChange}
                     />
                   </div>
                 </div>

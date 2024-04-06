@@ -3,12 +3,14 @@ const ExpertModel = require("../models/Expert");
 const Message = require("../models/MessageModel");
 const UnderGraduateModel = require("../models/UnderGraduate");
 
+
 const sendMessage = async (req, res) => {
   try {
     const { message } = req.body;
-    const { id: receiverId } = req.params;
+    // const { id } = req.params;
+    const receiverId = req.params.id;
     // const senderId = req.user._id
-    const senderId = "65cef9e13a81a8b010e02470";
+    const senderId = "65e17aeb93b702152ad1a698";
 
     let conversation = await Conversation.findOne({
       participants: { $all: [senderId, receiverId] },
@@ -30,14 +32,15 @@ const sendMessage = async (req, res) => {
       conversation.messages.push(newMessage._id);
     }
 
-    await promise.all([conversation.save(), newMessage.save()]);
+    await Promise.all([conversation.save(), newMessage.save()]);
 
-    res.status(201).json(newMessage);
+    return res.status(201).json({type:"sucess",msg:newMessage.message});
   } catch (error) {
     console.log("Error in sendMessage controller", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
 
 //get messages
 
@@ -54,7 +57,7 @@ const getMessage = async (req, res) => {
 
       const messages = conversation.messages;
 
-      res.status(200).json(messages);
+      return res.status(200).json(messages);
 
   } catch (error) {
     console.log("Error in sendMessage controller", error);

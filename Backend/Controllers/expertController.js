@@ -92,4 +92,17 @@ const getUsersForSideBar = async(req, res) => {
   }
 }
 
-module.exports = { expertRegister, expertLogin ,getUsersForSideBar};
+const getUserById = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const undergraduate = await ExpertModel.findById(userId);
+    if (!undergraduate) {
+      return res.status(404).json({ message: "Undergraduate not found" });
+    }
+    res.json(undergraduate);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { expertRegister, expertLogin ,getUsersForSideBar,getUserById};
