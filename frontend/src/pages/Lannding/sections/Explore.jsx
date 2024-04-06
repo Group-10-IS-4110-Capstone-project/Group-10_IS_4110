@@ -15,31 +15,41 @@ const Explore = () => {
   const workInfoData = [
     {
       image: AI, 
+      path:"/ai"
+    
     },
     {
       image: Devops,
+      path:"/devops"
     },
     {
       image: Mobile_App_dev,
+      path:"/mobile-app-dev"
     },
 
     {
       image: Cyber_Security,
+      path:"/cyber-security"
     },
     {
       image:Data_Science,
+      path:"/experts"
     },
     {
       image:Machine_Learning,
+      path:"/machine-learning"
     },
     {
       image:Cloud_Computing,
+      path:"/cloud-computing"
     },
     {
       image:Block_Chain,
+      path:"/block-chain"
     },
     {
       image:Web_Development,
+      path:"/web-development"
     },
     
 
@@ -57,13 +67,13 @@ within the IT industry.
       </div>
       <div className="work-section-bottom">
         {workInfoData.map((data) => (
-          <div className="work-section-info" key={data.title}>
+          <a className="work-section-info" key={data.title} href={data.path}>
             <div className="info-boxes-img-container">
               <img src={data.image} alt="" />
             </div>
             <h2>{data.title}</h2>
             <p>{data.text}</p>
-          </div>
+          </a>
         ))}
       </div>
     </div> 

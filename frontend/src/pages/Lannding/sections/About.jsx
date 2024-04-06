@@ -5,7 +5,7 @@ import AboutBackgroundImage from "../../../assets/au.png";
 
 const About = () => {
   return (
-    <div className="outer-container">
+    <section id="join-us" className="outer-container">
     <div className="about-section-container container">
       <div className="about-background-image-container">
        
@@ -35,7 +35,7 @@ valuable insights tailored just for you.
         </div>
       </div>
     </div>
-    </div>
+    </section>
   );
 };
 
