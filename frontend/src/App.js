@@ -5,6 +5,7 @@ import Artificial from './pages/Artificial';
 
 
 import Home from './pages/Lannding/Home';
+import AboutUs from './pages/AbtUs/AboutUs';
 import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
 import ForgotPwd from './pages/ForgotPwd/ForgotPwd';
@@ -42,6 +43,7 @@ function App() {
       <BrowserRouter>
         <Routes>
         <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs/>} />
           <Route path="/Datascience" element={<Datascience/>} />
      
 
