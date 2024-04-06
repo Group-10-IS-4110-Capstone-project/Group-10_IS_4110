@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
+import axios from "axios";
 
 export default function () {
   const [experts, setExperts] = useState([]);
   const [selectedExpert, setSelectedExpert] = useState(null);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3001/expert/")
@@ -30,9 +32,43 @@ export default function () {
         ...selectedExpert,
         profilePic: expertDetails.profilePic,
         Name: expertDetails.Name,
+        id: expertDetails._id,
       });
     } catch (error) {
       console.error("Error fetching expert details:", error);
+    }
+  };
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const sendMessage = async () => {
+    try {
+      // const userId = getUserId();
+      const response = await fetch(
+        `http://localhost:3001/message/send/${selectedExpert.id}`,
+        {
+          method: "POST", // Specify the method as POST
+          headers: {
+            "Content-Type": "application/json", // Specify the content type as JSON
+          },
+          body: JSON.stringify({
+            // Convert the data to JSON string
+            message: message,
+            userId: "65eb32ff9b96d7db56c4ac3f",
+          }),
+        }
+      );
+
+      const responseData = await response.json(); // Parse the response JSON
+
+      console.log("Message sent successfully:", responseData);
+
+      // console.log("Message sent successfully:", response);
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending message:", error);
     }
   };
 
@@ -187,14 +223,19 @@ export default function () {
                 <div className="chat-message clearfix">
                   <div className="input-group mb-0">
                     <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        <i class="bi bi-send"></i>
-                      </span>
+                      <button
+                        className="input-group-text"
+                        onClick={sendMessage}
+                      >
+                        <i className="bi bi-send"></i>
+                      </button>
                     </div>
                     <input
                       type="text"
                       className="form-control"
                       placeholder="Enter text here..."
+                      value={message}
+                      onChange={handleMessageChange}
                     />
                   </div>
                 </div>
