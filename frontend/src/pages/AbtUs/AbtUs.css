@@ -1,19 +1,30 @@
 .abt-container {
     text-align: center;
-    
-  }
-  
-  .abt-content {
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
-    max-width: 100%;
+  } 
+  
+  .abt-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh ;
+    gap: 24px;
+    margin-inline: auto;
+    padding-inline: 48px;
+    max-width: 1200px;
     border: 1px solid rgb(21, 5, 144); 
     border-radius: 12px;
     border-width: 2px;
     
     
+  }
+
+  .abt-content h1 {
+    margin-bottom: 24px;
   }
   
   .abt-image {
@@ -25,13 +36,8 @@
   }
   
   .abt-text {
-    width: 30%;
     color: black;
     font-size: 14px;
-    justify-self: center;
-    max-height: 50%;
-    
-   
-   
+    justify-self: center;   
   }
   
