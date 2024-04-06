@@ -14,8 +14,9 @@
 }
 
 .nav-icon-1{
-    width: 100px;
-    height: auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
 .user-navbar-1{

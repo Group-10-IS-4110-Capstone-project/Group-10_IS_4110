@@ -15,6 +15,7 @@ const experts = require("../Routes/expert");
 const message = require("../Routes/message");
 const content = require("../Routes/content");
 const advertisement = require("../Routes/advertisement");
+const upload = require("../Routes/upload")
 const { verifyToken, protectToken } = require("../middleware/protectRoute");
 
 const app = express();
@@ -47,6 +48,8 @@ app.use("/expert", experts);
 app.use("/message", message);
 app.use("/content", content);
 app.use("/advertisement", advertisement)
+app.use('/upload', upload);
+app.use('/uploads', express.static('uploads'));
 
 // app.post('/api/register', async (req, res) => {
 //   try {

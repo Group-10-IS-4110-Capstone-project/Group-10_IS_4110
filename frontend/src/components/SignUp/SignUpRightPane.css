@@ -163,3 +163,48 @@
   line-height: normal;
   width: 300px;
 }
+@media (max-width: 767px) {
+  .signupright {
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .box {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .title-1,
+  .title-2 {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .active:after {
+    width: 100px;
+  }
+
+  .log {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .signupright {
+    width: 400px;
+  }
+
+  .box {
+    gap: 50px;
+  }
+
+  .title-1,
+  .title-2 {
+    font-size: 16px;
+  }
+
+  .active:after {
+    width: 120px;
+  }
+}

@@ -19,10 +19,11 @@ const Hero = () => {
             Explore your career journey !
           </p>
           <div className="cta-btns">
-            <button className="secondary-button">
+         
+            <a className="secondary-button" href="#join-us">
               Join Us
-            </button>
-            <button className="btn-outline">Learn more</button>
+            </a>
+            <a className="btn-outline" href="/about">Learn more</a>
 
           </div>
         </div>

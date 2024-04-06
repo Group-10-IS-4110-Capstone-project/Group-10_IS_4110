@@ -7,6 +7,7 @@ const ExpertSchema = new mongoose.Schema({
   workExperience: String,
   email: String,
   password: String,
+  profilePic: String,
 });
 
 const ExpertModel = mongoose.model("LoginExpert", ExpertSchema);

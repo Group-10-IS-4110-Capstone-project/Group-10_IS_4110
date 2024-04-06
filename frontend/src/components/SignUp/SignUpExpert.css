@@ -14,3 +14,21 @@
     position: relative;
     top: -10px;
 }
+@media (max-width: 767px) {
+    .expert:after {
+      width: 50px;
+    }
+  
+    .ex {
+      height: auto;
+    }
+  
+    .message {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .exper {
+      top: 0;
+    }
+  }
