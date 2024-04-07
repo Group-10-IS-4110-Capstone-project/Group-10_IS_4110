@@ -48,6 +48,11 @@ export default function LoginRightPane() {
         localStorage.setItem("token", response.data.token);
         navigate("/admin");
       }
+
+      if (response.data.message === "success-expert") {
+        localStorage.setItem("token", response.data.token);
+        navigate("/homeEx");
+      }
       // Redirect to the next page or perform other actions on successful login
     } catch (error) {
       console.error("Error during login:", error.response?.data?.message);

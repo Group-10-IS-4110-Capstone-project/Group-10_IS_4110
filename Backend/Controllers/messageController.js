@@ -6,11 +6,11 @@ const UnderGraduateModel = require("../models/UnderGraduate");
 
 const sendMessage = async (req, res) => {
   try {
-    const { message } = req.body;
+    const { message,senderId } = req.body;
     // const { id } = req.params;
     const receiverId = req.params.id;
     // const senderId = req.user._id
-    const senderId = "65e17aeb93b702152ad1a698";
+    // const senderId = "65e17aeb93b702152ad1a698";
 
     let conversation = await Conversation.findOne({
       participants: { $all: [senderId, receiverId] },
@@ -18,6 +18,7 @@ const sendMessage = async (req, res) => {
 
     if (!conversation) {
       conversation = await Conversation.create({
+
         participants: [senderId, receiverId],
       });
     }
@@ -47,7 +48,8 @@ const sendMessage = async (req, res) => {
 const getMessage = async (req, res) => {
   try {
     const {id: userToChatId} = req.params;
-    const senderId = "65cef9e13a81a8b010e02470";
+    // const senderId = "65cef9e13a81a8b010e02470";
+    const senderId = req.params.id
 
     let conversation = await Conversation.findOne({
         participants: { $all: [senderId, userToChatId] },

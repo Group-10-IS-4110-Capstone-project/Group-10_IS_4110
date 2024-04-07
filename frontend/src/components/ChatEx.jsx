@@ -1,8 +1,118 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Chat.css";
 
 export default function ChatEx() {
+
+  const userIdenty = localStorage.getItem("userid");
+  const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [prevSelectedUser, setPrevSelectedUser] = useState(null);
+  const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([]);
+  
+
+  useEffect(() => {
+    fetch("http://localhost:3001/user/")
+      .then((res) => res.json())
+      .then((res) => setUsers(res));
+  }, []);
+
+  const handleUserClick = (user) => {
+    setPrevSelectedUser(selectedUser);
+    setSelectedUser(user);
+    fetchUserDetails(user._id);
+    setMessages([]);
+    fetchMessages(user._id);
+  };
+
+  const fetchMessages = async () => {
+    try {
+      const response = await fetch(`http://localhost:3001/message/${selectedUser.id}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch messages");
+      }
+      const messagesData = await response.json();
+      console.log("recieve successfully",messagesData)
+      setMessages(messagesData);
+    } catch (error) {
+      console.error("Error fetching messages:", error);
+    }
+  };
+
+  const fetchUserDetails = async (userId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/user/undergraduates/${userId}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch expert details");
+      }
+      const userDetails = await response.json();
+
+      // const profilePicUrl = userDetails.profilePic
+      // ? `http://localhost:3001/uploads/${userDetails.profilePic}`
+      // : "https://bootdey.com/img/Content/avatar/avatar1.png";
+
+      // console.log(userDetails)
+      setSelectedUser({
+        ...selectedUser,
+        profilePic: userDetails.profilePic,
+        Name: userDetails.firstName,
+        id: userDetails._id,
+      });
+    } catch (error) {
+      console.error("Error fetching expert details:", error);
+    }
+  };
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const sendMessage = async () => {
+    try {
+
+      const userIdenty = localStorage.getItem("userid");
+      
+      
+      // const userId = getUserId();
+      const response = await fetch(
+        `http://localhost:3001/message/send/${selectedUser.id}`,
+        {
+          method: "POST", // Specify the method as POST
+          headers: {
+            "Content-Type": "application/json", // Specify the content type as JSON
+          },
+          body: JSON.stringify({
+            // Convert the data to JSON string
+            message: message,
+            senderId: userIdenty,
+          }),
+        }
+      );
+
+      const responseData = await response.json(); // Parse the response JSON
+
+      const newMessage = {
+        text: message,
+        time: new Date().toLocaleTimeString(),
+        sender: 'user', // Assuming user is sending the message
+      };
+
+      console.log("Message sent successfully:", responseData);
+
+      // console.log("Message sent successfully:", response);
+      setMessages(prevMessages => [...prevMessages, newMessage]);
+      setMessage("");
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
+
   return (
+
+    
     <div>
         <link
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -27,87 +137,43 @@ export default function ChatEx() {
                   />
                 </div>
                 <ul className="list-unstyled chat-list mt-2 mb-0">
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Vincent Porter</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle offline"></i> left 7 mins ago{" "}
+                  {users.map((user) => (
+                    <li
+                      key={user._id}
+                      className={`clearfix ${
+                        selectedUser === user ? "selected" : ""
+                      }`}
+                      onClick={() => handleUserClick(user)}
+                    >
+                      <img
+                        //  src={selectedUser && selectedUser.profilePic ? `http://localhost:3001/uploads/${user.profilePic}`: "https://bootdey.com/img/Content/avatar/avatar1.png"}
+                        // // src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                        // alt="avatar"
+                        src={
+                          (prevSelectedUser &&
+                            prevSelectedUser._id === user._id &&
+                            prevSelectedUser.profilePic) ||
+                          user.profilePic
+                            ? `http://localhost:3001/uploads/${
+                                user.profilePic || ""
+                              }`
+                            : "https://bootdey.com/img/Content/avatar/avatar1.png"
+                        }
+                        alt="avatar"
+
+                      />
+                      <div className="about">
+                        <div className="name">{user.firstName}</div>
+                        <div className="status">
+                          {" "}
+                          <i className="fa fa-circle offline"></i> left 7 mins
+                          ago{" "}
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="clearfix active">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Aiden Chavez</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Mike Thomas</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Christian Kelly</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle offline"></i> left 10 hours
-                        ago{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar8.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Monica Ward</div>
-                      <div className="status">
-                        {" "}
-                        <i className="fa fa-circle online"></i> online{" "}
-                      </div>
-                    </div>
-                  </li>
-                  <li className="clearfix">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                      alt="avatar"
-                    />
-                    <div className="about">
-                      <div className="name">Dean Henry</div>
-                      <div className="status">
-                        {" "}
-                        <i class="fa fa-circle offline"></i> offline since Oct
-                        28{" "}
-                      </div>
-                    </div>
-                  </li>
+                    </li>
+                  ))}
                 </ul>
+                 
               </div>
               <div className="chat">
                 <div className="chat-header clearfix">
@@ -119,13 +185,15 @@ export default function ChatEx() {
                         data-target="#view_info"
                       >
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                          src={selectedUser && selectedUser.profilePic ? `http://localhost:3001/uploads/${selectedUser.profilePic}`: "https://bootdey.com/img/Content/avatar/avatar1.png"}
                           alt="avatar"
                         />
                       </a>
                       <div className="chat-about">
-                        <h6 className="m-b-0">Aiden Chavez</h6>
-                        <small>Last seen: 2 hours ago</small>
+                      <h6 className="m-b-0">
+                          {selectedUser ? selectedUser.Name : ""}
+                        </h6>
+                        
                       </div>
                     </div>
                     <div className="col-lg-6 hidden-sm text-right">
@@ -157,7 +225,18 @@ export default function ChatEx() {
                   </div>
                 </div>
                 <div className="chat-history">
-                  <ul className="m-b-0">
+                <ul className="m-b-0">
+    {messages.map((msg, index) => (
+      <li key={index} className={`clearfix ${msg.sender === 'user' ? 'other-message float-right-down' : 'clearfix float-left-down'}`}>
+        <div className={`message ${msg.sender === 'user' ? 'my-message' : 'other-message'}`}>{msg.text || msg.message}</div>
+        <div className="message-data">
+          <span className="message-data-time">{msg.time}</span>
+        </div>
+        {/* <div className={`message ${msg.sender === 'user' ? 'my-message' : 'other-message'}`}>{msg.text}</div> */}
+      </li>
+    ))}
+  </ul>
+                  {/* <ul className="m-b-0">
                     <li className="clearfix">
                       <div className="message-data text-right">
                         <span className="message-data-time">
@@ -194,19 +273,23 @@ export default function ChatEx() {
                         show you.
                       </div>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
                 <div className="chat-message clearfix">
                   <div className="input-group mb-0">
                     <div className="input-group-prepend">
-                      <span className="input-group-text">
+                      <button className="input-group-text"
+                      onClick={sendMessage}>
                         <i class="bi bi-send"></i>
-                      </span>
+                      </button>
                     </div>
                     <input
                       type="text"
                       className="form-control"
                       placeholder="Enter text here..."
+                      value={message}
+                      onChange={handleMessageChange}
+                    
                     />
                   </div>
                 </div>
