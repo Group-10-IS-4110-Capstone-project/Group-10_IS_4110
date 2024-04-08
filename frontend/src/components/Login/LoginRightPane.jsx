@@ -46,11 +46,13 @@ export default function LoginRightPane() {
       }
       if (response.data.message === "success-admin") {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userid", response.data.id);
         navigate("/admin");
       }
 
       if (response.data.message === "success-expert") {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userid", response.data.id);
         navigate("/homeEx");
       }
       // Redirect to the next page or perform other actions on successful login

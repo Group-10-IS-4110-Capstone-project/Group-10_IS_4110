@@ -1,6 +1,146 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import useAuth from "./UseAth";
+import { useNavigate } from "react-router-dom";
 
 export default function ExpertProfile() {
+  const isAuthenticated = useAuth();
+  const userid = localStorage.getItem("userid");
+  const navigate = useNavigate();
+
+  const [expertData, setExpertData] = useState({
+    Name: "",
+    jobField: "",
+    workExperience: "",
+    bio: "",
+    profilePic: "",
+  });
+
+  const [img,setimg] = useState("");
+
+  const fetchData = async (userId) => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        // Handle the case where the token is not available
+        console.log("No token available");
+        return;
+      }
+      const response = await fetch(
+        `http://localhost:3001/expert/experts/${userId}`
+      );
+
+      const data = await response.json();
+      console.log(data.Name)
+
+      setExpertData({
+        Name: data.Name || "",
+        jobField: data.jobFeild || "",
+        workExperience: data.workExperience || "",
+        bio: data.bio || "",
+        profilePic: `http://localhost:3001/uploads/${data.profilePic}` || "https://bootdey.com/img/Content/avatar/avatar7.png",
+      });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+
+  useEffect(() => {
+    if (isAuthenticated == null) return;
+
+    if (isAuthenticated == false) {
+      // Handle unauthorized access, e.g., redirect to login page
+      navigate("/login");
+      return;
+    }
+    fetchData(userid);
+  }, [isAuthenticated]);
+
+  const handleInputChange = (event) => {
+    // Handle input changes if needed
+    const { name, value } = event.target;
+    setExpertData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setimg(file);
+    
+  };
+
+  const handleUpload = async (event) => {
+    event.preventDefault();
+    try {
+      
+      const token = localStorage.getItem("token");
+      if (!token) {
+        console.log("No token available");
+        return;
+      }
+
+      // const formData = new FormData();
+      // formData.append("profilePic", img);
+      // formData.append("id", userid);
+
+      // const response = await fetch("http://localhost:3001/upload/uploadpic", {
+      //   method: "POST",
+      //   body: formData,
+      // });
+
+      // const data = await response.json();
+
+      // if (response.ok) {
+      //   setExpertData((prevData) => ({
+      //     ...prevData,
+      //     profilePic: "http://localhost:3001/uploads/" + data.user.profilePic,
+      //   }));
+        
+      // } else {
+      //   console.error("Error updating profile picture:", data.error);
+      // }
+    } catch (error) {
+      console.error("Error updating profile picture:", error);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Handle form submission if needed
+    try {
+      const token = localStorage.getItem("token");
+      console.log(userid)
+      if (!token) {
+        // Handle the case where the token is not available
+        console.log("No token available");
+        return;
+      }
+      const response = await fetch(
+        `http://localhost:3001/expert/updateuser/${userid}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(expertData),
+        }
+      );
+
+      const data = await response.json();
+      console.log(data);
+
+      if (response.ok) {
+        console.log("User updated successfully:", data);
+      } else {
+        console.error("Error updating user:", data.error);
+      }
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
+  };
+
   return (
     <div>
     <div className="container bootstrap snippets bootdey">
@@ -11,14 +151,23 @@ export default function ExpertProfile() {
       <div className="row">
         <div className="col-md-3">
           <div className="text-center">
-            <img
-              src="https://bootdey.com/img/Content/avatar/avatar7.png"
-              className="avatar img-circle img-thumbnail"
-              alt="avatar"
-            ></img>
-            <h6>Upload a different photo...</h6>
-
-            <input type="file" class="form-control" />
+          <img
+                src={
+                  expertData.profilePic
+                    
+                }
+                className="avatar img-circle img-thumbnail"
+                alt="avatar"
+              ></img>
+              <input
+                type="file"
+                class="form-control"
+                onChange={handleFileChange}
+              />
+              <button type="Submit" value={"submit"} onClick={handleUpload}>
+                upload
+              </button>
+            
           </div>
         </div>
 
@@ -28,7 +177,7 @@ export default function ExpertProfile() {
           <form
             className="form-horizontal"
             role="form"
-            // onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
           >
             <div className="form-group">
               <label className="col-lg-3 control-label">Name:</label>
@@ -36,9 +185,9 @@ export default function ExpertProfile() {
                 <input
                   className="form-control"
                   type="text"
-                  name="firstName"
-                //   value={undergraduateData.firstName}
-                //   onChange={handleInputChange}
+                  name="Name"
+                  value={expertData.Name}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -48,9 +197,9 @@ export default function ExpertProfile() {
                 <input
                   className="form-control"
                   type="text"
-                  name="lastName"
-                //   value={undergraduateData.lastName}
-                //   onChange={handleInputChange}
+                  name="jobField"
+                  value={expertData.jobField}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -60,9 +209,9 @@ export default function ExpertProfile() {
                 <input
                   className="form-control"
                   type="text"
-                  name="university"
-                //   value={undergraduateData.university}
-                //   onChange={handleInputChange}
+                  name="workExperience"
+                  value={expertData.workExperience}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -73,8 +222,8 @@ export default function ExpertProfile() {
                   className="form-control"
                   type="text"
                   name="bio"
-                //   value={undergraduateData.bio}
-                //   onChange={handleInputChange}
+                  value={expertData.bio}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>

@@ -14,7 +14,7 @@ export default function () {
     fetch("http://localhost:3001/expert/")
       .then((res) => res.json())
       .then((res) => setExperts(res));
-  }, []);
+  }, [selectedExpert]);
 
   const handleExpertClick = (expert) => {
     setSelectedExpert(expert);
@@ -49,6 +49,7 @@ export default function () {
 
   const sendMessage = async () => {
     try {
+      console.log(selectedExpert.id)
       const userIdenty = localStorage.getItem("userid");
       // const userId = getUserId();
       const response = await fetch(

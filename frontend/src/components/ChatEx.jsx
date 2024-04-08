@@ -15,19 +15,27 @@ export default function ChatEx() {
     fetch("http://localhost:3001/user/")
       .then((res) => res.json())
       .then((res) => setUsers(res));
-  }, []);
+  }, [selectedUser]);
+
+  // useEffect(() => {
+  //   if (selectedUser) {
+  //     fetchMessages();
+  //   }
+  // }, [sele]);
 
   const handleUserClick = (user) => {
+    fetchMessages(user._id);
     setPrevSelectedUser(selectedUser);
     setSelectedUser(user);
     fetchUserDetails(user._id);
     setMessages([]);
-    fetchMessages(user._id);
   };
 
-  const fetchMessages = async () => {
+  const fetchMessages = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:3001/message/${selectedUser.id}`);
+      console.log(userId)
+      console.log("getmessage")
+      const response = await fetch(`http://localhost:3001/message/${userId}`);
       if (!response.ok) {
         throw new Error("Failed to fetch messages");
       }
@@ -75,8 +83,11 @@ export default function ChatEx() {
 
       const userIdenty = localStorage.getItem("userid");
       
+      console.log(selectedUser.id)
+      console.log("====")
+      console.log(userIdenty)
+      console.log("sender")
       
-      // const userId = getUserId();
       const response = await fetch(
         `http://localhost:3001/message/send/${selectedUser.id}`,
         {

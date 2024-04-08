@@ -35,7 +35,7 @@ const sendMessage = async (req, res) => {
 
     await Promise.all([conversation.save(), newMessage.save()]);
 
-    return res.status(201).json({type:"sucess",msg:newMessage.message});
+    return res.status(201).json({type:"sucess",msg:newMessage.message,rc:receiverId,sen:senderId});
   } catch (error) {
     console.log("Error in sendMessage controller", error);
     res.status(500).json({ error: "Internal Server Error" });

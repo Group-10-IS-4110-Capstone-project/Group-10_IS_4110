@@ -101,7 +101,7 @@ const userLogin = async (req, res) => {
           "10",
           { expiresIn: "1h" }
         );
-        return res.json({ message: "success-expert", token });
+        return res.json({ message: "success-expert", token ,id:expert._id});
       } else {
         return res.json({ message: "Incorrect password admin" });
       }
@@ -119,7 +119,7 @@ const userLogin = async (req, res) => {
         const token = jwt.sign({ userId: admin._id, userType: "admin" }, "10", {
           expiresIn: "1h",
         });
-        return res.json({ message: "success-admin", token });
+        return res.json({ message: "success-admin", token ,id:admin._id});
       } else {
         return res.json({ message: "Incorrect password" });
       }

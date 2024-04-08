@@ -125,7 +125,7 @@ export default function () {
           body: JSON.stringify(undergraduateData),
         }
       );
-      console.log(undergraduateData);
+      
 
       const data = await response.json();
       console.log(data);
