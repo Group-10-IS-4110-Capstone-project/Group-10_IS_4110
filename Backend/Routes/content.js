@@ -15,6 +15,6 @@ Router.put('/update/:id',verifyToken,updateContent);
 Router.delete('/delete/:id',verifyToken,deleteContent);
 
 //get all content
-Router.get('/getAllcontent',verifyToken, getAllContent);
+Router.get('/getAllcontent', getAllContent);
 
 module.exports = Router;

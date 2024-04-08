@@ -52,6 +52,43 @@ const createContent = async (req, res) => {
   }
 };
 
+// const createContent = async (req, res) => {
+//   try {
+//     const userId = req.params.id;
+
+//     // Parse the form data
+//     const form = new formidable.IncomingForm();
+//     form.parse(req, async (err, fields, files) => {
+//       if (err) {
+//         return res.status(400).json({ error: "Bad Request" });
+//       }
+
+//       const { Picture } = files;
+//       const { Subject, Description } = JSON.parse(fields.data);
+
+//       // Your existing logic for determining userType and createdByName
+
+//       const newContent = new ContentModel({
+//         Picture,
+//         Subject,
+//         Description,
+//         createdBy: {
+//           userId: userId,
+//           userType: userType,
+//           createdByName: createdByName
+//         }
+//       });
+
+//       await newContent.save();
+
+//       res.json({ message: "Content created successfully", content: newContent });
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// };
+
 const updateContent = async (req, res) => {
   try {
     const contentId = req.params.id;

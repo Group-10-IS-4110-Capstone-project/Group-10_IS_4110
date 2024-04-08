@@ -83,7 +83,7 @@ export default function ExpertProfile() {
       const formData = new FormData();
       formData.append("profilePic", img);
       formData.append("id", userid);
-      // console.log(formData)
+      console.log(formData)
 
       const response = await fetch("http://localhost:3001/upload/uploadpicex", {
         method: "POST",

@@ -21,24 +21,39 @@ export default function CreatePost() {
     setImage(file);
   };
 
+
   const handleSubmit = async(event) => {
     event.preventDefault();
+
     
     try {
       const userid = localStorage.getItem("userid");
-      console.log(userid)
+      
+      const postData = {
+        Subject: title,
+        Description: description,
+      };
+
+      // const formData = new FormData();
+      // formData.append("Picture", image);
+      // formData.append("Subject", title);
+      // formData.append("Description", description);
+
+      // console.log(formData)
       const formData = new FormData();
       formData.append("Picture", image);
-      formData.append("Subject", title);
-      formData.append("Description", description);
 
-      console.log(formData)
+      formData.append("data", JSON.stringify(postData));
 
       // Make an HTTP POST request using fetch
       const response = await fetch(`http://localhost:3001/content/create/${userid}`, {
         method: "POST",
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(postData),
       });
+
       const data = await response.json();
       console.log(data)
       // Handle the response from the backend
@@ -48,10 +63,32 @@ export default function CreatePost() {
       // const data = await response.json();
       console.log("Response:", data);
       // You can display a success message to the user or redirect to another page
+
+      const imageFormData = new FormData();
+      imageFormData.append('image', image);
+
+      // const imageResponse = await fetch('http://localhost:3001/upload/upload', {
+      //   method: 'POST',
+      //   body: imageFormData
+      // });
+
+      // if (!imageResponse.ok) {
+      //   throw new Error('Failed to upload image');
+      // }
+
+      // console.log('Image uploaded successfully');
+
+      // setTitle("");
+      // setDescription("");
+      // setImage(null);
+      
+
     } catch (error) {
       console.error("Error:", error.message);
       // Handle errors, such as displaying an error message to the user
     }
+    
+    
   };
 
   return (
@@ -81,7 +118,7 @@ export default function CreatePost() {
                 </div>
                 <div className="col-12">
                   <label for="inputAddress" className="form-label">Image</label>
-                  <input type="file" className="form-control" id="inputAddress" placeholder="1234 Main St" onChange={handleImageChange}/>
+                  <input type="file" className="form-control" id="inputAddress" placeholder="upload image" onChange={handleImageChange} />
                 </div>
                 <div className="text-center">
                   <button type="submit" className="btn btn-primary">Post</button>

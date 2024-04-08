@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Feed.css"
 
 export default function Feed() {
@@ -12,9 +12,11 @@ export default function Feed() {
 
       const fetchContent = async () => {
         try {
+
           const response = await fetch("http://localhost:3001/content/getAllcontent"); // Adjust the endpoint URL as per your backend route
           if (response.ok) {
             const data = await response.json();
+            console.log(data)
             setContent(data.content);
           } else {
             console.error('Failed to fetch content');
@@ -109,7 +111,33 @@ export default function Feed() {
 
     </div> */}
 
-    <div className="social-feed-box">
+{content.map((item, index) => (
+            <div className="social-feed-box" key={index}>
+              {/* <div className="social-avatar">
+                <a href="" className="pull-left">
+                  <img alt="image" src={item.createdBy.userType === "ExpertModel" ? "https://bootdey.com/img/Content/avatar/avatar1.png" : "https://bootdey.com/img/Content/avatar/avatar2.png"} />
+                </a>
+                <div className="media-body">
+                  <a href="#">
+                    {item.createdBy.createdByName}
+                  </a>
+                  <small className="text-muted">Today 4:21 pm - 12.06.2014</small>
+                </div>
+              </div> */}
+              <div className="social-body">
+                <p>{item.Description}</p>
+                <p>{item.Picture}</p>
+                <img src={`http://localhost:3001/uploads/${item.Picture}`} alt="content image" className="img-responsive" />
+                <div className="btn-group">
+                  <button className="btn btn-white btn-xs"><i className="fa fa-thumbs-up"></i> Like this!</button>
+                  <button className="btn btn-white btn-xs"><i className="fa fa-comments"></i> Comment</button>
+                  <button className="btn btn-white btn-xs"><i className="fa fa-share"></i> Share</button>
+                </div>
+              </div>
+            </div>
+          ))}
+
+    {/* <div className="social-feed-box">
 
         <div class="pull-right social-action dropdown">
             <button data-toggle="dropdown" className="dropdown-toggle btn-white">
@@ -207,7 +235,7 @@ export default function Feed() {
 
         </div>
 
-    </div>
+    </div> */}
 
     {/* <div className="social-feed-box">
 

@@ -20,4 +20,9 @@ const upload = multer({ storage: storage });
 router.post('/uploadpic', upload.single('profilePic'), uploadController.uploadProfilePic);
 router.post('/uploadpicex', upload.single('profilePic'), uploadController.uploadProfilePicEx);
 
+router.post('/upload', upload.single('image'), (req, res) => {
+    // Handle the uploaded image
+    res.status(200).json({ message: 'Image uploaded successfully' });
+  });
+
 module.exports = router;
