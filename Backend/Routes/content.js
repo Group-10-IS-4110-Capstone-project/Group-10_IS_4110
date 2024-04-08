@@ -6,7 +6,7 @@ const { verifyToken } = require('../middleware/protectRoute');
 
 
 // Create Content
-Router.post('/create',verifyToken,createContent);
+Router.post('/create/:id',createContent);
 
 // Update Content
 Router.put('/update/:id',verifyToken,updateContent);

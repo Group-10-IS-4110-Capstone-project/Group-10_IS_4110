@@ -1,14 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Feed.css"
 
 export default function Feed() {
+
+    const [content, setContent] = useState([]);
+
+    useEffect(() => {
+        // Fetch content from the backend when the component mounts
+        fetchContent();
+      }, []);
+
+      const fetchContent = async () => {
+        try {
+          const response = await fetch("http://localhost:3001/content/getAllcontent"); // Adjust the endpoint URL as per your backend route
+          if (response.ok) {
+            const data = await response.json();
+            setContent(data.content);
+          } else {
+            console.error('Failed to fetch content');
+          }
+        } catch (error) {
+          console.error('Error fetching content:', error);
+        }
+      };
+
   return (
     <div>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
 <div className="container">
 <div className="col-md-7">
 
-    <div className="social-feed-box">
+    {/* <div className="social-feed-box">
 
         <div className="pull-right social-action dropdown">
             <button data-toggle="dropdown" className="dropdown-toggle btn-white">
@@ -85,7 +107,7 @@ export default function Feed() {
 
         </div>
 
-    </div>
+    </div> */}
 
     <div className="social-feed-box">
 
@@ -187,7 +209,7 @@ export default function Feed() {
 
     </div>
 
-    <div className="social-feed-box">
+    {/* <div className="social-feed-box">
 
         <div className="pull-right social-action dropdown">
             <button data-toggle="dropdown" class="dropdown-toggle btn-white">
@@ -245,9 +267,9 @@ export default function Feed() {
                 <div className="media-body">
                     <textarea className="form-control" placeholder="Write comment..."></textarea>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> */}
+        {/* </div> */}
+    {/* </div> */}
 </div>
 </div>
     </div>
