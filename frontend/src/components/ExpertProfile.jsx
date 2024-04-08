@@ -30,7 +30,6 @@ export default function ExpertProfile() {
       );
 
       const data = await response.json();
-      console.log(data.Name)
 
       setExpertData({
         Name: data.Name || "",
@@ -81,26 +80,28 @@ export default function ExpertProfile() {
         return;
       }
 
-      // const formData = new FormData();
-      // formData.append("profilePic", img);
-      // formData.append("id", userid);
+      const formData = new FormData();
+      formData.append("profilePic", img);
+      formData.append("id", userid);
+      // console.log(formData)
 
-      // const response = await fetch("http://localhost:3001/upload/uploadpic", {
-      //   method: "POST",
-      //   body: formData,
-      // });
+      const response = await fetch("http://localhost:3001/upload/uploadpicex", {
+        method: "POST",
+        body: formData,
+      });
 
-      // const data = await response.json();
+      const data = await response.json();
+      // console.log(data)
 
-      // if (response.ok) {
-      //   setExpertData((prevData) => ({
-      //     ...prevData,
-      //     profilePic: "http://localhost:3001/uploads/" + data.user.profilePic,
-      //   }));
+      if (response.ok) {
+        setExpertData((prevData) => ({
+          ...prevData,
+          profilePic: "http://localhost:3001/uploads/" + data.user.profilePic,
+        }));
         
-      // } else {
-      //   console.error("Error updating profile picture:", data.error);
-      // }
+      } else {
+        console.error("Error updating profile picture:", data.error);
+      }
     } catch (error) {
       console.error("Error updating profile picture:", error);
     }

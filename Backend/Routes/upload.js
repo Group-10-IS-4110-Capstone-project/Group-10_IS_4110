@@ -18,5 +18,6 @@ const upload = multer({ storage: storage });
 
 // Route to handle profile picture upload
 router.post('/uploadpic', upload.single('profilePic'), uploadController.uploadProfilePic);
+router.post('/uploadpicex', upload.single('profilePic'), uploadController.uploadProfilePicEx);
 
 module.exports = router;

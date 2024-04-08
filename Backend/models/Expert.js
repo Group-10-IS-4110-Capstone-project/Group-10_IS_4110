@@ -11,7 +11,7 @@ const ExpertSchema = new mongoose.Schema({
   bio: String,
   profilePic: String,
 
-});
+},{timestamps: true});
 
 const ExpertModel = mongoose.model("LoginExpert", ExpertSchema);
 
