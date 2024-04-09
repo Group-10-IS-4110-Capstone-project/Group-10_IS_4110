@@ -54,8 +54,14 @@ export default function CreatePost() {
         body: JSON.stringify(postData),
       });
 
+      const response1 = await fetch(`http://localhost:3001/content/content/upload/${userid}`, {
+        method: "POST",
+        body: formData,
+      });
+      const data1 = await response1.json();
       const data = await response.json();
       console.log(data)
+      console.log(data1)
       // Handle the response from the backend
       if (!response.ok) {
         throw new Error("Failed to create post");

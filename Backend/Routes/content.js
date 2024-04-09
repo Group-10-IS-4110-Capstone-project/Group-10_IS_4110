@@ -1,7 +1,7 @@
 // contentRoutes.js
 const express = require('express');
 const Router = express.Router();
-const {createContent,updateContent,deleteContent, getAllContent} = require("../Controllers/contentController");
+const {createContent,updateContent,deleteContent, getAllContent, uploadPictureToContent} = require("../Controllers/contentController");
 const { verifyToken } = require('../middleware/protectRoute');
 
 
@@ -16,5 +16,7 @@ Router.delete('/delete/:id',verifyToken,deleteContent);
 
 //get all content
 Router.get('/getAllcontent', getAllContent);
+
+Router.post("/content/upload/:id", uploadPictureToContent);
 
 module.exports = Router;

@@ -52,42 +52,23 @@ const createContent = async (req, res) => {
   }
 };
 
-// const createContent = async (req, res) => {
-//   try {
-//     const userId = req.params.id;
+const uploadPictureToContent = async (req, res) => {
+  try {
+    const { Picture } = req.body;
+    const userId = req.params.id; // Assuming the user ID is available in req.user
 
-//     // Parse the form data
-//     const form = new formidable.IncomingForm();
-//     form.parse(req, async (err, fields, files) => {
-//       if (err) {
-//         return res.status(400).json({ error: "Bad Request" });
-//       }
+    // Create a new content entry with the provided picture and user ID
+    const newContent = new ContentModel({ Picture: Picture, createdBy: {
+      userId: userId
+    }});
+    const savedContent = await newContent.save();
 
-//       const { Picture } = files;
-//       const { Subject, Description } = JSON.parse(fields.data);
-
-//       // Your existing logic for determining userType and createdByName
-
-//       const newContent = new ContentModel({
-//         Picture,
-//         Subject,
-//         Description,
-//         createdBy: {
-//           userId: userId,
-//           userType: userType,
-//           createdByName: createdByName
-//         }
-//       });
-
-//       await newContent.save();
-
-//       res.json({ message: "Content created successfully", content: newContent });
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// };
+    res.json({ message: "Picture uploaded successfully", content: savedContent });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 const updateContent = async (req, res) => {
   try {
@@ -152,4 +133,4 @@ const getAllContent = async (req, res) => {
   }
 };
 
-module.exports = { createContent, updateContent, deleteContent, getAllContent };
+module.exports = { createContent, updateContent, deleteContent, getAllContent, uploadPictureToContent };
