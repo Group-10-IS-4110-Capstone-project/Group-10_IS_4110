@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import icon1 from "../assets/icon1.png"
-import icon2 from "../assets/icon2.png"
-import icon3 from "../assets/icon3.png"
-import icon4 from "../assets/icon4.png"
-import icon5 from "../assets/icon5.png"
-import "./UnderNav_Bar.css"
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import icon1 from "../assets/icon1.png";
+import icon2 from "../assets/icon2.png";
+import icon3 from "../assets/icon3.png";
+import icon4 from "../assets/icon4.png";
+import icon5 from "../assets/icon5.png";
+import "./UnderNav_Bar.css";
+import { Link } from "react-router-dom";
 
 export default function () {
   const userId = localStorage.getItem("userid");
@@ -23,7 +23,7 @@ export default function () {
           return;
         }
         const response = await fetch(
-          `http://localhost:3001/user/undergraduates/${userId}`
+          `http://localhost:3001/user/experts/${userId}`
         );
         const data = await response.json();
         setUndergraduateDataPic({
@@ -41,19 +41,39 @@ export default function () {
     }
   }, [userId]);
 
+  const handleLogout = () => {
+    // Remove token and user ID from local storage
+    localStorage.removeItem("token");
+    localStorage.removeItem("userid");
+
+    // Navigate to login page
+    window.location.href = "/login";
+  };
+
   return (
     <div>
-        <div className="user-navbar">
-            <img src={undergraduateDataPic.profilePic} alt="" className="nav-icon-1" />
-            <div className="user-navbar-1">
-                <Link to={"/Undergraduate"}><img src={icon2} alt="" className="nav-icon2" /></Link>
-                <Link to={"/Undergraduatechat"}><img src={icon3} alt="" className="nav-icon2" /></Link>
-                <Link to={"/feed"}><img src={icon4} alt="" className="nav-icon2" /></Link>
-                <Link to={"/Undergraduate"}><img src={icon5} alt="" className="nav-icon2" /></Link>
-                
-            </div>
-            <button className="nav-logout">Log Out</button>
+      <div className="user-navbar">
+        <img
+          src={undergraduateDataPic.profilePic}
+          alt=""
+          className="nav-icon-1"
+        />
+        <div className="user-navbar-1">
+          <Link to={"/Home"}>
+            <img src={icon2} alt="" className="nav-icon2" />
+          </Link>
+          <Link to={"/Undergraduatechat"}>
+            <img src={icon3} alt="" className="nav-icon2" />
+          </Link>
+          <Link to={"/feed"}>
+            <img src={icon4} alt="" className="nav-icon2" />
+          </Link>
+          <Link to={"/Undergraduate"}>
+            <img src={icon5} alt="" className="nav-icon2" />
+          </Link>
         </div>
+        <button className="nav-logout" onClick={handleLogout}>Log Out</button>
+      </div>
     </div>
-  )
+  );
 }

@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+.card-body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.card-title{
+    font-size: 25px;
+}
+
+/* .g-3{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 600px;
+} */
+
+.form-label{
+    font-family: inter;
+    font-size: 16px;
+}
+
+#subject{
+    height: 150px;
+}
+
+.form-control{
+    height: 35px;
+}
+

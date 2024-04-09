@@ -35,6 +35,7 @@ const expertRegister = async (req, res) => {
       jobFeild,
       workExperience,
       email,
+      profilePic,
       password: hashedPassword,
     });
 
@@ -105,4 +106,35 @@ const getUserById = async (req, res) => {
   }
 };
 
-module.exports = { expertRegister, expertLogin ,getUsersForSideBar,getUserById};
+const updateUser = async (req, res) => {
+  try {
+
+    const userId = req.params.id;
+    const { Name, jobField, workExperience, bio } = req.body;
+
+    // Check if the user has a valid token and the token matches the user type
+    // if (!req.userId || req.userId !== userId || req.userType !== 'undergraduate') {
+    //   return res.status(401).json({ error: 'Unauthorized - Invalid token for this operation' });
+    // }
+
+    const user = await ExpertModel.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    user.Name = Name;
+    user.jobFeild = jobField;
+    user.workExperience = workExperience;
+    user.bio = bio;
+
+    await user.save();
+
+    res.json({ message: "User updated successfully", user });
+   } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+module.exports = { expertRegister, expertLogin ,getUsersForSideBar,getUserById, updateUser};

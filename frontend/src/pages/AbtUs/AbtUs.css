@@ -1,3 +1,8 @@
+.abti{
+  background-color: #046EC4;
+}
+
+
 .abt-container {
     text-align: center;
     min-height: 80vh;
@@ -19,7 +24,6 @@
     border: 1px solid rgb(21, 5, 144); 
     border-radius: 12px;
     border-width: 2px;
-    
     
   }
 

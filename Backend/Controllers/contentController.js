@@ -5,17 +5,21 @@ const AdminModel = require("../models/Admin");
 
 const createContent = async (req, res) => {
   try {
+    
     const { Picture, Subject, Description } = req.body;
-    // const userId = '65d78a2a6ea712e95b14143c';
-    const userId = req.userId;
+    // const userId = '66121a84db43129f871a51ff';
+    
+    
+    const userId = req.params.id;
     // Fetch user details to determine userType and createdByName
     const user = await ExpertModel.findById(userId); // Try to find the user in the ExpertModel
     let userType, createdByName;
 
+   
     if (user) {
       userType = "ExpertModel";
       createdByName = user.Name;
-    } else {
+     } else {
       const adminUser = await AdminModel.findById(userId); // Try to find the user in the AdminModel
       if (!adminUser) {
         return res.status(404).json({ error: "User not found" });
@@ -25,18 +29,41 @@ const createContent = async (req, res) => {
       createdByName = "Admin";
     }
 
+    console.log(userType)
+
     const newContent = new ContentModel({
       Picture,
       Subject,
       Description,
-      createdBy: userId,
-      createdByName,
-      userType,
+      createdBy: {
+        userId: userId, // Include the userId here
+        userType: userType,
+        createdByName: createdByName
+      }
+      
     });
 
     await newContent.save();
 
     res.json({ message: "Content created successfully", content: newContent });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+const uploadPictureToContent = async (req, res) => {
+  try {
+    const { Picture } = req.body;
+    const userId = req.params.id; // Assuming the user ID is available in req.user
+
+    // Create a new content entry with the provided picture and user ID
+    const newContent = new ContentModel({ Picture: Picture, createdBy: {
+      userId: userId
+    }});
+    const savedContent = await newContent.save();
+
+    res.json({ message: "Picture uploaded successfully", content: savedContent });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -106,4 +133,4 @@ const getAllContent = async (req, res) => {
   }
 };
 
-module.exports = { createContent, updateContent, deleteContent, getAllContent };
+module.exports = { createContent, updateContent, deleteContent, getAllContent, uploadPictureToContent };

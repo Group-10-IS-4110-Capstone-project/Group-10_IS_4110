@@ -34,6 +34,15 @@ import UnderGraduate from './pages/UnderGraduate';
 import UndergraduateChat from './pages/UndergraduateChat';
 import UserFeed from './pages/UserFeed';
 import UserHome from './pages/UserHome';
+import ExpertNav_Bar from './components/ExpertNav_Bar';
+import ExpertFeed from './pages/ExpertFeed';
+import ExpertHome from './pages/ExpertHome';
+import ChatEx from './components/ChatEx';
+import ExpertChat from './pages/ExpertChat';
+import Advertistemen from './components/Advertistemen';
+import CreatePost from './components/CreatePost';
+import ExpertProfile from './components/ExpertProfile';
+import Expert from './pages/Expert';
 
 
 function App() {
@@ -72,6 +81,13 @@ function App() {
           <Route path="/Undergraduatechat" element={<UndergraduateChat></UndergraduateChat>}></Route>
           <Route path="/feed" element={<UserFeed></UserFeed>}></Route>
           <Route path="/Home" element={<UserHome></UserHome>}></Route>
+
+
+          <Route path="/nav" element={<ExpertNav_Bar></ExpertNav_Bar>}></Route>
+          <Route path="/chatEx" element={<ExpertChat></ExpertChat>}></Route>
+          <Route path="/feedEx" element={<ExpertFeed></ExpertFeed>}></Route>
+          <Route path="/homeEx" element={<ExpertHome></ExpertHome>}></Route>
+          <Route path="/profileEx" element={<Expert></Expert>}></Route>
 
           
           

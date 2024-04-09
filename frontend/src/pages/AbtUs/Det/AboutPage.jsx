@@ -2,9 +2,10 @@ import React from 'react';
 import NavBar from '../../Lannding/sections/NavBar'; 
 import logo from "../../../assets/red.svg"; 
 
+
 function AboutPage() {
   return (
-    <div>
+    <div className='abti'>
       <NavBar />
       <div className="abt-container">
         <div className="abt-content">

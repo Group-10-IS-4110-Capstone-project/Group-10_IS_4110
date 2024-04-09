@@ -3,19 +3,23 @@ import "./Chat.css";
 import axios from "axios";
 
 export default function () {
+  const userIdenty = localStorage.getItem("userid");
   const [experts, setExperts] = useState([]);
   const [selectedExpert, setSelectedExpert] = useState(null);
+  const [prevSelectedExpert, setPrevSelectedExpert] = useState(null);
   const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/expert/")
       .then((res) => res.json())
       .then((res) => setExperts(res));
-  }, []);
+  }, [selectedExpert]);
 
   const handleExpertClick = (expert) => {
     setSelectedExpert(expert);
     fetchExpertDetails(expert._id);
+    setMessages([]);
   };
 
   const fetchExpertDetails = async (expertId) => {
@@ -45,6 +49,8 @@ export default function () {
 
   const sendMessage = async () => {
     try {
+      console.log(selectedExpert.id)
+      const userIdenty = localStorage.getItem("userid");
       // const userId = getUserId();
       const response = await fetch(
         `http://localhost:3001/message/send/${selectedExpert.id}`,
@@ -56,16 +62,23 @@ export default function () {
           body: JSON.stringify({
             // Convert the data to JSON string
             message: message,
-            userId: "65eb32ff9b96d7db56c4ac3f",
+            senderId: userIdenty,
           }),
         }
       );
 
       const responseData = await response.json(); // Parse the response JSON
 
+      const newMessage = {
+        text: message,
+        time: new Date().toLocaleTimeString(),
+        sender: 'user', // Assuming user is sending the message
+      };
+
       console.log("Message sent successfully:", responseData);
 
       // console.log("Message sent successfully:", response);
+      setMessages([...messages, newMessage]);
       setMessage("");
     } catch (error) {
       console.error("Error sending message:", error);
@@ -106,7 +119,16 @@ export default function () {
                       onClick={() => handleExpertClick(expert)}
                     >
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                        src={
+                          (prevSelectedExpert &&
+                            prevSelectedExpert._id === expert._id &&
+                            prevSelectedExpert.profilePic) ||
+                          expert.profilePic
+                            ? `http://localhost:3001/uploads/${
+                                expert.profilePic || ""
+                              }`
+                            : "https://bootdey.com/img/Content/avatar/avatar1.png"
+                        }
                         alt="avatar"
                       />
                       <div className="about">
@@ -131,7 +153,7 @@ export default function () {
                         data-target="#view_info"
                       >
                         <img
-                          src={selectedExpert ? selectedExpert.profilePic : ""}
+                          src={selectedExpert && selectedExpert.profilePic ? `http://localhost:3001/uploads/${selectedExpert.profilePic}`: "https://bootdey.com/img/Content/avatar/avatar1.png"}
                           alt="avatar"
                         />
                       </a>
@@ -181,7 +203,17 @@ export default function () {
                   </div>
                 </div>
                 <div className="chat-history">
-                  <ul className="m-b-0">
+                <ul className="m-b-0">
+    {messages.map((msg, index) => (
+      <li key={index} className={`clearfix ${msg.sender === 'user' ? 'other-message float-right-down' : 'clearfix float-left-down'}`}>
+        <div className="message-data">
+          <span className="message-data-time">{msg.time}</span>
+        </div>
+        <div className={`message ${msg.sender === 'user' ? 'my-message' : 'other-message'}`}>{msg.text}</div>
+      </li>
+    ))}
+  </ul>
+                  {/* <ul className="m-b-0">
                     <li className="clearfix">
                       <div className="message-data text-right">
                         <span className="message-data-time">
@@ -218,7 +250,7 @@ export default function () {
                         show you.
                       </div>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
                 <div className="chat-message clearfix">
                   <div className="input-group mb-0">

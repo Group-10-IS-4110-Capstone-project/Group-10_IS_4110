@@ -101,7 +101,7 @@ const userLogin = async (req, res) => {
           "10",
           { expiresIn: "1h" }
         );
-        return res.json({ message: "success-expert", token });
+        return res.json({ message: "success-expert", token ,id:expert._id});
       } else {
         return res.json({ message: "Incorrect password admin" });
       }
@@ -119,7 +119,7 @@ const userLogin = async (req, res) => {
         const token = jwt.sign({ userId: admin._id, userType: "admin" }, "10", {
           expiresIn: "1h",
         });
-        return res.json({ message: "success-admin", token });
+        return res.json({ message: "success-admin", token ,id:admin._id});
       } else {
         return res.json({ message: "Incorrect password" });
       }
@@ -289,12 +289,26 @@ const changePassword = (req, res) => {
 
 ///logout
 
-const logOut = async (req, res) => {
+// const logOut = async (req, res) => {
+//   try {
+//     res.cookie("jwt", "10", { maxAge: 0 });
+//     res.status(200).json({ message: "Logged out successfully" });
+//   } catch (error) {
+//     console.log("Error in logout controller", error);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// };
+const logout = async (req, res) => {
   try {
-    res.cookie("jwt", "10", { maxAge: 0 });
-    res.status(200).json({ message: "Logged out successfully" });
+    // Assuming you're using JWT tokens stored in local storage
+    // Remove the token from local storage
+    // localStorage.removeItem("token");
+    
+    // You can also remove any other relevant information from client-side storage
+
+    res.json({ message: "Logout successful" });
   } catch (error) {
-    console.log("Error in logout controller", error);
+    console.error("Error during logout:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
@@ -344,13 +358,29 @@ const updateUser = async (req, res) => {
   }
 };
 
+const getUsersForSideBar = async(req, res) => {
+
+  //undergraduate
+  try {
+    // const loggedInUserId = req.user._id  //if logged in
+
+    const filteredUsers = await UnderGraduateModel.find().select("-password")
+
+    res.status(200).json(filteredUsers);
+  } catch (error) {
+    console.log("Error in getUserForSideBar",error);
+    res.status(500).json({error:"Internal server error"});
+  }
+}
+
 module.exports = {
   userTest,
   userRegister,
   userLogin,
   forgotPassword,
   changePassword,
-  logOut,
+  logout,
   updateUser,
   getUserById,
+  getUsersForSideBar,
 };

@@ -15,41 +15,41 @@ const Explore = () => {
   const workInfoData = [
     {
       image: AI, 
-      path:"/ai"
+      path:"/Artificial"
     
     },
     {
       image: Devops,
-      path:"/devops"
+      path:"/DevOps"
     },
     {
       image: Mobile_App_dev,
-      path:"/mobile-app-dev"
+      path:"/Mobile_app_Dev"
     },
 
     {
       image: Cyber_Security,
-      path:"/cyber-security"
+      path:"/Cyber_Security"
     },
     {
       image:Data_Science,
-      path:"/experts"
+      path:"/Data_Science"
     },
     {
       image:Machine_Learning,
-      path:"/machine-learning"
+      path:"/Machine_Learning"
     },
     {
       image:Cloud_Computing,
-      path:"/cloud-computing"
+      path:"/Cloud_Computing"
     },
     {
       image:Block_Chain,
-      path:"/block-chain"
+      path:"/BlockChain"
     },
     {
       image:Web_Development,
-      path:"/web-development"
+      path:"/Web_Development"
     },
     
 

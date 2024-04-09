@@ -32,6 +32,7 @@ export default function () {
       );
 
       const data = await response.json();
+      console.log(data);
 
       setUndergraduateData({
         firstName: data.firstName || "",
@@ -125,7 +126,7 @@ export default function () {
           body: JSON.stringify(undergraduateData),
         }
       );
-      console.log(undergraduateData);
+      
 
       const data = await response.json();
       console.log(data);

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./SignUpLeftPane.css"
-import img from "../../assets/Background.png"
+import img from "../../assets/signup.png"
 
 
 export default function SignUpLeftPane() {
