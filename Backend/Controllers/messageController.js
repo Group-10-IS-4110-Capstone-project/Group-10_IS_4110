@@ -7,11 +7,9 @@ const UnderGraduateModel = require("../models/UnderGraduate");
 const sendMessage = async (req, res) => {
   try {
     const { message,senderId } = req.body;
-    // const { id } = req.params;
+    
     const receiverId = req.params.id;
-    // const senderId = req.user._id
-    // const senderId = "65e17aeb93b702152ad1a698";
-
+    
     let conversation = await Conversation.findOne({
       participants: { $all: [senderId, receiverId] },
     });

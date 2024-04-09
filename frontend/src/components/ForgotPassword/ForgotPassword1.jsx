@@ -39,6 +39,7 @@ export default function ForgotPassword1() {
         email: email,
       });
 
+      alert("Email sent successfully");
       // Check the response status or message if needed
       console.log(response.data);
       
