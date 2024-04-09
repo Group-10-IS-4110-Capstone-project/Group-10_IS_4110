@@ -289,12 +289,26 @@ const changePassword = (req, res) => {
 
 ///logout
 
-const logOut = async (req, res) => {
+// const logOut = async (req, res) => {
+//   try {
+//     res.cookie("jwt", "10", { maxAge: 0 });
+//     res.status(200).json({ message: "Logged out successfully" });
+//   } catch (error) {
+//     console.log("Error in logout controller", error);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// };
+const logout = async (req, res) => {
   try {
-    res.cookie("jwt", "10", { maxAge: 0 });
-    res.status(200).json({ message: "Logged out successfully" });
+    // Assuming you're using JWT tokens stored in local storage
+    // Remove the token from local storage
+    // localStorage.removeItem("token");
+    
+    // You can also remove any other relevant information from client-side storage
+
+    res.json({ message: "Logout successful" });
   } catch (error) {
-    console.log("Error in logout controller", error);
+    console.error("Error during logout:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
@@ -365,7 +379,7 @@ module.exports = {
   userLogin,
   forgotPassword,
   changePassword,
-  logOut,
+  logout,
   updateUser,
   getUserById,
   getUsersForSideBar,
