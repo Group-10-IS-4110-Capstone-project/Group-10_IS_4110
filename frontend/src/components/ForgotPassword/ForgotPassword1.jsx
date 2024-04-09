@@ -86,6 +86,7 @@ export default function ForgotPassword1() {
           >
             Submit
           </Button>{" "}
+          
           <div className="forgotPasswordMessageDesc">
             <img
               src="https://s3-alpha-sig.figma.com/img/5efd/7a32/bc7860f727863436f76c19fe713b82db?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Hfx2A~vqO~vYivbV5nUERnE6oaKcDoSQ7rf6uZzbnFtqb05Hqor0h1jiLfHkRyhp1tShE4~H3w3Iw2PQeW02JOcIpu55bVXDkUuVITf9lXQpIQxYDwexXtMpy35E~5iweXR8V~QZFSNd9OqjDMWY7~p5dfwfo78ER44~PE6P7xqaD9BX0vBBFvFOEFcIrDCpepA11bbUv6fO1orpxizkvAX07Y6qu5GA6-1nwCY-uwvFu7ocmASFWumMSH1iz88GAzXL9gHtB9ZWaIxv7SPVVZM4Cp9~nxuN5DStr6Bplc7FuKU4MG47YymWj8EA5OB2oFiZwlXX451VL8i6WTfZpg__"
