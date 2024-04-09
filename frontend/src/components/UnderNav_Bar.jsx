@@ -23,7 +23,7 @@ export default function () {
           return;
         }
         const response = await fetch(
-          `http://localhost:3001/user/undergraduates/${userId}`
+          `http://localhost:3001/user/experts/${userId}`
         );
         const data = await response.json();
         setUndergraduateDataPic({

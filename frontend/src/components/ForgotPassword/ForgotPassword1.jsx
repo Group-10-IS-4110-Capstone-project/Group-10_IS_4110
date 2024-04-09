@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./ForgotPassword1.css";
+import fp from "../../assets/fp.jpg"
+import arrow from "../../assets/arrow 2.png"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -59,7 +61,7 @@ export default function ForgotPassword1() {
       <div className="forgotPasswordContent">
         <div className="forgotPasswordForm">
           <img
-            src="https://s3-alpha-sig.figma.com/img/f606/022d/82e1e29df907c0ec7a2f535f97e90849?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dUNbeYMmrtdMvCZVKsOSb8Pn0aoxVFXfRhIWs9JxFmAewNVyK5FD7wFgASHo1ghqhe1sz2hZapJuZlLhfRdgkdUoH3kU7GH7reLw1nxDuKrUkrosddqZW-XTRgFY-Iqr~cqy-uAsYOUu~hzm0XWulXe3Hxb0z~~WPh7a2JFyCeNxU8psoAiYUlwgAsCBh6AQMRCb~snBx1Fya4PpBGsnnYuA20M8F3aHXU8JOSoBrbJU0tkDHHJCV4P~ZR8GAvh6QLIXm67OIsObT0hNgOu7OcKcInLMFiPgKGrN7AFz9A~~TX44OEqSDDVFF3rfiLDGAErNitgZW9AQoxYBY5EiKA__"
+            src={fp}
             alt=""
             className="img404"
           />
@@ -89,7 +91,7 @@ export default function ForgotPassword1() {
           
           <div className="forgotPasswordMessageDesc">
             <img
-              src="https://s3-alpha-sig.figma.com/img/5efd/7a32/bc7860f727863436f76c19fe713b82db?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Hfx2A~vqO~vYivbV5nUERnE6oaKcDoSQ7rf6uZzbnFtqb05Hqor0h1jiLfHkRyhp1tShE4~H3w3Iw2PQeW02JOcIpu55bVXDkUuVITf9lXQpIQxYDwexXtMpy35E~5iweXR8V~QZFSNd9OqjDMWY7~p5dfwfo78ER44~PE6P7xqaD9BX0vBBFvFOEFcIrDCpepA11bbUv6fO1orpxizkvAX07Y6qu5GA6-1nwCY-uwvFu7ocmASFWumMSH1iz88GAzXL9gHtB9ZWaIxv7SPVVZM4Cp9~nxuN5DStr6Bplc7FuKU4MG47YymWj8EA5OB2oFiZwlXX451VL8i6WTfZpg__"
+              src={arrow}
               alt=""
               className="linkArrow"
             />
