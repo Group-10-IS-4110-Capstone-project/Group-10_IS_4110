@@ -24,7 +24,7 @@ const About = () => {
 
         </p>
         <p className="secondary-text">
-        <h2 className="Third-heading"><u>Join Us</u></h2>
+        <h2 className="Third-heading" >Join Us</h2>
         Calling all tech-savvy undergraduates with a passion for IT!  Look no further! 
 Join our thriving community of IT enthusiasts and gain access to a wealth of 
 valuable insights tailored just for you.
