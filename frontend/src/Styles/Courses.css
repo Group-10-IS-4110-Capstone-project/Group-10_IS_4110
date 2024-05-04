@@ -1,22 +1,43 @@
-
-
 .courses {
   padding-top: 50px;
   background-color: #B5D1E2;
 }
-.paren{
-display:grid;
-grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
-column-gap : 200px;
-row-gap: 100px;
-padding-left: 15%;
-padding-right: 15%;
-padding-bottom: 20%;
 
-
+.courses .col-3 {
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+  margin-bottom: 30px; /* Added margin bottom for spacing between boxes */
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 50px;
 }
 
+.courses .col-3 img {
+  width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
 
+.courses .col-3:hover {
+  transform: translateY(-10px);
+}
+
+.col-3 p {
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+
+.courses .col-3 h3 {
+  font-weight: 600;
+  color: #555;
+  font-size: 16px;
+}
 
 .title {
   text-align: center;
@@ -26,301 +47,115 @@ padding-bottom: 20%;
   color: #000000; /* Changed text color */
 }
 
-
-
-  
-  
-.udemy {
-  height: 250px;
-
-
-
-  width: 321px;
+.row1 {
+  display: flex;
+  background-color: rgb(199, 221, 236);
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  scroll-snap-type: x mandatory; /* Enable snapping */
+  justify-content: center; /* Center the items horizontally */
+  margin-top: 20px; /* Add more margin on the top */
+  margin-bottom: 10px; /* Add more margin on the bottom */
+  padding: 10px; /* Add padding */
 }
 
- .overlap-7 {
-  background-color: #ffffff;
-  border-radius: 40px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 250px;
-  position: relative;
-  width: 317px;
+.col-32 {
+  text-align: center; /* Center the content horizontally */
+  padding: 20px; /* Add padding for spacing */
+  margin: 0 20px; /* Add margin for spacing between boxes */
+  width: 300px; /* Fixed width for grid layout */
+  flex: 0 0 auto; /* Ensure fixed width */
+
 }
 
- .ellipse-5 {
-  height: 48px;
-  left: 130px;
-  object-fit: cover;
-  position: absolute;
-  top: 50px;
-  width: 48px;
+.row1::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
 }
 
- .overlap-group-2 {
-  height: 43px;
-  left: 74px;
-  position: absolute;
-  top: 110px;
-  width: 157px;
+.row1 .col-32 img {
+  width: 270px; /* Adjust the width as per your preference */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+.courses {
+  padding-top: 50px;
+  background-color: #B5D1E2;
 }
 
- .fixed-width-fixed {
-  background-color: var(--light-gray-1);
-  height: 2px;
-  left: 53px;
-  position: absolute;
-  top: 32px;
+.courses .col-3 {
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+  margin-bottom: 30px; /* Added margin bottom for spacing between boxes */
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.courses .col-3 img {
   width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
 }
 
- .feature-title {
-  color: var(--text-color);
-  font-family: "Montserrat", Helvetica;
+.courses .col-3:hover {
+  transform: translateY(-10px);
+}
+
+.col-3 p {
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+
+.courses .col-3 h3 {
+  font-weight: 600;
+  color: #555;
   font-size: 16px;
-  font-weight: 700;
-  left: 0;
-  letter-spacing: 0.1px;
-  line-height: 24px;
-  position: absolute;
+}
+
+.title {
   text-align: center;
-  top: 0;
-  width: 157px;
+  margin: 0 auto 40px; /* Adjusted margin */
+  position: relative;
+  line-height: 60px;
+  color: #000000; /* Changed text color */
 }
 
- .paragraph-feature {
-  color: var(--second-text-color);
-  font-family: "Montserrat", Helvetica;
-  font-size: 14px;
-  font-weight: 400;
-  left: 91px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  position: absolute;
-  text-align: center;
-  top: 153px;
-  width: 136px;
+.row1 {
+  display: flex;
+  background-color: rgb(199, 221, 236);
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  scroll-snap-type: x mandatory; /* Enable snapping */
+  justify-content: center; /* Center the items horizontally */
+  margin-top: 20px; /* Add more margin on the top */
+  margin-bottom: 10px; /* Add more margin on the bottom */
+  padding: 10px; /* Add padding */
 }
 
-.great {
-  height: 250px;
- 
-  width: 321px;
+.col-32 {
+  text-align: center; /* Center the content horizontally */
+  padding: 20px; /* Add padding for spacing */
+  margin: 0 20px; /* Add margin for spacing between boxes */
+  width: 300px; /* Fixed width for grid layout */
+  flex: 0 0 auto; /* Ensure fixed width */
+
 }
 
-.overlap-8 {
-  height: 51px;
-  left: 126px;
-  position: absolute;
-  top: 39px;
-  width: 52px;
+.row1::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
 }
 
- .ellipse-6 {
-  height: 48px;
-  left: 3px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 48px;
+.row1 .col-32 img {
+  width: 270px; /* Adjust the width as per your preference */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px; /* Adjust the margin as needed */
+  transition: transform 0.3s; /* Add transition for smooth effect */
 }
 
- .ellipse-7 {
-  height: 51px;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 52px;
-}
-
- .overlap-group-3 {
-  height: 43px;
-  left: 73px;
-  position: absolute;
-  top: 99px;
-  width: 157px;
-}
-
-.paragraph-feature-2 {
-  color: var(--second-text-color);
-  font-family: "Montserrat", Helvetica;
-  font-size: 14px;
-  font-weight: 400;
-  left: 90px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  position: absolute;
-  text-align: center;
-  top: 142px;
-  width: 136px;
-}
-
-.coursera {
-  height: 250px;
-
-  width: 321px;
-}
-
- .overlap-9 {
-  height: 51px;
-  left: 135px;
-  position: absolute;
-  top: 44px;
-  width: 50px;
-}
-
- .ellipse-8 {
-  height: 48px;
-  left: 1px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 48px;
-}
-
-.ellipse-9 {
-  height: 51px;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 50px;
-}
-
-.overlap-group-4 {
-  height: 43px;
-  left: 80px;
-  position: absolute;
-  top: 104px;
-  width: 157px;
-}
-
- .paragraph-feature-3 {
-  color: var(--second-text-color);
-  font-family: "Montserrat", Helvetica;
-  font-size: 14px;
-  font-weight: 400;
-  left: 97px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  position: absolute;
-  text-align: center;
-  top: 147px;
-  width: 136px;
-}
-
- .udacity {
-  height: 250px;
- 
-  width: 321px;
-}
-
- .overlap-10 {
-  height: 55px;
-  left: 122px;
-  position: absolute;
-  top: 44px;
-  width: 55px;
-}
-
- .ellipse-10 {
-  height: 48px;
-  left: 4px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 48px;
-}
-
- .ellipse-11 {
-  height: 55px;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 55px;
-}
-
-.overlap-group-5 {
-  height: 43px;
-  left: 70px;
-  position: absolute;
-  top: 104px;
-  width: 157px;
-}
-
- .paragraph-feature-4 {
-  color: var(--second-text-color);
-  font-family: "Montserrat", Helvetica;
-  font-size: 14px;
-  font-weight: 400;
-  left: 87px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  position: absolute;
-  text-align: center;
-  top: 147px;
-  width: 136px;
-}
-
- .solo {
-  height: 250px;
-  
-  
-  width: 321px;
-}
-
- .ellipse-12 {
-  height: 47px;
-  left: 133px;
-  object-fit: cover;
-  position: absolute;
-  top: 50px;
-  width: 52px;
-}
-
- .overlap-group-6 {
-  height: 48px;
-  left: 74px;
-  position: absolute;
-  top: 110px;
-  width: 157px;
-}
- .fixed-width-fixed-2 {
-  background-color: var(--light-gray-1);
-  height: 2px;
-  left: 54px;
-  position: absolute;
-  top: 34px;
-  width: 50px;
-}
-
- .paragraph-feature-5 {
-  color: var(--second-text-color);
-  font-family: "Montserrat", Helvetica;
-  font-size: 14px;
-  font-weight: 400;
-  left: 91px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  position: absolute;
-  text-align: center;
-  top: 158px;
-  width: 136px;
-}
-.adver{
-  height: 200px;
-  margin-left: 160%;
- margin-top: -155%;
-  
-  
-  width: 500px;
-}
-.c_butn{
-  
-  margin-left: 0%;
- margin-top: 40%;
-  
-  
-
+.row1 .col-32:hover img {
+  transform: scale(1.25); /* Zoom in effect on hover */
 }

@@ -40,7 +40,7 @@
 }
 
 .col-3 img:hover {
-  transform: scale(1.1); /* Example transform on hover */
+  transform: scale(1.15); /* Example transform on hover */
 }
 
 
