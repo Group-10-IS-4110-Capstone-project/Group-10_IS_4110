@@ -12,10 +12,10 @@ function Navbar_2() {
     <div>
     <div className='navbar'>
       <div className=''>
-      <button className="primary-button">HOME</button>
-      <button className="primary-button">ABOUT</button>
-      <button className="primary-button">EXPERTS</button>
-      <button className="primary-button">CONTACT US</button>  
+      <button className="primary-button" style={{ backgroundColor: 'transparent' }}>HOME</button>
+      <button className="primary-button" style={{ backgroundColor: 'transparent' }}>ABOUT</button>
+      <button className="primary-button" style={{ backgroundColor: 'transparent' }}>EXPERTS</button>
+      <button className="primary-button" style={{ backgroundColor: 'transparent' }}>CONTACT US</button>  
       </div>
     </div>
     <div className='Search'>
