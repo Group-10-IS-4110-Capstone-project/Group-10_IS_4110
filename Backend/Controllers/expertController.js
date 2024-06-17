@@ -35,7 +35,6 @@ const expertRegister = async (req, res) => {
       jobFeild,
       workExperience,
       email,
-      profilePic,
       password: hashedPassword,
     });
 
